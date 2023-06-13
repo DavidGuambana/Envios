@@ -1,10 +1,136 @@
 package vista;
 
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JMenuItem;
+
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
     }
+
+    public JButton getJb_nuevo_camion() {
+        return jb_nuevo_camion;
+    }
+
+    public void setJb_nuevo_camion(JButton jb_nuevo_camion) {
+        this.jb_nuevo_camion = jb_nuevo_camion;
+    }
+
+    public JButton getJb_nuevo_chofer() {
+        return jb_nuevo_chofer;
+    }
+
+    public void setJb_nuevo_chofer(JButton jb_nuevo_chofer) {
+        this.jb_nuevo_chofer = jb_nuevo_chofer;
+    }
+
+    public JButton getJb_nuevo_cliente() {
+        return jb_nuevo_cliente;
+    }
+
+    public void setJb_nuevo_cliente(JButton jb_nuevo_cliente) {
+        this.jb_nuevo_cliente = jb_nuevo_cliente;
+    }
+
+    public JButton getJb_nuevo_envio() {
+        return jb_nuevo_envio;
+    }
+
+    public void setJb_nuevo_envio(JButton jb_nuevo_envio) {
+        this.jb_nuevo_envio = jb_nuevo_envio;
+    }
+
+    public JButton getJb_ubicaciones() {
+        return jb_ubicaciones;
+    }
+
+    public void setJb_ubicaciones(JButton jb_ubicaciones) {
+        this.jb_ubicaciones = jb_ubicaciones;
+    }
+
+    public JDesktopPane getJdp_principal() {
+        return jdp_principal;
+    }
+
+    public void setJdp_principal(JDesktopPane jdp_principal) {
+        this.jdp_principal = jdp_principal;
+    }
+
+    public JMenuItem getJmb_camiones() {
+        return jmb_camiones;
+    }
+
+    public void setJmb_camiones(JMenuItem jmb_camiones) {
+        this.jmb_camiones = jmb_camiones;
+    }
+
+    public JMenuItem getJmb_ciudades() {
+        return jmb_ciudades;
+    }
+
+    public void setJmb_ciudades(JMenuItem jmb_ciudades) {
+        this.jmb_ciudades = jmb_ciudades;
+    }
+
+    public JMenuItem getJmb_clientes() {
+        return jmb_clientes;
+    }
+
+    public void setJmb_clientes(JMenuItem jmb_clientes) {
+        this.jmb_clientes = jmb_clientes;
+    }
+
+    public JMenuItem getJmb_conductores() {
+        return jmb_conductores;
+    }
+
+    public void setJmb_conductores(JMenuItem jmb_conductores) {
+        this.jmb_conductores = jmb_conductores;
+    }
+
+    public JMenuItem getJmb_envios() {
+        return jmb_envios;
+    }
+
+    public void setJmb_envios(JMenuItem jmb_envios) {
+        this.jmb_envios = jmb_envios;
+    }
+
+    public JMenuItem getJmb_nuevo_envio() {
+        return jmb_nuevo_envio;
+    }
+
+    public void setJmb_nuevo_envio(JMenuItem jmb_nuevo_envio) {
+        this.jmb_nuevo_envio = jmb_nuevo_envio;
+    }
+
+    public JMenuItem getJmb_paquetes() {
+        return jmb_paquetes;
+    }
+
+    public void setJmb_paquetes(JMenuItem jmb_paquetes) {
+        this.jmb_paquetes = jmb_paquetes;
+    }
+
+    public JMenuItem getJmb_provincias() {
+        return jmb_provincias;
+    }
+
+    public void setJmb_provincias(JMenuItem jmb_provincias) {
+        this.jmb_provincias = jmb_provincias;
+    }
+
+    public JMenuItem getJmb_viajes() {
+        return jmb_viajes;
+    }
+
+    public void setJmb_viajes(JMenuItem jmb_viajes) {
+        this.jmb_viajes = jmb_viajes;
+    }
+    
+    
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -12,45 +138,41 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jdp_principal = new javax.swing.JDesktopPane();
         jToolBar1 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
+        jSeparator10 = new javax.swing.JToolBar.Separator();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
+        jb_nuevo_envio = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jSeparator2 = new javax.swing.JToolBar.Separator();
-        jSeparator4 = new javax.swing.JToolBar.Separator();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        jButton2 = new javax.swing.JButton();
+        jb_nuevo_cliente = new javax.swing.JButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
-        jSeparator6 = new javax.swing.JToolBar.Separator();
         jSeparator7 = new javax.swing.JToolBar.Separator();
         jSeparator8 = new javax.swing.JToolBar.Separator();
-        jButton4 = new javax.swing.JButton();
-        jSeparator10 = new javax.swing.JToolBar.Separator();
+        jb_nuevo_chofer = new javax.swing.JButton();
         jSeparator9 = new javax.swing.JToolBar.Separator();
         jSeparator11 = new javax.swing.JToolBar.Separator();
         jSeparator12 = new javax.swing.JToolBar.Separator();
-        jButton3 = new javax.swing.JButton();
-        jSeparator13 = new javax.swing.JToolBar.Separator();
+        jb_ubicaciones = new javax.swing.JButton();
         jSeparator15 = new javax.swing.JToolBar.Separator();
         jSeparator16 = new javax.swing.JToolBar.Separator();
         jSeparator14 = new javax.swing.JToolBar.Separator();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jb_nuevo_camion = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu10 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        jmb_nuevo_envio = new javax.swing.JMenuItem();
+        jmb_envios = new javax.swing.JMenuItem();
+        jmb_paquetes = new javax.swing.JMenuItem();
+        jmb_viajes = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        jmb_clientes = new javax.swing.JMenuItem();
+        jmb_conductores = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jmb_provincias = new javax.swing.JMenuItem();
+        jmb_ciudades = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        jmb_camiones = new javax.swing.JMenuItem();
 
         jMenu2.setText("File");
         jMenuBar2.add(jMenu2);
@@ -61,124 +183,117 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jDesktopPane1.setBackground(new java.awt.Color(51, 51, 51));
+        jdp_principal.setBackground(new java.awt.Color(51, 51, 51));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout jdp_principalLayout = new javax.swing.GroupLayout(jdp_principal);
+        jdp_principal.setLayout(jdp_principalLayout);
+        jdp_principalLayout.setHorizontalGroup(
+            jdp_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 805, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
+        jdp_principalLayout.setVerticalGroup(
+            jdp_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jToolBar1.setBackground(new java.awt.Color(0, 51, 153));
+        jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jToolBar1.setRollover(true);
         jToolBar1.setBorderPainted(false);
+        jToolBar1.add(jSeparator10);
+        jToolBar1.add(jSeparator4);
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 153));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/recibido.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        jb_nuevo_envio.setBackground(new java.awt.Color(0, 51, 153));
+        jb_nuevo_envio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/recibido.png"))); // NOI18N
+        jb_nuevo_envio.setBorder(null);
+        jb_nuevo_envio.setFocusable(false);
+        jb_nuevo_envio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_nuevo_envio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jb_nuevo_envio);
         jToolBar1.add(jSeparator1);
         jToolBar1.add(jSeparator2);
-        jToolBar1.add(jSeparator4);
         jToolBar1.add(jSeparator3);
 
-        jButton2.setBackground(new java.awt.Color(0, 51, 153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/cliente.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        jb_nuevo_cliente.setBackground(new java.awt.Color(0, 51, 153));
+        jb_nuevo_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/cliente.png"))); // NOI18N
+        jb_nuevo_cliente.setBorder(null);
+        jb_nuevo_cliente.setFocusable(false);
+        jb_nuevo_cliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_nuevo_cliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jb_nuevo_cliente);
         jToolBar1.add(jSeparator5);
-        jToolBar1.add(jSeparator6);
         jToolBar1.add(jSeparator7);
         jToolBar1.add(jSeparator8);
 
-        jButton4.setBackground(new java.awt.Color(0, 51, 153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/conductor.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton4);
-        jToolBar1.add(jSeparator10);
+        jb_nuevo_chofer.setBackground(new java.awt.Color(0, 51, 153));
+        jb_nuevo_chofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/conductor.png"))); // NOI18N
+        jb_nuevo_chofer.setBorder(null);
+        jb_nuevo_chofer.setFocusable(false);
+        jb_nuevo_chofer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_nuevo_chofer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jb_nuevo_chofer);
         jToolBar1.add(jSeparator9);
         jToolBar1.add(jSeparator11);
         jToolBar1.add(jSeparator12);
 
-        jButton3.setBackground(new java.awt.Color(0, 51, 153));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/mapa.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
-        jToolBar1.add(jSeparator13);
+        jb_ubicaciones.setBackground(new java.awt.Color(0, 51, 153));
+        jb_ubicaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/mapa.png"))); // NOI18N
+        jb_ubicaciones.setBorder(null);
+        jb_ubicaciones.setFocusable(false);
+        jb_ubicaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_ubicaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jb_ubicaciones);
         jToolBar1.add(jSeparator15);
         jToolBar1.add(jSeparator16);
         jToolBar1.add(jSeparator14);
 
-        jButton5.setBackground(new java.awt.Color(0, 51, 153));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/camion-de-carga.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton5);
-
-        jLabel1.setBackground(new java.awt.Color(0, 51, 153));
-        jLabel1.setOpaque(true);
+        jb_nuevo_camion.setBackground(new java.awt.Color(0, 51, 153));
+        jb_nuevo_camion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/camion-de-carga.png"))); // NOI18N
+        jb_nuevo_camion.setBorder(null);
+        jb_nuevo_camion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_nuevo_camion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jb_nuevo_camion);
 
         jMenu10.setText("Paquetería");
 
-        jMenuItem10.setText("Nuevo envio...");
-        jMenu10.add(jMenuItem10);
+        jmb_nuevo_envio.setText("Nuevo envio...");
+        jMenu10.add(jmb_nuevo_envio);
 
-        jMenuItem11.setText("Envios");
-        jMenu10.add(jMenuItem11);
+        jmb_envios.setText("Envios");
+        jMenu10.add(jmb_envios);
 
-        jMenuItem4.setText("Paquetes");
-        jMenu10.add(jMenuItem4);
+        jmb_paquetes.setText("Paquetes");
+        jMenu10.add(jmb_paquetes);
 
-        jMenuItem9.setText("Viajes");
-        jMenu10.add(jMenuItem9);
+        jmb_viajes.setText("Viajes");
+        jMenu10.add(jmb_viajes);
 
         jMenuBar1.add(jMenu10);
 
         jMenu1.setText("Contactos");
 
-        jMenuItem12.setText("Clientes");
-        jMenu1.add(jMenuItem12);
+        jmb_clientes.setText("Clientes");
+        jMenu1.add(jmb_clientes);
 
-        jMenuItem5.setText("Conductores");
-        jMenu1.add(jMenuItem5);
+        jmb_conductores.setText("Conductores");
+        jMenu1.add(jmb_conductores);
 
         jMenuBar1.add(jMenu1);
 
         jMenu7.setText("Ubicaciones");
 
-        jMenuItem1.setText("Provincias");
-        jMenu7.add(jMenuItem1);
+        jmb_provincias.setText("Provincias");
+        jMenu7.add(jmb_provincias);
 
-        jMenuItem2.setText("Ciudades");
-        jMenu7.add(jMenuItem2);
-
-        jMenuItem3.setText("Direcciones");
-        jMenu7.add(jMenuItem3);
+        jmb_ciudades.setText("Ciudades");
+        jMenu7.add(jmb_ciudades);
 
         jMenuBar1.add(jMenu7);
 
         jMenu4.setText("Transportes");
 
-        jMenuItem7.setText("Camiones...");
-        jMenu4.add(jMenuItem7);
+        jmb_camiones.setText("Camiones...");
+        jMenu4.add(jmb_camiones);
 
         jMenuBar1.add(jMenu4);
 
@@ -189,34 +304,21 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
-            .addComponent(jDesktopPane1)
+                .addComponent(jdp_principal)
+                .addGap(0, 0, 0)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(jdp_principal)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
@@ -225,21 +327,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
     private javax.swing.JToolBar.Separator jSeparator12;
-    private javax.swing.JToolBar.Separator jSeparator13;
     private javax.swing.JToolBar.Separator jSeparator14;
     private javax.swing.JToolBar.Separator jSeparator15;
     private javax.swing.JToolBar.Separator jSeparator16;
@@ -247,10 +338,24 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
-    private javax.swing.JToolBar.Separator jSeparator6;
     private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton jb_nuevo_camion;
+    private javax.swing.JButton jb_nuevo_chofer;
+    private javax.swing.JButton jb_nuevo_cliente;
+    private javax.swing.JButton jb_nuevo_envio;
+    private javax.swing.JButton jb_ubicaciones;
+    private javax.swing.JDesktopPane jdp_principal;
+    private javax.swing.JMenuItem jmb_camiones;
+    private javax.swing.JMenuItem jmb_ciudades;
+    private javax.swing.JMenuItem jmb_clientes;
+    private javax.swing.JMenuItem jmb_conductores;
+    private javax.swing.JMenuItem jmb_envios;
+    private javax.swing.JMenuItem jmb_nuevo_envio;
+    private javax.swing.JMenuItem jmb_paquetes;
+    private javax.swing.JMenuItem jmb_provincias;
+    private javax.swing.JMenuItem jmb_viajes;
     // End of variables declaration//GEN-END:variables
 }
