@@ -9,10 +9,11 @@ public class Conexion {
     public void conectar() {
         try {
             OracleDataSource ods = new OracleDataSource();
-            ods.setURL("jdbc:oracle:thin:@192.168.0.102:1521:XE");
+            ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
             ods.setUser("SYSTEM");
-            ods.setPassword("0988");
+            ods.setPassword("1234");
             con = ods.getConnection();
+            System.out.println("conectado");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
         }
