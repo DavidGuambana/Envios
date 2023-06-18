@@ -1,5 +1,7 @@
 package modelo;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import oracle.jdbc.pool.OracleDataSource;
 public class Conexion {
@@ -41,6 +43,14 @@ public class Conexion {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), null, JOptionPane.ERROR_MESSAGE);
             return false;
+        }
+    }
+    
+    public void close(){
+        try {
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
