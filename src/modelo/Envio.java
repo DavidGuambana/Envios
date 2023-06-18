@@ -9,8 +9,6 @@ public class Envio {
 
     public Envio() {
     }
-
-    
     
     public Envio(int codigo, Date fecha, int codigo_vista) {
         this.codigo = codigo;
