@@ -8,6 +8,6 @@ package modelo;
  *
  * @author Usuario
  */
-public class az {
+public class CJ {
     
 }
