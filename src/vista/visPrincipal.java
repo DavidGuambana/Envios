@@ -3,12 +3,18 @@ package vista;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
 
-public class Principal extends javax.swing.JFrame {
+public class visPrincipal extends javax.swing.JFrame {
 
-    public Principal() {
+    public visPrincipal() {
         initComponents();
     }
+
+    public JToolBar getjToolBar() {
+        return jToolBar;
+    }
+    
 
     public JButton getJb_nuevo_camion() {
         return jb_nuevo_camion;
@@ -137,26 +143,18 @@ public class Principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jdp_principal = new javax.swing.JDesktopPane();
-        jToolBar1 = new javax.swing.JToolBar();
+        jToolBar = new javax.swing.JToolBar();
         jSeparator10 = new javax.swing.JToolBar.Separator();
-        jSeparator4 = new javax.swing.JToolBar.Separator();
         jb_nuevo_envio = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JToolBar.Separator();
-        jSeparator2 = new javax.swing.JToolBar.Separator();
-        jSeparator3 = new javax.swing.JToolBar.Separator();
-        jb_nuevo_cliente = new javax.swing.JButton();
-        jSeparator5 = new javax.swing.JToolBar.Separator();
-        jSeparator7 = new javax.swing.JToolBar.Separator();
-        jSeparator8 = new javax.swing.JToolBar.Separator();
-        jb_nuevo_chofer = new javax.swing.JButton();
-        jSeparator9 = new javax.swing.JToolBar.Separator();
         jSeparator11 = new javax.swing.JToolBar.Separator();
+        jb_nuevo_cliente = new javax.swing.JButton();
         jSeparator12 = new javax.swing.JToolBar.Separator();
+        jb_nuevo_chofer = new javax.swing.JButton();
+        jSeparator14 = new javax.swing.JToolBar.Separator();
         jb_ubicaciones = new javax.swing.JButton();
         jSeparator15 = new javax.swing.JToolBar.Separator();
-        jSeparator16 = new javax.swing.JToolBar.Separator();
-        jSeparator14 = new javax.swing.JToolBar.Separator();
         jb_nuevo_camion = new javax.swing.JButton();
+        jSeparator13 = new javax.swing.JToolBar.Separator();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu10 = new javax.swing.JMenu();
         jmb_nuevo_envio = new javax.swing.JMenuItem();
@@ -196,12 +194,14 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jToolBar1.setBackground(new java.awt.Color(0, 51, 153));
-        jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jToolBar1.setRollover(true);
-        jToolBar1.setBorderPainted(false);
-        jToolBar1.add(jSeparator10);
-        jToolBar1.add(jSeparator4);
+        jToolBar.setFloatable(false);
+        jToolBar.setBackground(new java.awt.Color(0, 51, 153));
+        jToolBar.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jToolBar.setRollover(true);
+        jToolBar.setBorderPainted(false);
+
+        jSeparator10.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator10);
 
         jb_nuevo_envio.setBackground(new java.awt.Color(0, 51, 153));
         jb_nuevo_envio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/recibido.png"))); // NOI18N
@@ -209,10 +209,10 @@ public class Principal extends javax.swing.JFrame {
         jb_nuevo_envio.setFocusable(false);
         jb_nuevo_envio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_nuevo_envio.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jb_nuevo_envio);
-        jToolBar1.add(jSeparator1);
-        jToolBar1.add(jSeparator2);
-        jToolBar1.add(jSeparator3);
+        jToolBar.add(jb_nuevo_envio);
+
+        jSeparator11.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator11);
 
         jb_nuevo_cliente.setBackground(new java.awt.Color(0, 51, 153));
         jb_nuevo_cliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/cliente.png"))); // NOI18N
@@ -220,10 +220,10 @@ public class Principal extends javax.swing.JFrame {
         jb_nuevo_cliente.setFocusable(false);
         jb_nuevo_cliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_nuevo_cliente.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jb_nuevo_cliente);
-        jToolBar1.add(jSeparator5);
-        jToolBar1.add(jSeparator7);
-        jToolBar1.add(jSeparator8);
+        jToolBar.add(jb_nuevo_cliente);
+
+        jSeparator12.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator12);
 
         jb_nuevo_chofer.setBackground(new java.awt.Color(0, 51, 153));
         jb_nuevo_chofer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/conductor.png"))); // NOI18N
@@ -231,10 +231,10 @@ public class Principal extends javax.swing.JFrame {
         jb_nuevo_chofer.setFocusable(false);
         jb_nuevo_chofer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_nuevo_chofer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jb_nuevo_chofer);
-        jToolBar1.add(jSeparator9);
-        jToolBar1.add(jSeparator11);
-        jToolBar1.add(jSeparator12);
+        jToolBar.add(jb_nuevo_chofer);
+
+        jSeparator14.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator14);
 
         jb_ubicaciones.setBackground(new java.awt.Color(0, 51, 153));
         jb_ubicaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/mapa.png"))); // NOI18N
@@ -242,17 +242,20 @@ public class Principal extends javax.swing.JFrame {
         jb_ubicaciones.setFocusable(false);
         jb_ubicaciones.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_ubicaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jb_ubicaciones);
-        jToolBar1.add(jSeparator15);
-        jToolBar1.add(jSeparator16);
-        jToolBar1.add(jSeparator14);
+        jToolBar.add(jb_ubicaciones);
+
+        jSeparator15.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator15);
 
         jb_nuevo_camion.setBackground(new java.awt.Color(0, 51, 153));
         jb_nuevo_camion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/camion-de-carga.png"))); // NOI18N
         jb_nuevo_camion.setBorder(null);
         jb_nuevo_camion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_nuevo_camion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jb_nuevo_camion);
+        jToolBar.add(jb_nuevo_camion);
+
+        jSeparator13.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator13);
 
         jMenu10.setText("Paquetería");
 
@@ -304,14 +307,14 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jdp_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jdp_principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
         );
 
         pack();
@@ -326,21 +329,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
     private javax.swing.JToolBar.Separator jSeparator12;
+    private javax.swing.JToolBar.Separator jSeparator13;
     private javax.swing.JToolBar.Separator jSeparator14;
     private javax.swing.JToolBar.Separator jSeparator15;
-    private javax.swing.JToolBar.Separator jSeparator16;
-    private javax.swing.JToolBar.Separator jSeparator2;
-    private javax.swing.JToolBar.Separator jSeparator3;
-    private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JToolBar.Separator jSeparator5;
-    private javax.swing.JToolBar.Separator jSeparator7;
-    private javax.swing.JToolBar.Separator jSeparator8;
-    private javax.swing.JToolBar.Separator jSeparator9;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar;
     private javax.swing.JButton jb_nuevo_camion;
     private javax.swing.JButton jb_nuevo_chofer;
     private javax.swing.JButton jb_nuevo_cliente;

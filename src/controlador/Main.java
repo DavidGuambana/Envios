@@ -3,28 +3,33 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import vista.Principal;
+import vista.visPrincipal;
 import vista.visConductor;
-import com.jtattoo.plaf.*;
-import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
+//import com.jtattoo.plaf.*;AeroLookAndFeel
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import vista.visPersona;
+import vista.visUbicacion;
 
 public class Main {
     public static void main(String [] args){
-        //NimbusLookAndFeel
+        
         try {
-            UIManager.setLookAndFeel(new AcrylLookAndFeel());
+            UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(visPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Principal p = new Principal();
-        
-        
-        
+        visPrincipal p = new visPrincipal();
         
         ctrlPrincipal ctrl_prin = new ctrlPrincipal(p);
         ctrl_prin.control();
         visConductor visconductor = new visConductor();
         visconductor.setVisible(true);
-        p.getJdp_principal().add(visconductor);
+        
+        visPersona vispersona = new visPersona();
+        vispersona.setVisible(true);
+        
+        visUbicacion visubicacion = new visUbicacion();
+        visubicacion.setVisible(true);
+        p.getJdp_principal().add(visubicacion);
     }
 }

@@ -1,12 +1,12 @@
 package controlador;
 
-import vista.Principal;
+import vista.visPrincipal;
 
 public class ctrlPrincipal {
 
-    Principal p;
+    visPrincipal p;
 
-    public ctrlPrincipal(Principal p) {
+    public ctrlPrincipal(visPrincipal p) {
         this.p = p;
 
     }
