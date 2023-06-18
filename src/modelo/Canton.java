@@ -1,7 +1,7 @@
 package modelo;
 public class Canton {
     private int codigo;
-    String nombre;
+    private String nombre;
 
     public Canton() {
     }

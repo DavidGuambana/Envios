@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author davic
- */
 public class Conductor {
    private int id_conductor;
    private String licencia;
@@ -60,7 +52,4 @@ public class Conductor {
     public String toString() {
         return "Conductor{" + "id_conductor=" + id_conductor + ", licencia=" + licencia + ", salario=" + salario + ", cedula=" + cedula + '}';
     }
-   
-   
-    
 }
