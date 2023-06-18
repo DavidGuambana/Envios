@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author ariel
- */
 public class Persona {
     public String cedula;
     public String nombre1;
@@ -100,6 +92,5 @@ public class Persona {
     public String toString() {
         return "Persona{" + "cedula=" + cedula + ", nombre1=" + nombre1 + ", nombre2=" + nombre2 + ", apelido1=" + apelido1 + ", apellido2=" + apellido2 + ", direccion=" + direccion + ", telefono=" + telefono + ", codigo_can=" + codigo_can + '}';
     }
-    
-    
+   
 }
