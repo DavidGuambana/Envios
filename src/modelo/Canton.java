@@ -1,4 +1,3 @@
-
 package modelo;
 public class Canton {
     private int codigo;
