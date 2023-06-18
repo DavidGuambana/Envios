@@ -92,5 +92,4 @@ public class Persona {
     public String toString() {
         return "Persona{" + "cedula=" + cedula + ", nombre1=" + nombre1 + ", nombre2=" + nombre2 + ", apelido1=" + apelido1 + ", apellido2=" + apellido2 + ", direccion=" + direccion + ", telefono=" + telefono + ", codigo_can=" + codigo_can + '}';
     }
-   
 }

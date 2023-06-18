@@ -58,7 +58,7 @@ public class M_persona extends Persona {
                 +getCodigo_can()+" WHERE cedula='"+getCedula()+"'";
         return con.accion(sql);
     }
-    public boolean eliminarPersona(String cedula){
+    public boolean eliminar(String cedula){
         sql = "DELETE FROM persona WHERE cedula='"+cedula+"'";
         return con.accion(sql);
     }
