@@ -1,4 +1,4 @@
-package controlador.util;
+package controlador;
 //import controlador.util.FiltrarTabla;
 //import controlador.util.Validar;
 //import java.awt.event.KeyAdapter;

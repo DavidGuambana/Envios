@@ -49,7 +49,7 @@ public final class ctrlPrincipal {
             p.getJdp_principal().add(visubicacion);
         }
         
-        ctrlUbicaciones controlador = new ctrlUbicaciones(model, visubicacion);
+//       CtrlUbicaciones controlador = new CtrlUbicaciones(model, visubicacion);
         
     }
      
