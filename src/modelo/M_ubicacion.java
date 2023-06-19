@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class M_ubicacion extends Envio{
+public class M_ubicacion {
    public static Conexion con = new Conexion();
     public static ResultSet rs = null;
     public static String sql;
@@ -15,16 +15,16 @@ public class M_ubicacion extends Envio{
     public void listar_ubicaciones(JTable tabla) {
         DefaultTableModel dtm = new DefaultTableModel(null,columnas);
         try {
-            sql = "SELECT codigo, fecha, codigo_via FROM envio";
+            sql = "SELECT C.codigo, C.nombre, P.codigo, P.nombre FROM CANTON C JOIN PROVINCIA P ON(C.codigo_prov = P.codigo);";
             rs = con.consulta(sql);
-            if (rs != null) {
-                while (rs.next()) {
+            System.out.println(sql);
+            while (rs.next()) {
                     dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4)});
-                    tabla.setModel(dtm);
                 }
-            }
+                tabla.setModel(dtm);
             con.close();
         } catch (SQLException ex) {
+            System.out.println("error");
         }
     }
 }

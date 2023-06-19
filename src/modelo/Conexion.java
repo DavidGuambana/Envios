@@ -13,7 +13,7 @@ public class Conexion {
             OracleDataSource ods = new OracleDataSource();
             ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
             ods.setUser("SYSTEM");
-            ods.setPassword("1234");
+            ods.setPassword("0988");
             con = ods.getConnection();
             System.out.println("conectado");
         } catch (SQLException ex) {

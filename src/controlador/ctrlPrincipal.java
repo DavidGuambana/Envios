@@ -1,13 +1,16 @@
 package controlador;
 
 import modelo.M_persona;
+import modelo.M_ubicacion;
 import vista.visPersona;
 import vista.visPrincipal;
+import vista.visUbicacion;
 
-public class ctrlPrincipal {
+public final class ctrlPrincipal {
 
     visPrincipal p;
     visPersona vispersona;
+    visUbicacion visubicacion;
 
     public ctrlPrincipal(visPrincipal p) {
         this.p = p;
@@ -19,7 +22,7 @@ public class ctrlPrincipal {
 
     public void control() {
        p.getJb_nuevo_cliente().addActionListener(l-> menuPersona());
-        
+       p.getJb_ubicaciones().addActionListener(l-> menuUbicaciones());
         
     }
     public void menuPersona(){
@@ -34,6 +37,19 @@ public class ctrlPrincipal {
         
         ctrlPersona controlador = new ctrlPersona(modper, vispersona);
         controlador.iniciarCtrlBtn();
+        
+    }
+    public void menuUbicaciones(){
+
+        M_ubicacion model = new M_ubicacion();
+        try {
+            p.getJdp_principal().add(visubicacion);
+        } catch (Exception e) {
+            visubicacion = new visUbicacion();
+            p.getJdp_principal().add(visubicacion);
+        }
+        
+        ctrlUbicaciones controlador = new ctrlUbicaciones(model, visubicacion);
         
     }
      
