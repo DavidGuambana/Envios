@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -53,34 +48,4 @@ public class M_conductor extends Conductor {
         sql = "DELETE FROM conductor WHERE id_con='"+id+"'";
         return con.accion(sql);
     }
-     /*
-    public List<Persona> listarPersonasLike(String txt,String campo) {
-        List<Persona> listaPersonas = new ArrayList<>();
-        try {
-            sql = "SELECT idpersona, nombres, apellidos, fechanacimiento, telefono, sexo, sueldo, cupo, foto, correo FROM persona WHERE "+campo+" like '%"+txt+"'";
-            rs = cpg.consultaBD(sql);
-            if (rs != null) {
-                while (rs.next()) {
-                    Persona persona = new Persona();
-                    persona.setIdPersona(rs.getString(1));
-                    persona.setNombrePersona(rs.getString(2));
-                    persona.setApellidoPersona(rs.getString(3));
-                    persona.setFechanacimineto(rs.getDate(4));
-                    persona.setTelefono(rs.getString(5));
-                    persona.setSexo(rs.getString(6));
-                    persona.setSueldo(rs.getInt(7));
-                    persona.setCupo(rs.getInt(8));
-                    //persona.setFoto(rs.getByte(9));
-                    persona.setCorreo(rs.getString(10));
-                    listaPersonas.add(persona);
-                }
-            }
-            return listaPersonas;
-        } catch (SQLException ex) {
-            return null;
-        }
-    }
-    */
-    
-    
 }

@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import static modelo.M_persona.con;
-import static modelo.M_persona.sql;
 
 public class M_envio extends Envio{
    public static Conexion con = new Conexion();

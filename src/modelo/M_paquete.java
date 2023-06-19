@@ -50,8 +50,6 @@ public class M_paquete extends Paquete {
         sql = "DELETE FROM paquete WHERE codigo=" + codigo + "";
         return con.accion(sql);
     }
-
-
-    
+ 
     
 }
