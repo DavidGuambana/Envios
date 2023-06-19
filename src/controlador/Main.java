@@ -15,29 +15,12 @@ import vista.visViaje;
 public class Main {
     public static void main(String [] args){
         
-        try {
+         try {
             UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(visPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        visPrincipal p = new visPrincipal();
-        
-        ctrlPrincipal ctrl_prin = new ctrlPrincipal(p);
-        ctrl_prin.control();
-        visConductor visconductor = new visConductor();
-        visconductor.setVisible(true);
-        
-        visPersona vispersona = new visPersona();
-        vispersona.setVisible(true);
-        
-        visEnvio visenvio = new visEnvio();
-        visenvio.setVisible(true);
-        
-        visViaje visviaje = new visViaje();
-        visviaje.setVisible(true);
-        
-        visUbicacion visubicacion = new visUbicacion();
-        visubicacion.setVisible(true);
-        p.getJdp_principal().add(visviaje);
+        visPrincipal vp =new visPrincipal();
+        ctrlPrincipal ctrlprprincipal=new ctrlPrincipal( vp);
     }
 }

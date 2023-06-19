@@ -22,6 +22,7 @@ public class Conexion {
     }
 
     public ResultSet consulta(String sql) {
+        conectar();
         try {
             st = con.createStatement();
             return st.executeQuery(sql);
@@ -32,6 +33,7 @@ public class Conexion {
     }
 
     public boolean accion(String sql) {
+        conectar();
         try {
             st = con.createStatement();
             if (st.executeUpdate(sql) == 1) {
@@ -47,6 +49,7 @@ public class Conexion {
     }
     
     public void close(){
+        conectar();
         try {
             con.close();
         } catch (SQLException ex) {

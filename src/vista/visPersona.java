@@ -80,6 +80,10 @@ public class visPersona extends javax.swing.JInternalFrame {
     public JTextField getTxt_telefono() {
         return txt_telefono;
     }
+
+    public JTable getJtPersonas() {
+        return jtPersonas;
+    }
     
     
 

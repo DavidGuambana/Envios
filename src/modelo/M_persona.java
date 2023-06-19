@@ -15,9 +15,9 @@ public class M_persona extends Persona {
         List<Persona> personas = new ArrayList<>();
         try {
             if ("".equals(cedula)) {
-                sql = "SELECT cedula, nombre1, nombre2, apelido1, apellido2, direccion, telefono, codigo_can FROM persona";
+                sql = "SELECT cedula, nombre1, nombre2, apellido1, apellido2, direccion, telefono, codigo_can FROM persona";
             } else {
-                sql = "SELECT cedula, nombre1, nombre2, apelido1, apellido2, direccion, telefono, codigo_can FROM persona WHERE cedula='"+cedula+"'";
+                sql = "SELECT cedula, nombre1, nombre2, apellido1, apellido2, direccion, telefono, codigo_can FROM persona WHERE cedula='"+cedula+"'";
             }
             rs = con.consulta(sql);
             if (rs != null) {
@@ -35,7 +35,7 @@ public class M_persona extends Persona {
     }
     
     public boolean crear() {
-        sql = "INSERT INTO persona(cedula, nombre1, nombre2, apelido1, apellido2, direccion, telefono, codigo_can)"
+        sql = "INSERT INTO persona(cedula, nombre1, nombre2, apellido1, apellido2, direccion, telefono, codigo_can)"
                 + " VALUES ('" + getCedula()
                 + "','" + getNombre1()
                 + "','" + getNombre2()
@@ -50,7 +50,7 @@ public class M_persona extends Persona {
     public boolean actualizar() {
         sql = "UPDATE persona SET nombre1='"
                 +getNombre1()+"', nombre2='"
-                +getNombre2()+"', apelido1='"
+                +getNombre2()+"', apellido1='"
                 +getApelido1()+"', apellido2='"
                 +getApellido2()+"', direccion='"
                 +getDireccion()+"', telefono='"
