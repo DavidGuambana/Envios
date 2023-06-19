@@ -81,6 +81,7 @@ public class visUbicacion extends javax.swing.JInternalFrame {
 
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/lupa (1).png"))); // NOI18N
+        btnBuscar.setToolTipText("Buscar...");
         btnBuscar.setBorder(null);
         btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 

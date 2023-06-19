@@ -259,7 +259,7 @@
                           <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" max="32767" attributes="0"/>
-                              <Component id="jLabel5" pref="129" max="32767" attributes="0"/>
+                              <Component id="jLabel5" max="32767" attributes="0"/>
                               <Component id="jLabel6" max="32767" attributes="0"/>
                               <Component id="jLabel7" max="32767" attributes="0"/>
                               <Component id="jLabel8" max="32767" attributes="0"/>
@@ -1014,6 +1014,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/vista/iconos/lupa (1).png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Buscar..."/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>

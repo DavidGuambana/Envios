@@ -30,6 +30,6 @@ public class Main {
         
         visUbicacion visubicacion = new visUbicacion();
         visubicacion.setVisible(true);
-        p.getJdp_principal().add(visubicacion);
+        p.getJdp_principal().add(vispersona);
     }
 }
