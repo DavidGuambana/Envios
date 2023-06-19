@@ -7,8 +7,10 @@ import vista.visPrincipal;
 import vista.visConductor;
 //import com.jtattoo.plaf.*;AeroLookAndFeel
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import vista.visEnvio;
 import vista.visPersona;
 import vista.visUbicacion;
+import vista.visViaje;
 
 public class Main {
     public static void main(String [] args){
@@ -28,8 +30,14 @@ public class Main {
         visPersona vispersona = new visPersona();
         vispersona.setVisible(true);
         
+        visEnvio visenvio = new visEnvio();
+        visenvio.setVisible(true);
+        
+        visViaje visviaje = new visViaje();
+        visviaje.setVisible(true);
+        
         visUbicacion visubicacion = new visUbicacion();
         visubicacion.setVisible(true);
-        p.getJdp_principal().add(vispersona);
+        p.getJdp_principal().add(visviaje);
     }
 }

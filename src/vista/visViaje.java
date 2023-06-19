@@ -3,7 +3,6 @@ package vista;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class visViaje extends javax.swing.JInternalFrame {
@@ -16,58 +15,89 @@ public class visViaje extends javax.swing.JInternalFrame {
         return btnBuscar;
     }
 
+    public void setBtnBuscar(JButton btnBuscar) {
+        this.btnBuscar = btnBuscar;
+    }
+
     public JComboBox<String> getCbColumnas() {
         return cbColumnas;
+    }
+
+    public void setCbColumnas(JComboBox<String> cbColumnas) {
+        this.cbColumnas = cbColumnas;
     }
 
     public JComboBox<String> getCb_canton() {
         return cb_canton;
     }
 
+    public void setCb_canton(JComboBox<String> cb_canton) {
+        this.cb_canton = cb_canton;
+    }
+
     public JComboBox<String> getCb_provincia() {
         return cb_provincia;
     }
 
-    public JTable getJtPaquetes() {
-        return jtPaquetes;
+    public void setCb_provincia(JComboBox<String> cb_provincia) {
+        this.cb_provincia = cb_provincia;
+    }
+
+    public JTable getJtViajes() {
+        return jtViajes;
+    }
+
+    public void setJtViajes(JTable jtViajes) {
+        this.jtViajes = jtViajes;
     }
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
 
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
     public JTextField getTxt_codigo() {
         return txt_codigo;
     }
 
-    public JTextField getTxt_codigo_envio() {
-        return txt_codigo_envio;
+    public void setTxt_codigo(JTextField txt_codigo) {
+        this.txt_codigo = txt_codigo;
     }
 
-    public static JTextArea getTxt_descripcion() {
-        return txt_descripcion;
+    public JTextField getTxt_fecha() {
+        return txt_fecha;
     }
 
-    public JTextField getTxt_direccion_des() {
-        return txt_direccion_des;
+    public void setTxt_fecha(JTextField txt_fecha) {
+        this.txt_fecha = txt_fecha;
     }
 
-    public JTextField getTxt_nombre_des() {
-        return txt_nombre_des;
+    public JTextField getTxt_id_conductor() {
+        return txt_id_conductor;
     }
 
-    public JTextField getTxt_nombre_rem() {
-        return txt_nombre_rem;
+    public void setTxt_id_conductor(JTextField txt_id_conductor) {
+        this.txt_id_conductor = txt_id_conductor;
     }
 
-    public JTextField getTxt_peso() {
-        return txt_peso;
+    public JTextField getTxt_matricula() {
+        return txt_matricula;
     }
 
-    public JTextField getTxt_precio() {
-        return txt_precio;
+    public void setTxt_matricula(JTextField txt_matricula) {
+        this.txt_matricula = txt_matricula;
     }
 
+    public JTextField getTxt_nombre_conductor() {
+        return txt_nombre_conductor;
+    }
+
+    public void setTxt_nombre_conductor(JTextField txt_nombre_conductor) {
+        this.txt_nombre_conductor = txt_nombre_conductor;
+    }
     
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -81,33 +111,23 @@ public class visViaje extends javax.swing.JInternalFrame {
         txt_codigo = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        txt_nombre_rem = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        txt_id_conductor = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        txt_matricula = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        txt_nombre_des = new javax.swing.JTextField();
+        txt_fecha = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txt_nombre_conductor = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
-        txt_direccion_des = new javax.swing.JTextField();
-        jSeparator12 = new javax.swing.JSeparator();
-        txt_peso = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         cb_provincia = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         cb_canton = new javax.swing.JComboBox<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txt_descripcion = new javax.swing.JTextArea();
-        jLabel13 = new javax.swing.JLabel();
-        JTextField1 = new javax.swing.JTextField();
-        jSeparator14 = new javax.swing.JSeparator();
-        JTextField2 = new javax.swing.JTextField();
-        txt_precio = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txt_codigo_envio = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtPaquetes = new javax.swing.JTable();
+        jtViajes = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
@@ -132,7 +152,7 @@ public class visViaje extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("vista envios");
+        jLabel3.setText("vista viaje");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -159,57 +179,66 @@ public class visViaje extends javax.swing.JInternalFrame {
         jSeparator8.setOpaque(true);
         jSeparator8.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        txt_nombre_rem.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_nombre_rem.setBorder(null);
-
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("Nombre remitente:");
+        jLabel6.setText("ID de conductor:");
+
+        txt_id_conductor.setEditable(false);
+        txt_id_conductor.setBackground(new java.awt.Color(255, 255, 255));
+        txt_id_conductor.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        txt_id_conductor.setForeground(new java.awt.Color(0, 153, 204));
+        txt_id_conductor.setText("Autoasignado");
+        txt_id_conductor.setBorder(null);
+
+        jSeparator7.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator7.setMinimumSize(new java.awt.Dimension(50, 1));
+        jSeparator7.setOpaque(true);
+        jSeparator7.setPreferredSize(new java.awt.Dimension(50, 1));
+
+        txt_matricula.setEditable(false);
+        txt_matricula.setBackground(new java.awt.Color(255, 255, 255));
+        txt_matricula.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txt_matricula.setBorder(null);
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Matrícula:");
 
         jSeparator9.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator9.setMinimumSize(new java.awt.Dimension(50, 1));
         jSeparator9.setOpaque(true);
         jSeparator9.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        txt_nombre_des.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_nombre_des.setBorder(null);
+        txt_fecha.setEditable(false);
+        txt_fecha.setBackground(new java.awt.Color(255, 255, 255));
+        txt_fecha.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txt_fecha.setText("Autogenerado");
+        txt_fecha.setBorder(null);
 
         jLabel7.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Nombre destinatario:");
+        jLabel7.setText("Fecha:");
 
-        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Dirección destinatario:");
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Nombre conductor:");
+
+        txt_nombre_conductor.setEditable(false);
+        txt_nombre_conductor.setBackground(new java.awt.Color(255, 255, 255));
+        txt_nombre_conductor.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txt_nombre_conductor.setBorder(null);
 
         jSeparator10.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator10.setMinimumSize(new java.awt.Dimension(50, 1));
         jSeparator10.setOpaque(true);
         jSeparator10.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        txt_direccion_des.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_direccion_des.setBorder(null);
-
-        jSeparator12.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator12.setMinimumSize(new java.awt.Dimension(50, 1));
-        jSeparator12.setOpaque(true);
-        jSeparator12.setPreferredSize(new java.awt.Dimension(50, 1));
-
-        txt_peso.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_peso.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txt_peso.setText("0");
-        txt_peso.setBorder(null);
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Peso:");
+        cb_provincia.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        cb_provincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Rios", "Manabí ", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los Tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Provincia:");
-
-        cb_provincia.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        cb_provincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Azuay", "Bolívar", "Cañar", "Carchi", "Chimborazo", "Cotopaxi", "El Oro", "Esmeraldas", "Galápagos", "Guayas", "Imbabura", "Loja", "Los Rios", "Manabí ", "Morona Santiago", "Napo", "Orellana", "Pastaza", "Pichincha", "Santa Elena", "Santo Domingo de los Tsáchilas", "Sucumbíos", "Tungurahua", "Zamora Chinchipe" }));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
@@ -218,58 +247,6 @@ public class visViaje extends javax.swing.JInternalFrame {
         cb_canton.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         cb_canton.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Alamor", "Alausí", "Alfredo Baquerizo Moreno", "Amaluza", "Ambato", "Arajuno", "Archidona", "Arenillas", "Atacames", "Atuntaqui", "Azogues", "Baba", "Babahoyo", "Baeza", "Bahía de Caráquez", "Balao", "Balsas", "Balzar", "Baños de Agua Santa", "Biblián", "Bolívar", "Buena Fe", "Calceta", "Caluma", "Camilo Ponce Enríquez", "Canton Guano", "Cañar", "Cariamanga", "Carlos Julio Arosemena Tola", "Catacocha", "Catamayo", "Catarama", "Cayambe", "Celica", "Cevallos", "Chaguarpamba", "Chambo", "Chilla", "Chillanes", "Chimbo", "Chone", "Chordeleg", "Chunchi", "Cnel. Marcelino Maridueña", "Colimes", "Cotacachi", "Cuenca", "Cumandá", "Daule", "Déleg", "Durán", "Echeandía", "El Ángel", "El Carmen", "El Chaco", "El Corazón", "El Dorado de Cascales", "El Guabo", "El Pan", "El Pangui", "El Tambo", "El Triunfo", "Esmeraldas", "Flavio Alfaro", "General Villamil", "Girón", "Gonzanamá", "Gral. Antonio Elizalde (Bucay)", "Gral. Leonidas Plaza Gutiérrez (Limón)", "Guachapala", "Gualaceo", "Gualaquiza", "Guamote", "Guaranda", "Guayaquil", "Guayzimi", "Huaca", "Huamboya", "Huaquillas", "Ibarra", "Isidro Ayora", "Jama", "Jaramijó", "Jipijapa", "Junín", "La Bonita", "La Concordia", "La Joya de los Sachas", "La Libertad", "La Maná", "La Troncal", "La Victoria", "Las Naves", "Latacunga", "Logroño", "Loja", "Lomas de Sargentillo", "Loreto", "Lumbaqui", "Macará", "Macas", "Machachi", "Machala", "Manta", "Marcabelí", "Mera", "Milagro", "Mira", "Mocache", "Mocha", "Montalvo", "Montecristi", "Muisne", "Nabón", "Naranjal", "Naranjito", "Nobol", "Nueva Loja", "Olmedo", "Olmedo", "Oña", "Otavalo", "Pablo Sexto", "Paccha", "Paján", "Palanda", "Palenque", "Palestina", "Pallatanga", "Palora", "Paquisha", "Pasaje", "Patate", "Paute", "Pedernales", "Pedro Carbo", "Pedro Vicente Maldonado", "Pelileo", "Penipe", "Pichincha", "Píllaro", "Pimampiro", "Pindal", "Piñas", "Portovelo", "Portoviejo", "Pucará", "Puebloviejo", "Puerto Ayora", "Puerto Baquerizo Moreno", "Puerto El Carmen de Putumayo", "Puerto Francisco de Orellana", "Puerto López", "Puerto Quito", "Puerto Villamil", "Pujilí", "Puyo", "Quero", "Quevedo", "Quilanga", "Quinsaloma", "Quito", "Riobamba", "Rioverde", "Rocafuerte", "Rosa Zárate", "Salinas", "Salitre", "Samborondón", "San Fernando", "San Gabriel", "San Juan Bosco", "San Lorenzo", "San Miguel", "San Miguel de Los Bancos", "San Miguel de Salcedo", "San Vicente", "Sangolquí", "Santa Ana", "Santa Clara", "Santa Elena", "Santa Isabel", "Santa Lucía", "Santa Rosa", "Santiago", "Santiago de Méndez", "Santo Domingo", "Saquisilí", "Saraguro", "Sevilla de Oro", "Shushufindi", "Sigchos", "Sígsig", "Simón Bolívar", "Sozoranga", "Sucre", "Sucúa", "Suscal", "Tabacundo", "Taisha", "Tarapoa", "Tena", "Tiputini", "Tisaleo", "Tosagua", "Tulcán", "Urcuquí", "Valdez (Limones)", "Valencia", "Velasco Ibarra", "Ventanas", "Villa La Unión (Cajabamba)", "Vinces", "Yacuambi", "Yaguachi", "Yantzaza", "Zamora", "Zapotillo", "Zaruma", "Zumba", "Zumbi" }));
 
-        jScrollPane3.setBorder(null);
-
-        txt_descripcion.setColumns(20);
-        txt_descripcion.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_descripcion.setForeground(new java.awt.Color(255, 255, 255));
-        txt_descripcion.setLineWrap(true);
-        txt_descripcion.setRows(5);
-        txt_descripcion.setWrapStyleWord(true);
-        txt_descripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        jScrollPane3.setViewportView(txt_descripcion);
-
-        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Descripción:");
-
-        JTextField1.setEditable(false);
-        JTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        JTextField1.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        JTextField1.setText("Kg.");
-        JTextField1.setBorder(null);
-
-        jSeparator14.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator14.setMinimumSize(new java.awt.Dimension(50, 1));
-        jSeparator14.setOpaque(true);
-        jSeparator14.setPreferredSize(new java.awt.Dimension(50, 1));
-
-        JTextField2.setEditable(false);
-        JTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        JTextField2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        JTextField2.setText("$.");
-        JTextField2.setBorder(null);
-
-        txt_precio.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_precio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txt_precio.setText("0");
-        txt_precio.setBorder(null);
-
-        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Precio:");
-
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Código de envío:");
-
-        txt_codigo_envio.setEditable(false);
-        txt_codigo_envio.setBackground(new java.awt.Color(255, 255, 255));
-        txt_codigo_envio.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        txt_codigo_envio.setForeground(new java.awt.Color(0, 153, 204));
-        txt_codigo_envio.setText("Autoasignado");
-        txt_codigo_envio.setBorder(null);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -277,47 +254,30 @@ public class visViaje extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(15, 15, 15)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_codigo_envio)
-                            .addComponent(txt_codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_nombre_rem)
-                            .addComponent(txt_nombre_des)
-                            .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txt_direccion_des)
-                            .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTextField1))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(JTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-                            .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cb_provincia, 0, 0, Short.MAX_VALUE)
-                            .addComponent(cb_canton, 0, 0, Short.MAX_VALUE))))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_codigo)
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(txt_matricula)
+                        .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(txt_fecha)
+                        .addComponent(cb_provincia, javax.swing.GroupLayout.Alignment.TRAILING, 0, 1, Short.MAX_VALUE)
+                        .addComponent(cb_canton, 0, 0, Short.MAX_VALUE)
+                        .addComponent(txt_id_conductor, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_nombre_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -329,56 +289,38 @@ public class visViaje extends javax.swing.JInternalFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel13)
-                .addGap(6, 6, 6)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_peso)
-                        .addComponent(JTextField1)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_matricula))
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_precio)
-                        .addComponent(JTextField2)))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_fecha))
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_nombre_rem))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_canton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txt_id_conductor))
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_nombre_des))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_nombre_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_direccion_des))
-                .addGap(2, 2, 2)
-                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(cb_provincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(cb_canton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_codigo_envio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         jScrollPane.setViewportView(jPanel3);
@@ -403,13 +345,13 @@ public class visViaje extends javax.swing.JInternalFrame {
 
         jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        jtPaquetes = new javax.swing.JTable(){
+        jtViajes = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        jtPaquetes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jtPaquetes.setModel(new javax.swing.table.DefaultTableModel(
+        jtViajes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtViajes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -417,7 +359,7 @@ public class visViaje extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jtPaquetes);
+        jScrollPane1.setViewportView(jtViajes);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -489,11 +431,12 @@ public class visViaje extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -510,46 +453,36 @@ public class visViaje extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JTextField1;
-    private javax.swing.JTextField JTextField2;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JComboBox<String> cbColumnas;
     private javax.swing.JComboBox<String> cb_canton;
     private javax.swing.JComboBox<String> cb_provincia;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jtPaquetes;
+    private javax.swing.JTable jtViajes;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txt_codigo;
-    private javax.swing.JTextField txt_codigo_envio;
-    public static javax.swing.JTextArea txt_descripcion;
-    private javax.swing.JTextField txt_direccion_des;
-    private javax.swing.JTextField txt_nombre_des;
-    private javax.swing.JTextField txt_nombre_rem;
-    private javax.swing.JTextField txt_peso;
-    private javax.swing.JTextField txt_precio;
+    private javax.swing.JTextField txt_fecha;
+    private javax.swing.JTextField txt_id_conductor;
+    private javax.swing.JTextField txt_matricula;
+    private javax.swing.JTextField txt_nombre_conductor;
     // End of variables declaration//GEN-END:variables
 }
