@@ -23,7 +23,10 @@ public class Conexion {
     public ResultSet consulta(String sql) {
         conectar();
         try {
+            System.out.println(con);
             st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            System.out.println(rs);
             return st.executeQuery(sql);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), null, JOptionPane.ERROR_MESSAGE);

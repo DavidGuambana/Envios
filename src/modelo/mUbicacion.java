@@ -7,10 +7,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class mUbicacion {
-   public static Conexion con = new Conexion() ;
-    public static ResultSet rs;
-    public static String sql;
-    String[] columnas = {"Código de cantón", "Nombre de Cantón", "Código de Provincia", "Nombre de Provincia"};
+   Conexion con = new Conexion() ;
+   ResultSet rs;
+   String sql;
+   String[] columnas = {"Código de cantón", "Nombre de Cantón", "Código de Provincia", "Nombre de Provincia"};
     
     public void listar(JTable tabla) {
         DefaultTableModel dtm = new DefaultTableModel(null, columnas);
