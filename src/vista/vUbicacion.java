@@ -9,7 +9,6 @@ public class vUbicacion extends javax.swing.JInternalFrame {
 
     public vUbicacion() {
         initComponents();
-        
     }
 
     public JButton getBtnBuscar() {
@@ -28,9 +27,6 @@ public class vUbicacion extends javax.swing.JInternalFrame {
         return txtBuscar;
     }
     
-    
-    
-
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

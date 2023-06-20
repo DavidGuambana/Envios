@@ -11,13 +11,28 @@ public final class cUbicacion{
         this.mubicacion = mubicacion;
         this.vubicacion = vubicacion;
         vubicacion.setVisible(true);
-        //iniciar();
+        iniciar();
         listar();
     }
-    public void iniciar(){
-        
+
+    public void iniciar() {
+        vubicacion.getBtnBuscar().addActionListener(l -> buscar());
     }
-    public void listar(){
+
+    public void listar() {
         mubicacion.listar(vubicacion.getJtUbicaciones());
     }
+
+    public void buscar() {
+        String columna = "";
+        switch (vubicacion.getCbColumnas().getSelectedIndex()) {
+            case 0: columna = "C.codigo";break;
+            case 1: columna = "C.nombre,";break;
+            case 2: columna = "P.codigo";break;
+            case 3: columna = "P.nombre";break;
+        }
+        mubicacion.buscar(vubicacion.getTxtBuscar().getText(), columna, vubicacion.getJtUbicaciones());
+    }
+    
+    
 }

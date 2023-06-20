@@ -26,7 +26,7 @@ public final class cPrincipal {
     public void control() {
        p.getJb_nuevo_cliente().addActionListener(l-> menuPersona());
        p.getJb_ubicaciones().addActionListener(l-> menuUbicaciones());
-       p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
+       //p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
     }
     public void menuPersona(){
 

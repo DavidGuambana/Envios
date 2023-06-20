@@ -38,7 +38,7 @@ public class cCamion {
     private void visualizar(String id) {
         dtm = new DefaultTableModel(null, columnas);
         camiones = modelo.listar(id);
-        camiones.stream().forEach(p -> dtm.addRow(new Object[]{p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()}));
+        //camiones.stream().forEach(p -> dtm.addRow(new Object[]{p.getMatricula(), p.getMarca(), p.getModelo(), p.getPotencia()}));
         vista.getJtCamiones().setModel(dtm);
         vista.getJtCamiones().setRowHeight(30);
     }
@@ -54,7 +54,7 @@ public class cCamion {
         camiones = modelo.listar(id);
         if (!camiones.isEmpty()) {
             vista.getTxt_matricula().setText(camiones.get(0).getMatricula());
-            vista.getCb_marca().setSelectedItem(camiones.get(0).getMarca());
+            //vista.getCb_marca().setSelectedItem(camiones.get(0).getMarca());
             vista.getCb_modelo().setSelectedItem(camiones.get(0).getModelo());
             vista.getTxt_potencia().setText(camiones.get(0).getPotencia());
 
