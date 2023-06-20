@@ -15,7 +15,7 @@ public final class cUbicacion{
         listar();
     }
     public void iniciar(){
-        as
+        
     }
     public void listar(){
         mubicacion.listar(vubicacion.getJtUbicaciones());
