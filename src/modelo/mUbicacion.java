@@ -112,4 +112,22 @@ public class mUbicacion {
         con.close();
         return codigo;
     }
+    
+    public int obteneridPRO(String nombre) {
+        int codigo = 0;
+
+        sql = "SELECT CODIGO_PROV FROM CANTON WHERE NOMBRE='" + nombre + "'";
+
+        try {
+            rs = con.consulta(sql);
+            rs.next();
+            codigo = rs.getInt(1);
+            System.out.println(codigo);
+        } catch (SQLException ex) {
+        }
+        con.close();
+        return codigo;
+    }
+    
+    
 }

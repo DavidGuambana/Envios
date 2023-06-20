@@ -1,5 +1,6 @@
 package controlador;
 
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -115,6 +116,10 @@ public class cPersona {
             vista.getTxt_direccion().setText(personas.get(0).getDireccion());
             vista.getTxt_telefono().setText(personas.get(0).getTelefono());
             vista.getCb_canton().setSelectedIndex(personas.get(0).getCodigo_can());
+            String nombrec = vista.getCb_canton().getSelectedItem().toString();
+            vista.getCb_provincia().setSelectedIndex(modubi.obteneridPRO(nombrec));
+             
+             
         }
     }
         public void seleccionar(JTable t) {
@@ -188,25 +193,33 @@ public class cPersona {
         }
     }
     public void blockboton(){
-           vista.getTxt_cedula().setEditable(false);
-            vista.getTxt_nombre1().setEditable(false);
-            vista.getTxt_nombre2().setEditable(false);
-            vista.getTxt_apellido1().setEditable(false);
-            vista.getTxt_apellido2().setEditable(false);
-            vista.getTxt_direccion().setEditable(false);
-            vista.getTxt_telefono().setEditable(false);
-        
+        vista.getTxt_cedula().setEditable(false);
+        vista.getTxt_nombre1().setEditable(false);
+        vista.getTxt_nombre2().setEditable(false);
+        vista.getTxt_apellido1().setEditable(false);
+        vista.getTxt_apellido2().setEditable(false);
+        vista.getTxt_direccion().setEditable(false);
+        vista.getTxt_telefono().setEditable(false);
+        vista.getCb_canton().setEnabled(false);
+        vista.getCb_canton().setBackground(Color.WHITE);
+        vista.getCb_provincia().setEnabled(false);
+        vista.getCb_provincia().setBackground(Color.WHITE);
+
+
     
 }
       public void desbckbtn(){
-           vista.getTxt_cedula().setEditable(true);
-            vista.getTxt_nombre1().setEditable(true);
-            vista.getTxt_nombre2().setEditable(true);
-            vista.getTxt_apellido1().setEditable(true);
-            vista.getTxt_apellido2().setEditable(true);
-            vista.getTxt_direccion().setEditable(true);
-            vista.getTxt_telefono().setEditable(true);
-        
+          vista.getTxt_cedula().setEditable(true);
+          vista.getTxt_nombre1().setEditable(true);
+          vista.getTxt_nombre2().setEditable(true);
+          vista.getTxt_apellido1().setEditable(true);
+          vista.getTxt_apellido2().setEditable(true);
+          vista.getTxt_direccion().setEditable(true);
+          vista.getTxt_telefono().setEditable(true);
+          vista.getCb_canton().setEnabled(true);
+          vista.getCb_canton().setBackground(Color.WHITE);
+          vista.getCb_provincia().setEnabled(true);
+          vista.getCb_provincia().setBackground(Color.WHITE);
     
 }
         

@@ -652,6 +652,7 @@
                         <StringItem index="24" value="Zamora Chinchipe"/>
                       </StringArray>
                     </Property>
+                    <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -899,6 +900,7 @@
                         <StringItem index="221" value="Zumbi"/>
                       </StringArray>
                     </Property>
+                    <Property name="opaque" type="boolean" value="true"/>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
