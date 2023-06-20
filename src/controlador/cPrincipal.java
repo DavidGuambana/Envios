@@ -106,11 +106,12 @@ public final class cPrincipal {
         }
         cMarcaModelo controlador = new cMarcaModelo(model, vismarcamodelo);
     }
-    
+
     public void Conectar() {
-        if (p.getTxtIP().getText().isEmpty()||p.getTxtUser().getText().isEmpty()||p.getTxtPassword().getText().isEmpty()) {
+        if (p.getTxtIP().getText().isEmpty() || p.getTxtUser().getText().isEmpty() || p.getTxtPassword().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Aún hay campos por completar!");
-        } else{
+        } else {
+
             Conexion.IP = p.getTxtIP().getText();
             Conexion.user = p.getTxtUser().getText();
             Conexion.password = p.getTxtPassword().getText();
@@ -118,9 +119,11 @@ public final class cPrincipal {
             if (con.conectar()) {
                 p.getjDialog().setVisible(false);
                 p.setLocationRelativeTo(null);
-                p.setVisible(true);
                 setearVariables();
+                p.setVisible(true);
+                
             }
+
         }
     }
 
@@ -138,7 +141,11 @@ public final class cPrincipal {
     }
 
     public void setearVariables() {
-        p.getLbTipo().setText(p.getJcTipo().getSelectedItem().toString());
+        if (p.getTxtIP().getText().toLowerCase().equals("localhost") || p.getTxtIP().getText().equals("127.0.0.1")) {
+            p.getLbTipo().setText("localhost");
+        } else {
+            p.getLbTipo().setText("LAN");
+        }
         p.getLbEstado().setText("Activo");
         //COUNT DE REGISTROS
     }

@@ -240,6 +240,11 @@ public class vPrincipal extends javax.swing.JFrame {
         jcTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "localhost", "LAN" }));
         jcTipo.setToolTipText("Seleccione el tipo de conexión...");
         jcTipo.setBorder(null);
+        jcTipo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcTipoItemStateChanged(evt);
+            }
+        });
 
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -416,7 +421,7 @@ public class vPrincipal extends javax.swing.JFrame {
 
         jb_marcas_modelos.setBackground(new java.awt.Color(0, 51, 153));
         jb_marcas_modelos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/signo-de-interrogacion.png"))); // NOI18N
-        jb_marcas_modelos.setToolTipText("Camiones...");
+        jb_marcas_modelos.setToolTipText("Marcas y modelos...");
         jb_marcas_modelos.setBorder(null);
         jb_marcas_modelos.setFocusable(false);
         jb_marcas_modelos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -677,6 +682,14 @@ public class vPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jcTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcTipoItemStateChanged
+        if (jcTipo.getSelectedIndex()==0) {
+            txtIP.setText("127.0.0.1");
+        } else{
+            txtIP.setText("");
+        }
+    }//GEN-LAST:event_jcTipoItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextArea Output;
