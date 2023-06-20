@@ -4,54 +4,47 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Usuario
- */
 public class mCamion extends Camion{
      public static Conexion con = new Conexion();
     public static ResultSet rs = null;
     public static String sql;
     
      public List<Camion> listar(String matricula) {
-        List<Camion> camion1 = new ArrayList<>();
+        List<Camion> camion = new ArrayList<>();
         try {
             if ("".equals(matricula)) {
-                sql = "SELECT matricula, marca, modelo, potencia";
+                sql = "SELECT matricula, codigo_mod, potencia FROM CAMION ";
             } else {
-                sql = "SELECT matricula, marca, modelo, potencia FROM persona WHERE CAMION='"+matricula+"'";
+                sql = "SELECT matricula, codigo_mod, potencia FROM CAMION WHERE matricula='"+matricula+"'";
             }
             rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
-                    Camion cami = new Camion(rs.getString(1),rs.getString(2), rs.getString(3), rs.getString(4));
-                   camion1.add(cami);
+                    Camion cami = new Camion(rs.getString(1),rs.getInt(2), rs.getString(4));
+                   camion.add(cami);
                 }
             }
             con.close();
-            return camion1;
+            return camion;
         } catch (SQLException ex) {
             return null;
         }
     }
       public boolean crear() {
-        sql = "INSERT INTO persona(matricula, marca, modelo, potencia)"
+        sql = "INSERT INTO CAMION(matricula, marca, modelo, potencia)"
                 + " VALUES ('" + getMatricula()
-                + "','" + getMarca()
-                + "','" + getModelo()
-                + "','" + getPotencia()+
-                ")";
+                + "'," + getModelo()
+                + "','" + getPotencia()+")";
         return con.accion(sql);
     }
       public boolean actualizar() {
-        sql = "UPDATE persona SET marca='"
-                +getMarca()+"', modelo='"
-                +getModelo()+"', potencia='"
-                +getPotencia()+" WHERE cedula='"+getMatricula()+"'";
+        sql = "UPDATE CAMION SET codigo_mod="
+                +getModelo()+", potencia='"
+                +getPotencia()+"' WHERE matricula='"+getMatricula()+"'";
         return con.accion(sql);
     }
-    public boolean eliminarPersona(String cedula){
-        sql = "DELETE FROM persona WHERE cedula='"+cedula+"'";
+    public boolean eliminar(String matricula){
+        sql = "DELETE FROM CAMION WHERE matricula='"+matricula+"'";
         return con.accion(sql);
     }
       

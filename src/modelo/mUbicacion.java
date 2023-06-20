@@ -25,21 +25,21 @@ public class mUbicacion {
         } catch (SQLException ex) {
         }
     }
-    
-//    public void buscar(String txt, String columna) {
-//       try {
-//           sql = "SELECT C.codigo, C.nombre, P.codigo, P.nombre FROM CANTON C JOIN PROVINCIA P ON(C.codigo_prov = P.codigo) WHERE " + columna + " LIKE '%" + txt + "'";
-//           rs = con.consulta(sql);
-//           while (rs.next()) {
-//               dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4)});
-//           }
-//           tabla.setModel(dtm);
-//           con.close();
-//       } catch (SQLException ex) {
-//           Logger.getLogger(mUbicacion.class.getName()).log(Level.SEVERE, null, ex);
-//       }
-//    }
-    
+
+    public void buscar(String txt, String columna, JTable tabla) {
+        DefaultTableModel dtm = new DefaultTableModel(null, columnas);
+        try {
+            sql = "SELECT C.codigo, C.nombre, P.codigo, P.nombre FROM CANTON C JOIN PROVINCIA P ON(C.codigo_prov = P.codigo) WHERE " + columna + " LIKE '%" + txt + "'";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4)});
+            }
+            tabla.setModel(dtm);
+            con.close();
+        } catch (SQLException ex) {
+        }
+    }
+
     public void llenarcombocanton(JComboBox cb) {
         try {
             cb.removeAllItems();

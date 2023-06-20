@@ -2,16 +2,14 @@ package modelo;
 
 public class Camion {
    private String matricula;
-   private String marca;
-   private String modelo;
+   private int modelo;
    private String potencia;
 
     public Camion() {
     }
 
-    public Camion(String matricula, String marca, String modelo, String potencia) {
+    public Camion(String matricula, int modelo, String potencia) {
         this.matricula = matricula;
-        this.marca = marca;
         this.modelo = modelo;
         this.potencia = potencia;
     }
@@ -24,19 +22,11 @@ public class Camion {
         this.matricula = matricula;
     }
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
+    public int getModelo() {
         return modelo;
     }
 
-    public void setModelo(String modelo) {
+    public void setModelo(int modelo) {
         this.modelo = modelo;
     }
 
@@ -48,9 +38,6 @@ public class Camion {
         this.potencia = potencia;
     }
 
-    @Override
-    public String toString() {
-        return "Camion{" + "matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", potencia=" + potencia + '}';
-    }
+    
    
 }
