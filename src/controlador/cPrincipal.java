@@ -2,10 +2,12 @@ package controlador;
 
 import modelo.mCamion;
 import modelo.mConductor;
+import modelo.mMarcaModelo;
 import modelo.mPersona;
 import modelo.mUbicacion;
 import vista.vCamion;
 import vista.vConductor;
+import vista.vModelo;
 import vista.vPersona;
 import vista.vPrincipal;
 import vista.vUbicacion;
@@ -17,6 +19,7 @@ public final class cPrincipal {
     vUbicacion visubicacion;
     vCamion viscamion;
     vConductor visconduc;
+    vModelo vismarcamodelo;
 
     public cPrincipal(vPrincipal p) {
         this.p = p;
@@ -31,6 +34,8 @@ public final class cPrincipal {
        p.getJb_ubicaciones().addActionListener(l-> menuUbicaciones());
        p.getJb_nuevo_chofer().addActionListener(l-> menuConductores());
        //p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
+       p.getJb_marcas_modelos().addActionListener(l-> menuMarcaModelo());
+       
     }
     public void menuPersona(){
 
@@ -79,5 +84,16 @@ public final class cPrincipal {
             p.getJdp_principal().add(visconduc);
         }
         cConductores controlador = new cConductores(model, visconduc);
+    }
+      public void menuMarcaModelo(){
+
+        mMarcaModelo model = new mMarcaModelo();
+        try {
+            p.getJdp_principal().add(vismarcamodelo);
+        } catch (Exception e) {
+            vismarcamodelo = new vModelo();
+            p.getJdp_principal().add(vismarcamodelo);
+        }
+        cMarcaModelo controlador = new cMarcaModelo(model, vismarcamodelo);
     }
 }

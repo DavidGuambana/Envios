@@ -66,6 +66,12 @@ public class vPrincipal extends javax.swing.JFrame {
     public JMenu getJmUbicaciones() {
         return jmUbicaciones;
     }
+
+    public JButton getJb_marcas_modelos() {
+        return jb_marcas_modelos;
+    }
+    
+    
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -82,10 +88,11 @@ public class vPrincipal extends javax.swing.JFrame {
         jSeparator12 = new javax.swing.JToolBar.Separator();
         jb_nuevo_chofer = new javax.swing.JButton();
         jSeparator14 = new javax.swing.JToolBar.Separator();
-        jb_ubicaciones = new javax.swing.JButton();
-        jSeparator15 = new javax.swing.JToolBar.Separator();
         jb_nuevo_camion = new javax.swing.JButton();
+        jSeparator15 = new javax.swing.JToolBar.Separator();
+        jb_ubicaciones = new javax.swing.JButton();
         jSeparator13 = new javax.swing.JToolBar.Separator();
+        jb_marcas_modelos = new javax.swing.JButton();
         jScrollPane = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jSeparator16 = new javax.swing.JToolBar.Separator();
@@ -190,6 +197,17 @@ public class vPrincipal extends javax.swing.JFrame {
         jSeparator14.setSeparatorSize(new java.awt.Dimension(50, 30));
         jToolBar.add(jSeparator14);
 
+        jb_nuevo_camion.setBackground(new java.awt.Color(0, 51, 153));
+        jb_nuevo_camion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/camion-de-carga.png"))); // NOI18N
+        jb_nuevo_camion.setToolTipText("Camiones...");
+        jb_nuevo_camion.setBorder(null);
+        jb_nuevo_camion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_nuevo_camion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jb_nuevo_camion);
+
+        jSeparator15.setSeparatorSize(new java.awt.Dimension(50, 30));
+        jToolBar.add(jSeparator15);
+
         jb_ubicaciones.setBackground(new java.awt.Color(0, 51, 153));
         jb_ubicaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/mapa.png"))); // NOI18N
         jb_ubicaciones.setToolTipText("Ubicaciones...");
@@ -199,19 +217,17 @@ public class vPrincipal extends javax.swing.JFrame {
         jb_ubicaciones.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jb_ubicaciones);
 
-        jSeparator15.setSeparatorSize(new java.awt.Dimension(50, 30));
-        jToolBar.add(jSeparator15);
-
-        jb_nuevo_camion.setBackground(new java.awt.Color(0, 51, 153));
-        jb_nuevo_camion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/camion-de-carga.png"))); // NOI18N
-        jb_nuevo_camion.setToolTipText("Camiones...");
-        jb_nuevo_camion.setBorder(null);
-        jb_nuevo_camion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jb_nuevo_camion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jb_nuevo_camion);
-
         jSeparator13.setSeparatorSize(new java.awt.Dimension(50, 30));
         jToolBar.add(jSeparator13);
+
+        jb_marcas_modelos.setBackground(new java.awt.Color(0, 51, 153));
+        jb_marcas_modelos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/signo-de-interrogacion.png"))); // NOI18N
+        jb_marcas_modelos.setToolTipText("Camiones...");
+        jb_marcas_modelos.setBorder(null);
+        jb_marcas_modelos.setFocusable(false);
+        jb_marcas_modelos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_marcas_modelos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jb_marcas_modelos);
 
         jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
@@ -493,6 +509,7 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator16;
     private javax.swing.JToolBar.Separator jSeparator17;
     private javax.swing.JToolBar jToolBar;
+    private javax.swing.JButton jb_marcas_modelos;
     private javax.swing.JButton jb_nuevo_camion;
     private javax.swing.JButton jb_nuevo_chofer;
     private javax.swing.JButton jb_nuevo_cliente;

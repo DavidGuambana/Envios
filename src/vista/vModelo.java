@@ -68,7 +68,7 @@ public class vModelo extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Lista de ubicaciones");
+        jLabel2.setText("Lista de modelos y marcas");
         jLabel2.setOpaque(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,7 +90,7 @@ public class vModelo extends javax.swing.JInternalFrame {
 
         cbColumnas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cbColumnas.setForeground(new java.awt.Color(51, 51, 51));
-        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código de provincia", "Nombre de provincia", "Código de ciudad", "Nombre de ciudad" }));
+        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código de modelo", "Nombre de modelo", "Código de marca", "Nombre de marca" }));
         cbColumnas.setBorder(null);
 
         jSeparator13.setBackground(new java.awt.Color(204, 204, 204));

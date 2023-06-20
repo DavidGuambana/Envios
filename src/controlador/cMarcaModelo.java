@@ -1,9 +1,8 @@
 package controlador;
-
 import modelo.mMarcaModelo;
 import vista.vModelo;
 
-public final class cMarcaModelo{
+public class cMarcaModelo{
     mMarcaModelo mmarcamodelo;
     vModelo vmodelo;
 
@@ -11,9 +10,8 @@ public final class cMarcaModelo{
         this.mmarcamodelo = mmarcamodelo;
         this.vmodelo = vmodelo;
         vmodelo.setVisible(true);
-        iniciar();
-        listar();
     }
+    
     
     public void iniciar() {
         vmodelo.getBtnBuscar().addActionListener(l -> buscar());
