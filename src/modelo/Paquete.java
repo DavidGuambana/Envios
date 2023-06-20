@@ -103,5 +103,4 @@ public class Paquete {
         return "Paquete{" + "codigopaq=" + codigopaq + ", descripcion=" + descripcion + ", peso=" + peso + ", precio=" + precio + ", cedula_rem=" + cedula_rem + ", cedula_dest=" + cedula_dest + ", codigo_can=" + codigo_can + ", direccion=" + direccion + ", codigo_envio=" + codigo_envio + '}';
     }
     
-    
 }
