@@ -34,21 +34,45 @@ public class cPersona {
         seleccionar(vista.getJtPersonas());
     }
     public void iniciarCtrlBtn() {
-    vista.getJb_ModoEditar().addActionListener(l->editarmodo());
-    vista.getJb_ModoNuevo().addActionListener(l->crearmodo());
-    vista.getJb_ModoVista().addActionListener(l->eliminarver());
-    vista.getJbOK().addActionListener(l->accionboton());
-    
-    
+        vista.getJb_ModoEditar().addActionListener(l -> editarmodo());
+        vista.getJb_ModoNuevo().addActionListener(l -> crearmodo());
+        vista.getJb_ModoVista().addActionListener(l -> eliminarver());
+        vista.getJbOK().addActionListener(l -> accionboton());
+        vista.getBtnBuscar().addActionListener(l -> buscar());
+
     }
-       private void visualizar(String id) {
-           dtm = new DefaultTableModel(null, columnas);
-           personas = modelo.listar(id);
-           personas.stream().forEach(p -> dtm.addRow(new Object[]{p.getCedula(), p.getNombre1(), p.getNombre2(),
-           p.getApelido1(), p.getApellido2(), p.getDireccion(), p.getTelefono(), p.getCodigo_can()}));
-           vista.getJtPersonas().setModel(dtm);
-           vista.getJtPersonas().setRowHeight(30);
+
+    private void visualizar(String id) {
+        dtm = new DefaultTableModel(null, columnas);
+        personas = modelo.listar(id);
+        personas.stream().forEach(p -> dtm.addRow(new Object[]{p.getCedula(), p.getNombre1(), p.getNombre2(),
+            p.getApelido1(), p.getApellido2(), p.getDireccion(), p.getTelefono(), p.getCodigo_can()}));
+        vista.getJtPersonas().setModel(dtm);
+        vista.getJtPersonas().setRowHeight(30);
     }
+    
+    private void buscar() {
+        String columna = "";
+        switch (vista.getCbColumnas().getSelectedIndex()) {
+
+            case 0: columna = "cedula";break;
+            case 1: columna = "nombre1";break;
+            case 2: columna = "nombre2";break;
+            case 3: columna = "apellido1";break;
+            case 4: columna = "apellido2";break;
+            case 5: columna = "direccion";break;
+            case 6: columna = "telefono";break;
+            case 7: columna = "codigo_can";break;
+        }
+        
+        dtm = new DefaultTableModel(null, columnas);
+        personas = modelo.buscar(vista.getTxtBuscar().getText(), columna);
+        personas.stream().forEach(p -> dtm.addRow(new Object[]{p.getCedula(), p.getNombre1(), p.getNombre2(),
+            p.getApelido1(), p.getApellido2(), p.getDireccion(), p.getTelefono(), p.getCodigo_can()}));
+        vista.getJtPersonas().setModel(dtm);
+        vista.getJtPersonas().setRowHeight(30);
+    }
+
     public void editarmodo() {
         llenarPerfil();
         desbckbtn();

@@ -472,7 +472,7 @@ public class vPersona extends javax.swing.JInternalFrame {
 
         cbColumnas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cbColumnas.setForeground(new java.awt.Color(51, 51, 51));
-        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "Nombre", "Precio", "Stock", "Descripción", "Categoría" }));
+        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cedula", "primer nombre", "segundo nombre", "primer apellido", "segundo apellido", "direccion", "telefono", "codigo de cantón" }));
         cbColumnas.setBorder(null);
 
         jSeparator13.setBackground(new java.awt.Color(204, 204, 204));

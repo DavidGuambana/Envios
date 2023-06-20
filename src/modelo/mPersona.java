@@ -65,33 +65,24 @@ public class mPersona extends Persona {
         return con.accion(sql);
     }
 
-    /*
-    public List<Persona> listarPersonasLike(String txt,String campo) {
-        List<Persona> listaPersonas = new ArrayList<>();
+    public List<Persona> buscar(String txt, String campo) {
+        List<Persona> personas = new ArrayList<>();
         try {
-            sql = "SELECT idpersona, nombres, apellidos, fechanacimiento, telefono, sexo, sueldo, cupo, foto, correo FROM persona WHERE "+campo+" like '%"+txt+"'";
-            rs = cpg.consultaBD(sql);
+            sql = "SELECT cedula, nombre1, nombre2, apellido1, apellido2, direccion, telefono, codigo_can FROM persona WHERE " + campo + " like '%" + txt + "'";
+            rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
-                    Persona persona = new Persona();
-                    persona.setIdPersona(rs.getString(1));
-                    persona.setNombrePersona(rs.getString(2));
-                    persona.setApellidoPersona(rs.getString(3));
-                    persona.setFechanacimineto(rs.getDate(4));
-                    persona.setTelefono(rs.getString(5));
-                    persona.setSexo(rs.getString(6));
-                    persona.setSueldo(rs.getInt(7));
-                    persona.setCupo(rs.getInt(8));
-                    //persona.setFoto(rs.getByte(9));
-                    persona.setCorreo(rs.getString(10));
-                    listaPersonas.add(persona);
+                    Persona persona = new Persona(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+                            rs.getString(5), rs.getString(6), rs.getString(7), rs.getInt(8));
+                    personas.add(persona);
                 }
             }
-            return listaPersonas;
+            con.close();
+            return personas;
         } catch (SQLException ex) {
             return null;
         }
     }
-    */
-    
+
+
 }
