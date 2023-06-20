@@ -11,23 +11,26 @@ public class vModelo extends javax.swing.JInternalFrame {
         return btnBuscar;
     }
 
-    public JComboBox<String> getCbColumnas() {
-        return cbColumnas;
-    }
-
-    public JTable getJtUbicaciones() {
-        return jtUbicaciones;
+    public JTable getJtMarcasModelos() {
+        return jtMarcasModelos;
     }
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
 
+    public JComboBox<String> getCbColumnas() {
+        return cbColumnas;
+    }
+    
+
+    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtUbicaciones = new javax.swing.JTable();
+        jtMarcasModelos = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
@@ -45,13 +48,13 @@ public class vModelo extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(840, 480));
         setPreferredSize(new java.awt.Dimension(840, 480));
 
-        jtUbicaciones = new javax.swing.JTable(){
+        jtMarcasModelos = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        jtUbicaciones.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jtUbicaciones.setModel(new javax.swing.table.DefaultTableModel(
+        jtMarcasModelos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtMarcasModelos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -59,7 +62,7 @@ public class vModelo extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jtUbicaciones);
+        jScrollPane1.setViewportView(jtMarcasModelos);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -153,7 +156,7 @@ public class vModelo extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JTable jtUbicaciones;
+    private javax.swing.JTable jtMarcasModelos;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
