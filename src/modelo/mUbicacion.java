@@ -2,8 +2,7 @@ package modelo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,4 +39,31 @@ public class mUbicacion {
 //           Logger.getLogger(mUbicacion.class.getName()).log(Level.SEVERE, null, ex);
 //       }
 //    }
+    
+    public void llenarcombocanton(JComboBox cb) {
+        try {
+            cb.removeAllItems();
+            cb.addItem("Seleccione...");
+            sql = "SELECT NOMBRE FROM CANTON";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                cb.addItem(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+        }
+
+    }
+
+    public void llenarcomboprovincia(JComboBox cb) {
+        try {
+            cb.removeAllItems();
+            cb.addItem("Seleccione...");
+            sql = "SELECT NOMBRE FROM PROVINCIA";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                cb.addItem(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+        }
+    }
 }
