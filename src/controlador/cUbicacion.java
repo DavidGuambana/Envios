@@ -11,7 +11,7 @@ public final class cUbicacion{
         this.mubicacion = mubicacion;
         this.vubicacion = vubicacion;
         vubicacion.setVisible(true);
-        iniciar();
+        //iniciar();
         listar();
     }
     public void iniciar(){

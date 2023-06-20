@@ -15,6 +15,8 @@ public class Conexion {
             ods.setUser("SYSTEM");
             ods.setPassword("1234");
             con = ods.getConnection();
+            System.out.println(con);
+            System.out.println("conectado");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
         }
@@ -23,10 +25,8 @@ public class Conexion {
     public ResultSet consulta(String sql) {
         conectar();
         try {
-            System.out.println(con);
             st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            System.out.println(rs);
+            st.executeQuery(sql);
             return st.executeQuery(sql);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), null, JOptionPane.ERROR_MESSAGE);
