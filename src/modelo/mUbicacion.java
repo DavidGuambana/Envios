@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class mUbicacion {
    public static Conexion con = new Conexion() ;
-    public static ResultSet rs = null;
+    public static ResultSet rs;
     public static String sql;
     String[] columnas = {"Código de cantón", "Nombre de Cantón", "Código de Provincia", "Nombre de Provincia"};
     
@@ -17,8 +17,6 @@ public class mUbicacion {
         try {
             sql = "SELECT C.codigo, C.nombre, P.codigo, P.nombre FROM CANTON C JOIN PROVINCIA P ON(C.codigo_prov = P.codigo);";
             rs = con.consulta(sql);
-            rs.next();
-            System.out.println(sql);
             while (rs.next()) {
                 dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4)});
             }
