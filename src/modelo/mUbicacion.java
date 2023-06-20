@@ -66,4 +66,20 @@ public class mUbicacion {
         } catch (SQLException ex) {
         }
     }
+    
+    public int obtenerid(String nombre) {
+        int codigo = 0;
+
+        sql = "SELECT CODIGO FROM CANTON WHERE NOMBRE='" + nombre + "'";
+
+        try {
+            rs = con.consulta(sql);
+            rs.next();
+            codigo = rs.getInt(1);
+            System.out.println(codigo);
+        } catch (SQLException ex) {
+        }
+        con.close();
+        return codigo;
+    }
 }
