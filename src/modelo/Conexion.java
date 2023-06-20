@@ -7,17 +7,20 @@ import oracle.jdbc.pool.OracleDataSource;
 public class Conexion {
     Connection con;
     Statement st;
-
-    public void conectar() {
+    public static String user="";
+    public static String password="";
+    public static String IP="";
+    public boolean conectar() {
         try {
             OracleDataSource ods = new OracleDataSource();
-            ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
-            ods.setUser("SYSTEM");
-            ods.setPassword("1234");
+            ods.setURL("jdbc:oracle:thin:@" + IP + ":1521:XE");
+            ods.setUser(user);
+            ods.setPassword(password);
             con = ods.getConnection();
-            System.out.println("conectado");
+            return true;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
+            return false;
         }
     }
 
@@ -50,11 +53,9 @@ public class Conexion {
     }
     
     public void close(){
-        conectar();
         try {
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
