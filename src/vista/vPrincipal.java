@@ -5,9 +5,9 @@ import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-public class visPrincipal extends javax.swing.JFrame {
+public class vPrincipal extends javax.swing.JFrame {
 
-    public visPrincipal() {
+    public vPrincipal() {
         initComponents();
     }
 

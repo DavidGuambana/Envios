@@ -5,11 +5,10 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-public class visCamion extends javax.swing.JInternalFrame {
+public class vEnvio extends javax.swing.JInternalFrame {
 
-    public visCamion() {
+    public vEnvio() {
         initComponents();
-        
     }
 
     public JButton getBtnBuscar() {
@@ -20,79 +19,46 @@ public class visCamion extends javax.swing.JInternalFrame {
         return cbColumnas;
     }
 
-    public JComboBox<String> getCb_marca() {
-        return cb_marca;
-    }
-
-    public JComboBox<String> getCb_modelo() {
-        return cb_modelo;
-    }
-
-    public JButton getJbOK() {
-        return jbOK;
-    }
-
-    public JButton getJb_ModoEditar() {
-        return jb_ModoEditar;
-    }
-
-    public JButton getJb_ModoNuevo() {
-        return jb_ModoNuevo;
-    }
-
-    public JButton getJb_ModoVista() {
-        return jb_ModoVista;
-    }
-
-    public JTable getJtCamiones() {
-        return jtCamiones;
+    public JTable getJtEnvios() {
+        return jtEnvios;
     }
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
 
-    public JTextField getTxt_matricula() {
-        return txt_matricula;
+    public JTextField getTxt_codigo() {
+        return txt_codigo;
     }
 
-    public JTextField getTxt_potencia() {
-        return txt_potencia;
+    public JTextField getTxt_codigo_via() {
+        return txt_codigo_via;
+    }
+
+    public JTextField getTxt_fecha() {
+        return txt_fecha;
     }
 
     
     
-
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jToolBar = new javax.swing.JToolBar();
-        jSeparator5 = new javax.swing.JToolBar.Separator();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JToolBar.Separator();
-        jb_ModoEditar = new javax.swing.JButton();
-        jSeparator3 = new javax.swing.JToolBar.Separator();
-        jb_ModoNuevo = new javax.swing.JButton();
-        jSeparator4 = new javax.swing.JToolBar.Separator();
-        jb_ModoVista = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jbOK = new javax.swing.JButton();
         jScrollPane = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        txt_matricula = new javax.swing.JTextField();
+        txt_codigo = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
-        jLabel11 = new javax.swing.JLabel();
-        cb_marca = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        cb_modelo = new javax.swing.JComboBox<>();
-        jSeparator14 = new javax.swing.JSeparator();
-        txt_potencia = new javax.swing.JTextField();
-        JTextField1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        jSeparator15 = new javax.swing.JSeparator();
+        txt_fecha = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txt_codigo_via = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtCamiones = new javax.swing.JTable();
+        jtEnvios = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
@@ -113,135 +79,85 @@ public class visCamion extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
 
-        jToolBar.setFloatable(false);
-        jToolBar.setBackground(new java.awt.Color(0, 102, 153));
-        jToolBar.setBorder(null);
-
-        jSeparator5.setSeparatorSize(new java.awt.Dimension(25, 18));
-        jToolBar.add(jSeparator5);
-
-        jLabel1.setText("Cambiar de modo:");
-        jToolBar.add(jLabel1);
-
-        jSeparator2.setPreferredSize(new java.awt.Dimension(40, 18));
-        jSeparator2.setSeparatorSize(new java.awt.Dimension(40, 18));
-        jToolBar.add(jSeparator2);
-
-        jb_ModoEditar.setText("Editar");
-        jb_ModoEditar.setFocusable(false);
-        jb_ModoEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jb_ModoEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jb_ModoEditar);
-
-        jSeparator3.setSeparatorSize(new java.awt.Dimension(30, 18));
-        jToolBar.add(jSeparator3);
-
-        jb_ModoNuevo.setText("Nuevo");
-        jb_ModoNuevo.setFocusable(false);
-        jb_ModoNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jb_ModoNuevo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jb_ModoNuevo);
-
-        jSeparator4.setSeparatorSize(new java.awt.Dimension(30, 18));
-        jToolBar.add(jSeparator4);
-
-        jb_ModoVista.setText("Vista");
-        jb_ModoVista.setFocusable(false);
-        jb_ModoVista.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jb_ModoVista.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jb_ModoVista);
-
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("(Modo) camión");
+        jLabel3.setText("vista envío");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 153)));
-
-        jbOK.setBackground(new java.awt.Color(0, 102, 153));
-        jbOK.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jbOK.setForeground(new java.awt.Color(255, 255, 255));
-        jbOK.setText("OK");
-        jbOK.setBorder(null);
-        jbOK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(350, 32767));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Matrícula:");
+        jLabel4.setText("Código:");
 
-        txt_matricula.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        txt_matricula.setForeground(new java.awt.Color(0, 153, 204));
-        txt_matricula.setBorder(null);
+        txt_codigo.setEditable(false);
+        txt_codigo.setBackground(new java.awt.Color(255, 255, 255));
+        txt_codigo.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        txt_codigo.setForeground(new java.awt.Color(0, 153, 204));
+        txt_codigo.setText("Autogenerado");
+        txt_codigo.setBorder(null);
 
         jSeparator6.setBackground(new java.awt.Color(204, 204, 204));
         jSeparator6.setMinimumSize(new java.awt.Dimension(50, 1));
         jSeparator6.setOpaque(true);
         jSeparator6.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Marca:");
+        jSeparator8.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator8.setMinimumSize(new java.awt.Dimension(50, 1));
+        jSeparator8.setOpaque(true);
+        jSeparator8.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        cb_marca.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Código de viaje:");
 
-        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Modelo:");
+        jSeparator15.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator15.setMinimumSize(new java.awt.Dimension(50, 1));
+        jSeparator15.setOpaque(true);
+        jSeparator15.setPreferredSize(new java.awt.Dimension(50, 1));
 
-        cb_modelo.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txt_fecha.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        txt_fecha.setText("Autogenerado");
+        txt_fecha.setBorder(null);
 
-        jSeparator14.setBackground(new java.awt.Color(204, 204, 204));
-        jSeparator14.setMinimumSize(new java.awt.Dimension(50, 1));
-        jSeparator14.setOpaque(true);
-        jSeparator14.setPreferredSize(new java.awt.Dimension(50, 1));
+        jLabel15.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Fecha:");
 
-        txt_potencia.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        txt_potencia.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txt_potencia.setBorder(null);
-
-        JTextField1.setEditable(false);
-        JTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        JTextField1.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        JTextField1.setText("HP.");
-        JTextField1.setBorder(null);
-
-        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Potencia:");
+        txt_codigo_via.setEditable(false);
+        txt_codigo_via.setBackground(new java.awt.Color(255, 255, 255));
+        txt_codigo_via.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        txt_codigo_via.setForeground(new java.awt.Color(0, 153, 204));
+        txt_codigo_via.setText("Autoasignado");
+        txt_codigo_via.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cb_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(txt_potencia, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(JTextField1))
-                                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(27, 27, 27))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txt_codigo_via)
+                                .addComponent(txt_codigo, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txt_fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,26 +165,22 @@ public class visCamion extends javax.swing.JInternalFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_matricula))
+                    .addComponent(txt_codigo))
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(cb_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addComponent(cb_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_potencia)
-                        .addComponent(JTextField1)))
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txt_codigo_via))
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         jScrollPane.setViewportView(jPanel3);
@@ -277,13 +189,8 @@ public class visCamion extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbOK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -291,26 +198,20 @@ public class visCamion extends javax.swing.JInternalFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
-                .addGap(6, 6, 6)
-                .addComponent(jbOK, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE))
         );
 
         jScrollPane.getVerticalScrollBar().setUnitIncrement(16);
 
-        jtCamiones = new javax.swing.JTable(){
+        jtEnvios = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        jtCamiones.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jtCamiones.setModel(new javax.swing.table.DefaultTableModel(
+        jtEnvios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtEnvios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -318,13 +219,13 @@ public class visCamion extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jtCamiones);
+        jScrollPane1.setViewportView(jtEnvios);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Lista de camiones");
+        jLabel2.setText("Lista de envíos");
         jLabel2.setOpaque(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -411,38 +312,26 @@ public class visCamion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JTextField1;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JComboBox<String> cbColumnas;
-    private javax.swing.JComboBox<String> cb_marca;
-    private javax.swing.JComboBox<String> cb_modelo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
-    private javax.swing.JToolBar.Separator jSeparator2;
-    private javax.swing.JToolBar.Separator jSeparator3;
-    private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JToolBar jToolBar;
-    private javax.swing.JButton jbOK;
-    private javax.swing.JButton jb_ModoEditar;
-    private javax.swing.JButton jb_ModoNuevo;
-    private javax.swing.JButton jb_ModoVista;
-    private javax.swing.JTable jtCamiones;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JTable jtEnvios;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txt_matricula;
-    private javax.swing.JTextField txt_potencia;
+    private javax.swing.JTextField txt_codigo;
+    private javax.swing.JTextField txt_codigo_via;
+    private javax.swing.JTextField txt_fecha;
     // End of variables declaration//GEN-END:variables
 }

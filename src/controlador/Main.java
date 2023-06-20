@@ -3,7 +3,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import vista.visPrincipal;
+import vista.vPrincipal;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class Main {
@@ -12,9 +12,9 @@ public class Main {
          try {
             UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(visPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(vPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
-        visPrincipal vp =new visPrincipal();
-        ctrlPrincipal ctrlprprincipal=new ctrlPrincipal( vp);
+        vPrincipal vp =new vPrincipal();
+        cPrincipal ctrlprprincipal=new cPrincipal( vp);
     }
 }

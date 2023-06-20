@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +8,7 @@ import java.util.List;
  *
  * @author Usuario
  */
-public class M_Camion extends Camion{
+public class mCamion extends Camion{
      public static Conexion con = new Conexion();
     public static ResultSet rs = null;
     public static String sql;

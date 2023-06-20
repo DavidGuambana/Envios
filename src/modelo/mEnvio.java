@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M_envio extends Envio{
+public class mEnvio extends Envio{
    public static Conexion con = new Conexion();
     public static ResultSet rs = null;
     public static String sql;

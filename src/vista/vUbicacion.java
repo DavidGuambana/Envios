@@ -5,9 +5,9 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-public class visModelo extends javax.swing.JInternalFrame {
+public class vUbicacion extends javax.swing.JInternalFrame {
 
-    public visModelo() {
+    public vUbicacion() {
         initComponents();
         
     }
@@ -20,20 +20,22 @@ public class visModelo extends javax.swing.JInternalFrame {
         return cbColumnas;
     }
 
-    public JTable getJtModelos() {
-        return jtModelos;
+    public JTable getJtUbicaciones() {
+        return jtUbicaciones;
     }
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
-
+    
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jtModelos = new javax.swing.JTable();
+        jtUbicaciones = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnBuscar = new javax.swing.JButton();
@@ -51,13 +53,13 @@ public class visModelo extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(840, 480));
         setPreferredSize(new java.awt.Dimension(840, 480));
 
-        jtModelos = new javax.swing.JTable(){
+        jtUbicaciones = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        jtModelos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jtModelos.setModel(new javax.swing.table.DefaultTableModel(
+        jtUbicaciones.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jtUbicaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -65,13 +67,13 @@ public class visModelo extends javax.swing.JInternalFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jtModelos);
+        jScrollPane1.setViewportView(jtUbicaciones);
 
         jLabel2.setBackground(new java.awt.Color(0, 102, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Lista de modelos y marcas");
+        jLabel2.setText("Lista de ubicaciones");
         jLabel2.setOpaque(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,7 +95,7 @@ public class visModelo extends javax.swing.JInternalFrame {
 
         cbColumnas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cbColumnas.setForeground(new java.awt.Color(51, 51, 51));
-        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código de modelo", "Nombre de modelo", "Código de marca", "Nombre de marca" }));
+        cbColumnas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código de provincia", "Nombre de provincia", "Código de ciudad", "Nombre de ciudad" }));
         cbColumnas.setBorder(null);
 
         jSeparator13.setBackground(new java.awt.Color(204, 204, 204));
@@ -159,7 +161,7 @@ public class visModelo extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JTable jtModelos;
+    private javax.swing.JTable jtUbicaciones;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

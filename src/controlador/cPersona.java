@@ -1,7 +1,5 @@
-
 package controlador;
 
-import controlador.util.FiltrarTabla;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -9,23 +7,22 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import modelo.M_persona;
+import modelo.mPersona;
 import modelo.Persona;
-import vista.visPersona;
+import vista.vPersona;
 
-public class ctrlPersona {
+public class cPersona {
 
-    private final M_persona modelo;
-    private final visPersona vista;
+    private final mPersona modelo;
+    private final vPersona vista;
     
-    List<Persona> personas = new ArrayList<Persona>();
+    List<Persona> personas = new ArrayList<>();
     DefaultTableModel dtm;
-//   cedula, nombre1,  nombre2,  apelido1, apellido2, direccion,  telefono,  codigo_can
     String[] columnas = {"Cedula", "Primer nombre", "Segundo nombre", "Primer Apellido", "Segundo Apellido", "Direccion", "Telefono", "Codigo canton"};
     String id;
     String mod=null;
 
-    public ctrlPersona(M_persona modelo, visPersona vista) {
+    public cPersona(mPersona modelo, vPersona vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);  
@@ -71,7 +68,6 @@ public class ctrlPersona {
             public void mousePressed(MouseEvent me) {
                 if (me.getClickCount() == 1) {
                     id = t.getValueAt(t.getSelectedRow(), 0).toString();
-                    
                     llenarPerfil();
                 }
             }

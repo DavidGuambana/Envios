@@ -1,18 +1,18 @@
 package controlador;
 
-import modelo.M_persona;
-import modelo.M_ubicacion;
-import vista.visPersona;
-import vista.visPrincipal;
-import vista.visUbicacion;
+import modelo.mPersona;
+import modelo.mUbicacion;
+import vista.vPersona;
+import vista.vPrincipal;
+import vista.vUbicacion;
 
-public final class ctrlPrincipal {
+public final class cPrincipal {
 
-    visPrincipal p;
-    visPersona vispersona;
-    visUbicacion visubicacion;
+    vPrincipal p;
+    vPersona vispersona;
+    vUbicacion visubicacion;
 
-    public ctrlPrincipal(visPrincipal p) {
+    public cPrincipal(vPrincipal p) {
         this.p = p;
         p.setLocationRelativeTo(null);
         p.setVisible(true);
@@ -27,29 +27,29 @@ public final class ctrlPrincipal {
     }
     public void menuPersona(){
 
-       M_persona modper = new M_persona();
+       mPersona modper = new mPersona();
         try {
             p.getJdp_principal().add(vispersona);
         } catch (Exception e) {
-            vispersona = new visPersona();
+            vispersona = new vPersona();
             p.getJdp_principal().add(vispersona);
         }
         
-        ctrlPersona controlador = new ctrlPersona(modper, vispersona);
+        cPersona controlador = new cPersona(modper, vispersona);
         controlador.iniciarCtrlBtn();
         
     }
     public void menuUbicaciones(){
 
-        M_ubicacion model = new M_ubicacion();
+        mUbicacion model = new mUbicacion();
         try {
             p.getJdp_principal().add(visubicacion);
         } catch (Exception e) {
-            visubicacion = new visUbicacion();
+            visubicacion = new vUbicacion();
             p.getJdp_principal().add(visubicacion);
         }
         
-//       CtrlUbicaciones controlador = new CtrlUbicaciones(model, visubicacion);
+       cUbicacion controlador = new cUbicacion(model, visubicacion);
         
     }
      

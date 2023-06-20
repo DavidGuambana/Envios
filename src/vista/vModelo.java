@@ -5,12 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-public class visUbicacion extends javax.swing.JInternalFrame {
-
-    public visUbicacion() {
-        initComponents();
-        
-    }
+public class vModelo extends javax.swing.JInternalFrame {
 
     public JButton getBtnBuscar() {
         return btnBuscar;
@@ -27,9 +22,6 @@ public class visUbicacion extends javax.swing.JInternalFrame {
     public JTextField getTxtBuscar() {
         return txtBuscar;
     }
-    
-    
-    
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

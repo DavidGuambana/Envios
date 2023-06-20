@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M_persona extends Persona {
+public class mPersona extends Persona {
     
     public static Conexion con = new Conexion();
     public static ResultSet rs = null;

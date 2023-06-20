@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.SQLException;
 
-public class M_paquete extends Paquete {
+public class mPaquete extends Paquete {
     public static Conexion con = new Conexion();
     public static ResultSet rs = null;
     public static String sql;

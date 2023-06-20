@@ -15,9 +15,17 @@ public class Conexion {
             ods.setUser("SYSTEM");
             ods.setPassword("1234");
             con = ods.getConnection();
-            System.out.println("conectado");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
+            try {
+                OracleDataSource ods = new OracleDataSource();
+                ods.setURL("jdbc:oracle:thin:@localhost:1521:XE");
+                ods.setUser("SYSTEM");
+                ods.setPassword("0988");
+                con = ods.getConnection();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "¡Error de conexión!", null, JOptionPane.ERROR_MESSAGE);
+
+            }
         }
     }
 
