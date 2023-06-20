@@ -43,7 +43,8 @@ public class mPersona extends Persona {
                 + "','" + getApellido2()
                 + "','" + getDireccion()
                 + "','" + getTelefono()
-                + "," + getCodigo_can()+")";
+                + "'," + getCodigo_can()+")";
+        System.out.println(sql);
         return con.accion(sql);
     }
     
@@ -60,6 +61,7 @@ public class mPersona extends Persona {
     }
     public boolean eliminar(String cedula){
         sql = "DELETE FROM persona WHERE cedula='"+cedula+"'";
+        System.out.println(sql);
         return con.accion(sql);
     }
 

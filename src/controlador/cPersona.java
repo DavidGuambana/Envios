@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.mPersona;
 import modelo.Persona;
+import modelo.mUbicacion;
 import vista.vPersona;
 
 public class cPersona {
@@ -21,16 +22,21 @@ public class cPersona {
     String[] columnas = {"Cedula", "Primer nombre", "Segundo nombre", "Primer Apellido", "Segundo Apellido", "Direccion", "Telefono", "Codigo canton"};
     String id;
     String mod=null;
+    private final mUbicacion modubi = new mUbicacion();
 
     public cPersona(mPersona modelo, vPersona vista) {
         this.modelo = modelo;
         this.vista = vista;
+        modubi.llenarcombocanton(vista.getCb_canton());
+        modubi.llenarcomboprovincia(vista.getCb_provincia());
         vista.setVisible(true);  
         visualizar("");
         seleccionar(vista.getJtPersonas());
     }
     public void iniciarCtrlBtn() {
     vista.getJb_ModoEditar().addActionListener(l->editarmodo());
+    vista.getJb_ModoNuevo().addActionListener(l->crearmodo());
+    vista.getJb_ModoVista().addActionListener(l->eliminarver());
     vista.getJbOK().addActionListener(l->accionboton());
     
     
@@ -45,9 +51,33 @@ public class cPersona {
     }
     public void editarmodo() {
         llenarPerfil();
-        modelo.actualizar();
+        desbckbtn();
         vista.getTxt_cedula().setEditable(false);
         vista.getJbOK().setText("MODIFICAR");
+    }
+      public void crearmodo() {
+        vaciarPerfil();
+        desbckbtn();
+        vista.getTxt_cedula().setEditable(true);
+        vista.getJbOK().setText("REGISTRAR");
+    }
+       public void eliminarver() {
+        llenarPerfil();
+        blockboton();
+        vista.getTxt_cedula().setEditable(false);
+        vista.getJbOK().setText("ELIMINAR");
+    }
+        
+      
+        public void vaciarPerfil() {
+            vista.getTxt_cedula().setText("");
+            vista.getTxt_nombre1().setText("");
+            vista.getTxt_nombre2().setText("");
+            vista.getTxt_apellido1().setText("");
+            vista.getTxt_apellido2().setText("");
+            vista.getTxt_direccion().setText("");
+            vista.getTxt_telefono().setText(""); 
+        
     }
        
         public void llenarPerfil() {
@@ -59,7 +89,8 @@ public class cPersona {
             vista.getTxt_apellido1().setText(personas.get(0).getApelido1());
             vista.getTxt_apellido2().setText(personas.get(0).getApellido2());
             vista.getTxt_direccion().setText(personas.get(0).getDireccion());
-            vista.getTxt_telefono().setText(personas.get(0).getTelefono()); 
+            vista.getTxt_telefono().setText(personas.get(0).getTelefono());
+            vista.getCb_canton().setSelectedIndex(personas.get(0).getCodigo_can());
         }
     }
         public void seleccionar(JTable t) {
@@ -78,9 +109,36 @@ public class cPersona {
              setearDatos();
              modelo.actualizar();
              visualizar("");
+        }
+        if (vista.getJbOK().getText().equals("REGISTRAR")) {
+             setearDatos();
+             modelo.crear();
+             visualizar("");
+        }
+        if (vista.getJbOK().getText().equals("ELIMINAR")) {
+               if (JOptionPane.showConfirmDialog(null, 
+                "¿Está seguro de que desea eliminar el registro seleccionado?",
+                "Eliminar registro", JOptionPane.YES_NO_OPTION, 
+                JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
              
+            try {
+                modelo.eliminar(vista.getTxt_cedula().getText());
+                visualizar("");
+                JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
+            }
+
+        } else {
             
         }
+
+//            modelo.eliminar(vista.getTxt_cedula().getText());
+//            visualizar("");
+
+        }
+        
     }
      public void setearDatos() {
         try {
@@ -95,12 +153,38 @@ public class cPersona {
                 modelo.setDireccion(vista.getTxt_direccion().getText());
                 modelo.setTelefono(vista.getTxt_telefono().getText());
                 modelo.setCodigo_can(1);
+                String nombrec = vista.getCb_canton().getSelectedItem().toString();
+                System.out.println(nombrec);
+                System.out.println(modubi.obtenerid(nombrec));
+                modelo.setCodigo_can(modubi.obtenerid(nombrec));
 
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Algunos datos no son correctos!");
         }
     }
+    public void blockboton(){
+           vista.getTxt_cedula().setEditable(false);
+            vista.getTxt_nombre1().setEditable(false);
+            vista.getTxt_nombre2().setEditable(false);
+            vista.getTxt_apellido1().setEditable(false);
+            vista.getTxt_apellido2().setEditable(false);
+            vista.getTxt_direccion().setEditable(false);
+            vista.getTxt_telefono().setEditable(false);
+        
+    
+}
+      public void desbckbtn(){
+           vista.getTxt_cedula().setEditable(true);
+            vista.getTxt_nombre1().setEditable(true);
+            vista.getTxt_nombre2().setEditable(true);
+            vista.getTxt_apellido1().setEditable(true);
+            vista.getTxt_apellido2().setEditable(true);
+            vista.getTxt_direccion().setEditable(true);
+            vista.getTxt_telefono().setEditable(true);
+        
+    
+}
         
 
 }
