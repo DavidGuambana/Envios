@@ -24,15 +24,26 @@ public final class cUbicacion{
     }
 
     public void buscar() {
-        String columna = "";
-        switch (vubicacion.getCbColumnas().getSelectedIndex()) {
-            case 0: columna = "C.codigo";break;
-            case 1: columna = "C.nombre,";break;
-            case 2: columna = "P.codigo";break;
-            case 3: columna = "P.nombre";break;
+        if (!vubicacion.getTxtBuscar().getText().isEmpty()) {
+            String columna = "";
+            int codigo = 0;
+            switch (vubicacion.getCbColumnas().getSelectedIndex()) {
+                case 0:
+                    columna = "C.codigo";
+                    break;
+                case 1:
+                    columna = "C.nombre";
+                    break;
+                case 2:
+                    columna = "P.codigo";
+                    break;
+                case 3:
+                    columna = "P.nombre";
+                    break;
+            }
+            mubicacion.buscar(vubicacion.getTxtBuscar().getText(), columna, vubicacion.getJtUbicaciones());
+        } else {
+            mubicacion.listar(vubicacion.getJtUbicaciones());
         }
-        mubicacion.buscar(vubicacion.getTxtBuscar().getText(), columna, vubicacion.getJtUbicaciones());
     }
-    
-    
 }

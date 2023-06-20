@@ -206,10 +206,10 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="C&#xf3;digo de provincia"/>
-                <StringItem index="1" value="Nombre de provincia"/>
-                <StringItem index="2" value="C&#xf3;digo de ciudad"/>
-                <StringItem index="3" value="Nombre de ciudad"/>
+                <StringItem index="0" value="C&#xf3;digo de cant&#xf3;n"/>
+                <StringItem index="1" value="Nombre de cant&#xf3;n"/>
+                <StringItem index="2" value="C&#xf3;digo de provincia"/>
+                <StringItem index="3" value="Nombre de provincia"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
