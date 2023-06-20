@@ -31,6 +31,14 @@ public class mConductor extends Conductor {
             return null;
         }
     }
+    
+    public ResultSet obtener_conductor(String cedula) {
+        sql = "SELECT P.CEDULA,P.NOMBRE1,P.NOMBRE2,P.APELLIDO1,P.APELLIDO2,P.DIRECCION,P.TELEFONO,PRO.NOMBRE,CAN.NOMBRE,C.ID_CON,C.LICENCIA,C.SALARIO\n" +
+"FROM PERSONA P JOIN CONDUCTOR C ON(p.cedula=c.cedula_per) JOIN CANTON CAN ON (p.codigo_can=can.codigo ) JOIN provincia PRO ON(pro.codigo=can.codigo_prov) WHERE p.cedula='"+cedula+"'";
+        rs = con.consulta(sql);
+        con.close();
+        return rs;
+    }
     public boolean crear() {
         sql = "INSERT INTO conductor(licencia, salario, cedula_per)"
                 + " VALUES ('" + getLicencia()

@@ -72,32 +72,32 @@ public class mMarcaModelo {
     }
     */
 
-    public void llenarcombocanton(JComboBox cb) {
-        try {
-            cb.removeAllItems();
-            cb.addItem("Seleccione...");
-            sql = "SELECT NOMBRE FROM CANTON";
-            rs = con.consulta(sql);
-            while (rs.next()) {
-                cb.addItem(rs.getString(1));
-            }
-        } catch (SQLException ex) {
-        }
+//    public void llenarcombocanton(JComboBox cb) {
+//        try {
+//            cb.removeAllItems();
+//            cb.addItem("Seleccione...");
+//            sql = "SELECT NOMBRE FROM CANTON";
+//            rs = con.consulta(sql);
+//            while (rs.next()) {
+//                cb.addItem(rs.getString(1));
+//            }
+//        } catch (SQLException ex) {
+//        }
 
-    }
-
-    public void llenarcomboprovincia(JComboBox cb) {
-        try {
-            cb.removeAllItems();
-            cb.addItem("Seleccione...");
-            sql = "SELECT NOMBRE FROM PROVINCIA";
-            rs = con.consulta(sql);
-            while (rs.next()) {
-                cb.addItem(rs.getString(1));
-            }
-        } catch (SQLException ex) {
-        }
-    }
+//    }
+//
+//    public void llenarcomboprovincia(JComboBox cb) {
+//        try {
+//            cb.removeAllItems();
+//            cb.addItem("Seleccione...");
+//            sql = "SELECT NOMBRE FROM PROVINCIA";
+//            rs = con.consulta(sql);
+//            while (rs.next()) {
+//                cb.addItem(rs.getString(1));
+//            }
+//        } catch (SQLException ex) {
+//        }
+//    }
     
     public int obtenerid(String nombre) {
         int codigo = 0;

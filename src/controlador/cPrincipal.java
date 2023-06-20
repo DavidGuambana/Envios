@@ -1,9 +1,11 @@
 package controlador;
 
 import modelo.mCamion;
+import modelo.mConductor;
 import modelo.mPersona;
 import modelo.mUbicacion;
 import vista.vCamion;
+import vista.vConductor;
 import vista.vPersona;
 import vista.vPrincipal;
 import vista.vUbicacion;
@@ -14,6 +16,7 @@ public final class cPrincipal {
     vPersona vispersona;
     vUbicacion visubicacion;
     vCamion viscamion;
+    vConductor visconduc;
 
     public cPrincipal(vPrincipal p) {
         this.p = p;
@@ -26,6 +29,7 @@ public final class cPrincipal {
     public void control() {
        p.getJb_nuevo_cliente().addActionListener(l-> menuPersona());
        p.getJb_ubicaciones().addActionListener(l-> menuUbicaciones());
+       p.getJb_nuevo_chofer().addActionListener(l-> menuConductores());
        //p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
     }
     public void menuPersona(){
@@ -64,5 +68,16 @@ public final class cPrincipal {
             p.getJdp_principal().add(viscamion);
         }
         cCamion controlador = new cCamion(model, viscamion);
+    }
+      public void menuConductores(){
+
+        mConductor model = new mConductor();
+        try {
+            p.getJdp_principal().add(visconduc);
+        } catch (Exception e) {
+            visconduc = new vConductor();
+            p.getJdp_principal().add(visconduc);
+        }
+        cConductores controlador = new cConductores(model, visconduc);
     }
 }
