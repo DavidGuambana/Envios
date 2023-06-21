@@ -3,6 +3,7 @@ package modelo;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,7 +19,11 @@ public class mTransaccional{
     String[] col_per = {"Cedula", "Primer nombre", "Segundo nombre", "Primer apellido", "Segundo apellido", "Acción"};
     String[] col_env = {"Código", "Fecha", "Código viaje", "Acción"};
     
-    public void list_cam(JTable tabla, JButton b) {
+    
+    public void list_cam(JTable tabla, JButton b, JComboBox c) {
+        for (int i = 0; i < col_cam.length-1; i++) {
+            c.addItem(col_cam[i]);
+        }
         dtm = new DefaultTableModel(null, col_cam);
         try {
             sql = "SELECT c.matricula, mo.nombre, ma.nombre FROM CAMION c JOIN MODELO mo ON (c.codigo_mod = mo.codigo) JOIN MARCA ma ON (mo.id_codigo_mar = ma.codigo)";
@@ -31,7 +36,46 @@ public class mTransaccional{
         } catch (SQLException ex) {
         }
     }
-    public void list_per(JTable tabla, JButton b) {
+    
+     public void list_con(JTable tabla, JButton b,JComboBox c) {
+         for (int i = 0; i < col_con.length-1; i++) {
+            c.addItem(col_con[i]);
+        }
+        dtm = new DefaultTableModel(null, col_con);
+        try {
+            sql = "SELECT * FROM CONDUCTOR";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getDouble(3),rs.getString(4),b});
+            }
+            tabla.setModel(dtm);
+            con.close();
+        } catch (SQLException ex) {
+        }
+    }
+     
+      public void list_via(JTable tabla, JButton b,JComboBox c) {
+          for (int i = 0; i < col_via.length-1; i++) {
+            c.addItem(col_via[i]);
+        }
+        dtm = new DefaultTableModel(null, col_via);
+        try {
+            sql = "SELECT * FROM VIAJE";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getDate(3),rs.getInt(4),rs.getInt(5),b});
+            }
+            tabla.setModel(dtm);
+            con.close();
+        } catch (SQLException ex) {
+        }
+    }
+      
+     
+    public void list_per(JTable tabla, JButton b,JComboBox c) {
+        for (int i = 0; i < col_per.length-1; i++) {
+            c.addItem(col_per[i]);
+        }
         dtm = new DefaultTableModel(null, col_per);
         try {
             sql = "SELECT cedula, nombre1, nombre2, apellido1, apellido2 FROM PERSONA";
@@ -45,22 +89,20 @@ public class mTransaccional{
         }
     }
     
-    
-    
-//    
-//    
-//      public boolean crear() {
-//        sql = "INSERT INTO envio(fecha, codigo_via)"
-//                + " VALUES ('" + getFecha()
-//                + "," + getCodigo_vista()+")";
-//        return con.accion(sql);
-//    }
-// 
-//
-//    public boolean eliminar(int codigo) {
-//        sql = "DELETE FROM envio WHERE codigo=" + codigo + "";
-//        return con.accion(sql);
-//    }
-
-    
+      public void list_env(JTable tabla, JButton b,JComboBox c) {
+          for (int i = 0; i < col_env.length-1; i++) {
+            c.addItem(col_env[i]);
+        }
+        dtm = new DefaultTableModel(null, col_env);
+        try {
+            sql = "SELECT * FROM ENVIO";
+            rs = con.consulta(sql);
+            while (rs.next()) {
+                dtm.addRow(new Object[]{rs.getInt(1),rs.getDate(2),rs.getInt(3),b});
+            }
+            tabla.setModel(dtm);
+            con.close();
+        } catch (SQLException ex) {
+        }
+    }
 }

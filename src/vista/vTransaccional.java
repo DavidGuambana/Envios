@@ -70,9 +70,10 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         return jbSaltarViaje;
     }
 
-    public JLabel getJbTitulo() {
-        return jbTitulo;
+    public JLabel getLbTitulo() {
+        return lbTitulo;
     }
+
 
     public JDialog getJdDialog() {
         return jdDialog;
@@ -176,7 +177,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtRegistros = new javax.swing.JTable();
-        jbTitulo = new javax.swing.JLabel();
+        lbTitulo = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         cbColumnas = new javax.swing.JComboBox<>();
         txtBuscar = new javax.swing.JTextField();
@@ -272,8 +273,8 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jtRegistros.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jtRegistros);
 
-        jbTitulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jbTitulo.setText("Listado de ...");
+        lbTitulo.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
+        lbTitulo.setText("Listado de ...");
 
         jPanel7.setBackground(new java.awt.Color(239, 239, 239));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -338,16 +339,16 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbTitulo)
                     .addComponent(jScrollPane2)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jbTitulo)
+                .addComponent(lbTitulo)
                 .addGap(17, 17, 17)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -1056,12 +1057,12 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbSIGUIENTE;
     private javax.swing.JButton jbSaltarEnvío;
     private javax.swing.JButton jbSaltarViaje;
-    private javax.swing.JLabel jbTitulo;
     private javax.swing.JDialog jdDialog;
     private javax.swing.JPanel jpEnvio;
     private javax.swing.JPanel jpPaquete;
     private javax.swing.JPanel jpViaje;
     private javax.swing.JTable jtRegistros;
+    private javax.swing.JLabel lbTitulo;
     private javax.swing.JSeparator sep_pro;
     private javax.swing.JTabbedPane tpEnvios;
     private javax.swing.JTextField txtBuscar;
