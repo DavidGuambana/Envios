@@ -2,6 +2,8 @@ package modelo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
@@ -138,4 +140,16 @@ public class mTransaccional{
             }
         }
     }
+    
+    public int getCodigoCan(String canton){
+        try {
+            sql = "SELECT codigo FROM CANTON WHERE NOMBRE ='"+canton+"'";
+            rs = con.consulta(sql);
+            rs.next();
+            return rs.getInt(1);
+        } catch (SQLException ex) {
+            return 0;
+        }
+    }
+    
 }

@@ -5,15 +5,25 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Date;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import modelo.mEnvio;
+import modelo.mPaquete;
 import modelo.mTransaccional;
+import modelo.mViaje;
 import vista.vTransaccional;
 
 public final class cTransaccional {
     int num;
     vTransaccional vista;
     mTransaccional modelo;
-
+    
+    mViaje m_via = new mViaje();
+    mEnvio m_env = new mEnvio();
+    mPaquete m_paq = new mPaquete();
+    
+    
     JButton btnAgregar = new JButton();
 
     public cTransaccional(vTransaccional vista, mTransaccional modelo) {
@@ -72,7 +82,72 @@ public final class cTransaccional {
     }
 
     public void siguiente() {
-
+        if (vista.getTpEnvios().getSelectedIndex() == 0) {
+            crear_viaje();
+        }
+        if (vista.getTpEnvios().getSelectedIndex() == 1) {
+            crear_envio();
+        }
+        if (vista.getTpEnvios().getSelectedIndex() == 2) {
+            crear_paquete();
+        }
+    }
+    
+    public void crear_viaje(){
+        Date fecha;
+        try {
+            fecha = vista.getXfecha_viaje().getDate();
+        } catch (Exception e) {
+            fecha = null;
+        }
+        if (vista.getXmatricula().getText().equals("Autoasignado") ||fecha==null|| vista.getXcanton().getSelectedIndex() == 0||
+                vista.getXid_conductor().getText().equals("Autoasignado")) {
+            JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
+        } else{
+            m_via.setMatricula(vista.getXmatricula().getText());
+            Long d = fecha.getTime();
+            java.sql.Date fecha_env = new java.sql.Date(d);
+            m_via.setFecha(fecha_env);
+            m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
+            m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
+            m_via.crear();
+        }
+    }
+    
+    public void crear_envio(){
+        Date fecha;
+        try {
+            fecha = vista.getXfecha_viaje().getDate();
+        } catch (Exception e) {
+            fecha = null;
+        }
+        if (vista.getXmatricula().getText().equals("Autoasignado") ||fecha==null|| vista.getXcanton().getSelectedIndex() == 0||
+                vista.getXid_conductor().getText().equals("Autoasignado")) {
+            JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
+        } else{
+            m_via.setMatricula(vista.getXmatricula().getText());
+            Long d = fecha.getTime();
+            java.sql.Date fecha_env = new java.sql.Date(d);
+            m_via.setFecha(fecha_env);
+            m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
+            m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
+            m_via.crear();
+        }
+    }
+    
+    public void crear_paquete(){
+        if (vista.getXmatricula().getText().equals("Autoasignado")|| vista.getXcanton().getSelectedIndex() == 0||
+                vista.getXid_conductor().getText().equals("Autoasignado")) {
+            JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
+        } else{
+//            m_via.setMatricula(vista.getXmatricula().getText());
+//            Long d = fecha.getTime();
+//            java.sql.Date fecha_env = new java.sql.Date(d);
+//            m_via.setFecha(fecha_env);
+            m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
+            m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
+            m_via.crear();
+        }
     }
 
     public void abrirJDialog(int num) {

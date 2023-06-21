@@ -33,10 +33,10 @@ public class mViaje extends Viaje{
         }
     }
      public boolean crear() {
-        sql = "INSERT INTO viaje( matricula, fecha, codigo_can,id_con)"
+        sql = "INSERT INTO viaje(matricula, fecha, codigo_can,id_con)"
                 + " VALUES ('" + getMatricula()
                 + "','" + getFecha()
-                + "','" + getCodigo_can()
+                + "'," + getCodigo_can()
                 + "," + getId_con()+")";
         return con.accion(sql);
     }
