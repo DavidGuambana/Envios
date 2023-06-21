@@ -1,6 +1,5 @@
 package controlador;
 
-import vista.vT1;
 import vista.vTransaccional;
 
 public class cTransaccional {
@@ -17,7 +16,6 @@ public class cTransaccional {
     }
     
     public void siguiente(){
-        vT1 vt1 = new vT1();
-        vista.getjDesktopPane().add(vt1);
+        
     }
 }
