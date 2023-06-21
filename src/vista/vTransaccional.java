@@ -3,9 +3,12 @@ package vista;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -15,11 +18,21 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    public JButton getBtnBuscar() {
+        return btnBuscar;
+    }
+
+    public JButton getBtnLimpiar() {
+        return btnLimpiar;
+    }
+
+    public JComboBox<String> getCbColumnas() {
+        return cbColumnas;
+    }
+
     public JProgressBar getjProgressBar() {
         return jProgressBar;
     }
-    
-    
 
     public JButton getJbElejirConductor() {
         return jbElejirConductor;
@@ -57,6 +70,14 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         return jbSaltarViaje;
     }
 
+    public JLabel getJbTitulo() {
+        return jbTitulo;
+    }
+
+    public JDialog getJdDialog() {
+        return jdDialog;
+    }
+
     public JPanel getJpEnvio() {
         return jpEnvio;
     }
@@ -69,8 +90,16 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         return jpViaje;
     }
 
+    public JTable getJtRegistros() {
+        return jtRegistros;
+    }
+
     public JTabbedPane getTpEnvios() {
         return tpEnvios;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
     }
 
     public JComboBox<String> getXcanton() {
@@ -136,21 +165,23 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     public JComboBox<String> getXprovincia2() {
         return xprovincia2;
     }
+
+    
     
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        seleccionar_pro = new javax.swing.JDialog();
+        jdDialog = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        t_productos = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        jtRegistros = new javax.swing.JTable();
+        jbTitulo = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        cbxProducto = new javax.swing.JComboBox<>();
-        txtBuscar_pro = new javax.swing.JTextField();
-        btnBuscar_pro = new javax.swing.JButton();
-        btnLimpiar_pro = new javax.swing.JButton();
+        cbColumnas = new javax.swing.JComboBox<>();
+        txtBuscar = new javax.swing.JTextField();
+        btnBuscar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         sep_pro = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
@@ -219,14 +250,14 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        t_productos = new javax.swing.JTable(){
+        jtRegistros = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        t_productos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 255)));
-        t_productos.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
-        t_productos.setModel(new javax.swing.table.DefaultTableModel(
+        jtRegistros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 255)));
+        jtRegistros.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
+        jtRegistros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -234,31 +265,32 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
             }
         ));
-        t_productos.setOpaque(false);
-        t_productos.setSelectionBackground(new java.awt.Color(102, 255, 102));
-        t_productos.getTableHeader().setResizingAllowed(false);
-        t_productos.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(t_productos);
+        jtRegistros.setOpaque(false);
+        jtRegistros.setRowHeight(40);
+        jtRegistros.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        jtRegistros.getTableHeader().setResizingAllowed(false);
+        jtRegistros.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jtRegistros);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setText("Listado de productos");
+        jbTitulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jbTitulo.setText("Listado de ...");
 
         jPanel7.setBackground(new java.awt.Color(239, 239, 239));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        cbxProducto.setBackground(new java.awt.Color(239, 239, 239));
-        cbxProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID producto", "Nombre", "Precio", "Stock", "Categoria" }));
-        cbxProducto.setBorder(null);
+        cbColumnas.setBackground(new java.awt.Color(239, 239, 239));
+        cbColumnas.setBorder(null);
 
-        txtBuscar_pro.setBackground(new java.awt.Color(239, 239, 239));
-        txtBuscar_pro.setBorder(null);
+        txtBuscar.setBackground(new java.awt.Color(239, 239, 239));
+        txtBuscar.setBorder(null);
 
-        btnBuscar_pro.setBackground(new java.awt.Color(239, 239, 239));
-        btnBuscar_pro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/lupa (1).png"))); // NOI18N
-        btnBuscar_pro.setBorder(null);
+        btnBuscar.setBackground(new java.awt.Color(239, 239, 239));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/lupa (1).png"))); // NOI18N
+        btnBuscar.setBorder(null);
 
-        btnLimpiar_pro.setBackground(new java.awt.Color(239, 239, 239));
-        btnLimpiar_pro.setBorder(null);
+        btnLimpiar.setBackground(new java.awt.Color(239, 239, 239));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/iconos/marca-x.png"))); // NOI18N
+        btnLimpiar.setBorder(null);
 
         sep_pro.setOrientation(javax.swing.SwingConstants.VERTICAL);
         sep_pro.setToolTipText("");
@@ -271,31 +303,31 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(cbxProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(cbColumnas, 0, 184, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtBuscar_pro, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnLimpiar_pro, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(sep_pro, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar_pro, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLimpiar_pro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator3)
                     .addComponent(sep_pro)
-                    .addComponent(txtBuscar_pro)
-                    .addComponent(btnBuscar_pro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cbxProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+                    .addComponent(txtBuscar)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbColumnas, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                 .addGap(8, 8, 8))
         );
 
@@ -306,8 +338,8 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jbTitulo)
                     .addComponent(jScrollPane2)
-                    .addComponent(jLabel4)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
@@ -315,22 +347,22 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel4)
-                .addGap(20, 20, 20)
+                .addComponent(jbTitulo)
+                .addGap(17, 17, 17)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
         );
 
-        javax.swing.GroupLayout seleccionar_proLayout = new javax.swing.GroupLayout(seleccionar_pro.getContentPane());
-        seleccionar_pro.getContentPane().setLayout(seleccionar_proLayout);
-        seleccionar_proLayout.setHorizontalGroup(
-            seleccionar_proLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jdDialogLayout = new javax.swing.GroupLayout(jdDialog.getContentPane());
+        jdDialog.getContentPane().setLayout(jdDialogLayout);
+        jdDialogLayout.setHorizontalGroup(
+            jdDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        seleccionar_proLayout.setVerticalGroup(
-            seleccionar_proLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jdDialogLayout.setVerticalGroup(
+            jdDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
@@ -354,7 +386,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("¡En esta sección puedes registrar paso a paso en envío!");
+        jLabel3.setText("¡En esta sección puedes registrar paso a paso un envío!");
 
         jbSIGUIENTE.setBackground(new java.awt.Color(0, 102, 153));
         jbSIGUIENTE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -514,12 +546,10 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpViajeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpViajeLayout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
-                .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(239, Short.MAX_VALUE))
         );
         jpViajeLayout.setVerticalGroup(
             jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -618,12 +648,10 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             jpEnvioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpEnvioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpEnvioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbSaltarEnvío, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jpEnvioLayout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
-                .addComponent(jbSaltarEnvío, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(239, Short.MAX_VALUE))
         );
         jpEnvioLayout.setVerticalGroup(
             jpEnvioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -980,9 +1008,9 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextField1;
     private javax.swing.JTextField JTextField2;
-    private javax.swing.JButton btnBuscar_pro;
-    private javax.swing.JButton btnLimpiar_pro;
-    private javax.swing.JComboBox<String> cbxProducto;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JComboBox<String> cbColumnas;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -995,7 +1023,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1029,14 +1056,15 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbSIGUIENTE;
     private javax.swing.JButton jbSaltarEnvío;
     private javax.swing.JButton jbSaltarViaje;
+    private javax.swing.JLabel jbTitulo;
+    private javax.swing.JDialog jdDialog;
     private javax.swing.JPanel jpEnvio;
     private javax.swing.JPanel jpPaquete;
     private javax.swing.JPanel jpViaje;
-    private javax.swing.JDialog seleccionar_pro;
+    private javax.swing.JTable jtRegistros;
     private javax.swing.JSeparator sep_pro;
-    private javax.swing.JTable t_productos;
     private javax.swing.JTabbedPane tpEnvios;
-    private javax.swing.JTextField txtBuscar_pro;
+    private javax.swing.JTextField txtBuscar;
     private javax.swing.JComboBox<String> xcanton;
     private javax.swing.JComboBox<String> xcanton2;
     private javax.swing.JTextField xcedula_destinatario;

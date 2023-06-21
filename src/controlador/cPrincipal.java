@@ -6,6 +6,7 @@ import modelo.mCamion;
 import modelo.mConductor;
 import modelo.mMarcaModelo;
 import modelo.mPersona;
+import modelo.mTransaccional;
 import modelo.mUbicacion;
 import vista.vCamion;
 import vista.vConductor;
@@ -110,13 +111,14 @@ public final class cPrincipal {
     }
     
     public void menuTransaccional(){
-        try {
+        mTransaccional model = new mTransaccional(); 
+       try {
             p.getJdp_principal().add(vistransaccional);
         } catch (Exception e) {
             vistransaccional = new vTransaccional();
             p.getJdp_principal().add(vistransaccional);
         }
-        cTransaccional controlador = new cTransaccional(vistransaccional);
+        cTransaccional controlador = new cTransaccional(vistransaccional,model);
     }
 
     public void Conectar() {
