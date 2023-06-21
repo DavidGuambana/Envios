@@ -252,11 +252,6 @@ public class vPrincipal extends javax.swing.JFrame {
         jcTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "localhost", "LAN" }));
         jcTipo.setToolTipText("Seleccione el tipo de conexión...");
         jcTipo.setBorder(null);
-        jcTipo.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jcTipoItemStateChanged(evt);
-            }
-        });
 
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -756,14 +751,6 @@ public class vPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jcTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcTipoItemStateChanged
-        if (jcTipo.getSelectedIndex()==0) {
-            txtIP.setText("127.0.0.1");
-        } else{
-            txtIP.setText("");
-        }
-    }//GEN-LAST:event_jcTipoItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Output;

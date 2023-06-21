@@ -43,6 +43,8 @@ public final class cPrincipal {
         p.getJbConectar().addActionListener(l -> Conectar());
         p.getJbDesconectar().addActionListener(l -> Desconectar());
         p.getBtnEjecutar().addActionListener(l -> RUN_SQL());
+        p.getJcTipo().addActionListener(l-> cambiar_tc());
+        
         
         p.getJb_nuevo_envio().addActionListener(l -> menuTransaccional());
         p.getJb_nuevo_cliente().addActionListener(l -> menuPersona());
@@ -170,6 +172,13 @@ public final class cPrincipal {
                 p.getjDialogRS().setLocationRelativeTo(p);
                 p.getjDialogRS().setVisible(true);
             }
+        }
+    }
+    public void cambiar_tc(){
+        if (p.getJcTipo().getSelectedIndex()==0) {
+            p.getTxtIP().setText("127.0.0.1");
+        } else{
+            p.getTxtIP().setText("");
         }
     }
 }

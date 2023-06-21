@@ -166,7 +166,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     public JComboBox<String> getXprovincia2() {
         return xprovincia2;
     }
-
     
     
     
@@ -437,6 +436,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jLabel7.setText("Fecha de viaje:");
 
         xprovincia.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        xprovincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(51, 51, 51));
@@ -447,6 +447,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jLabel12.setText("Cantón:");
 
         xcanton.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        xcanton.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
 
         xfecha_viaje.setDateFormatString("yyyy-MM-dd");
         xfecha_viaje.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
@@ -725,12 +726,14 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jLabel18.setText("Provincia:");
 
         xprovincia2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        xprovincia2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
 
         jLabel19.setFont(new java.awt.Font("Yu Gothic UI Light", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 51, 51));
         jLabel19.setText("Cantón:");
 
         xcanton2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
+        xcanton2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..." }));
 
         jScrollPane3.setBorder(null);
 

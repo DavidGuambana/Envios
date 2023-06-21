@@ -17,14 +17,23 @@ public final class cTransaccional {
         this.vista = vista;
         this.modelo = modelo;
         vista.setVisible(true);
-        control();
+        
         btnAgregar.setBackground(Color.WHITE);
         InsertarIcono(btnAgregar, "/vista/iconos/agregar.png");
         vista.getJtRegistros().setDefaultRenderer(Object.class, new BotonTabla());
+         modelo.list_provincia(vista.getXprovincia());
+         modelo.list_provincia(vista.getXprovincia2());
+         modelo.list_canton(vista.getXcanton(), vista.getXprovincia());
+         modelo.list_canton(vista.getXcanton2(), vista.getXprovincia2());
+         control();
     }
 
     public void control() {
         vista.getJbSIGUIENTE().addActionListener(l -> siguiente());
+        
+        //combobox
+        vista.getXprovincia().addActionListener(l-> modelo.list_canton(vista.getXcanton(), vista.getXprovincia()));
+        vista.getXprovincia2().addActionListener(l-> modelo.list_canton(vista.getXcanton2(), vista.getXprovincia2()));
 
         //Control de JDialog:
         vista.getJbElejirMatricula().addActionListener(l -> abrirJDialog(1));
