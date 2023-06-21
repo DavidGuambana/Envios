@@ -12,6 +12,7 @@ import vista.vConductor;
 import vista.vModelo;
 import vista.vPersona;
 import vista.vPrincipal;
+import vista.vTransaccional;
 import vista.vUbicacion;
 
 public final class cPrincipal {
@@ -22,6 +23,7 @@ public final class cPrincipal {
     vCamion viscamion;
     vConductor visconduc;
     vModelo vismarcamodelo;
+    vTransaccional vistransaccional;
     
     
     public cPrincipal(vPrincipal p) {
@@ -37,7 +39,8 @@ public final class cPrincipal {
     public void control() {
         p.getJbConectar().addActionListener(l -> Conectar());
         p.getJbDesconectar().addActionListener(l -> Desconectar());
-
+        p.getJb_nuevo_envio().addActionListener(l -> menuTransaccional());
+        
         p.getJb_nuevo_cliente().addActionListener(l -> menuPersona());
         p.getJb_ubicaciones().addActionListener(l -> menuUbicaciones());
         p.getJb_nuevo_chofer().addActionListener(l -> menuConductores());
@@ -83,8 +86,8 @@ public final class cPrincipal {
         }
         cCamion controlador = new cCamion(model, viscamion);
     }
-      public void menuConductores(){
 
+    public void menuConductores() {
         mConductor model = new mConductor();
         try {
             p.getJdp_principal().add(visconduc);
@@ -96,7 +99,6 @@ public final class cPrincipal {
     }
 
     public void menuMarcaModelo() {
-
         mMarcaModelo model = new mMarcaModelo();
         try {
             p.getJdp_principal().add(vismarcamodelo);
@@ -106,12 +108,21 @@ public final class cPrincipal {
         }
         cMarcaModelo controlador = new cMarcaModelo(model, vismarcamodelo);
     }
+    
+    public void menuTransaccional(){
+        try {
+            p.getJdp_principal().add(vistransaccional);
+        } catch (Exception e) {
+            vistransaccional = new vTransaccional();
+            p.getJdp_principal().add(vistransaccional);
+        }
+        cTransaccional controlador = new cTransaccional(vistransaccional);
+    }
 
     public void Conectar() {
         if (p.getTxtIP().getText().isEmpty() || p.getTxtUser().getText().isEmpty() || p.getTxtPassword().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Aún hay campos por completar!");
         } else {
-
             Conexion.IP = p.getTxtIP().getText();
             Conexion.user = p.getTxtUser().getText();
             Conexion.password = p.getTxtPassword().getText();
@@ -121,9 +132,7 @@ public final class cPrincipal {
                 p.setLocationRelativeTo(null);
                 setearVariables();
                 p.setVisible(true);
-                
             }
-
         }
     }
 
