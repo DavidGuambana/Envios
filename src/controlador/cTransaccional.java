@@ -111,6 +111,7 @@ public final class cTransaccional {
             m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
             m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
             m_via.crear();
+            
         }
     }
     
