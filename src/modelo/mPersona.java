@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class mPersona extends Persona {
     
@@ -82,6 +84,25 @@ public class mPersona extends Persona {
         } catch (SQLException ex) {
             return null;
         }
+    }
+      public boolean existepersona (String cedula){
+         boolean exist = false;
+        try {
+            sql = "SELECT COUNT(CEDULA)FROM PERSONA WHERE CEDULA="+cedula+"";
+            System.out.println(sql);
+            rs = con.consulta(sql);
+            rs.next();
+            if (rs.getInt(1) == 0) {
+                exist = false;
+                System.out.println("entra false");
+            } else {
+                exist = true;
+                System.out.println("entra true");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(mConductor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return exist;
     }
 
 

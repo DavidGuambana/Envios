@@ -93,15 +93,17 @@ public final class cPrincipal {
         cCamion controlador = new cCamion(model, viscamion);
     }
 
-    public void menuConductores() {
+      public void menuConductores() {
         mConductor model = new mConductor();
+        mPersona modper = new mPersona();
+        
         try {
             p.getJdp_principal().add(visconduc);
         } catch (Exception e) {
             visconduc = new vConductor();
             p.getJdp_principal().add(visconduc);
         }
-        cConductores controlador = new cConductores(model, visconduc);
+        cConductores controlador = new cConductores(model,visconduc,modper);
     }
 
     public void menuMarcaModelo() {
