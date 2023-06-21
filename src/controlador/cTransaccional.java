@@ -2,12 +2,15 @@ package controlador;
 
 import controlador.util.BotonTabla;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import modelo.mTransaccional;
 import vista.vTransaccional;
 
 public final class cTransaccional {
-
+    int num;
     vTransaccional vista;
     mTransaccional modelo;
 
@@ -35,13 +38,37 @@ public final class cTransaccional {
         vista.getXprovincia().addActionListener(l-> modelo.list_canton(vista.getXcanton(), vista.getXprovincia()));
         vista.getXprovincia2().addActionListener(l-> modelo.list_canton(vista.getXcanton2(), vista.getXprovincia2()));
 
-        //Control de JDialog:
-        vista.getJbElejirMatricula().addActionListener(l -> abrirJDialog(1));
-        vista.getJbElejirConductor().addActionListener(l -> abrirJDialog(2));
-        vista.getJbElejirViaje().addActionListener(l -> abrirJDialog(3));
-        vista.getJbElejirRemitente().addActionListener(l -> abrirJDialog(4));
-        vista.getJbElejirDestinatario().addActionListener(l -> abrirJDialog(5));
-        vista.getJbElejirEnvio().addActionListener(l -> abrirJDialog(6));
+        //Control de JDialog y click tabla:
+        vista.getJbElejirMatricula().addActionListener(l -> {
+            abrirJDialog(1);
+            num = 1;
+            vista.getJtRegistros().addMouseListener(ml);
+        });
+        vista.getJbElejirConductor().addActionListener(l -> {
+            abrirJDialog(2);
+            num = 2;
+            vista.getJtRegistros().addMouseListener(ml);
+        });
+        vista.getJbElejirViaje().addActionListener(l -> {
+            abrirJDialog(3);
+            num = 3;
+            vista.getJtRegistros().addMouseListener(ml);
+        });
+        vista.getJbElejirRemitente().addActionListener(l -> {
+            abrirJDialog(4);
+            num = 4;
+        vista.getJtRegistros().addMouseListener(ml);
+        });
+        vista.getJbElejirDestinatario().addActionListener(l -> {
+            abrirJDialog(5);
+            num = 5;
+        vista.getJtRegistros().addMouseListener(ml);
+        });
+        vista.getJbElejirEnvio().addActionListener(l -> {
+            abrirJDialog(6);
+            num = 6;
+        vista.getJtRegistros().addMouseListener(ml);
+        });
     }
 
     public void siguiente() {
@@ -79,6 +106,36 @@ public final class cTransaccional {
 
     public void InsertarIcono(JButton bot, String ruta) { //insertar icono en boton:
         bot.setIcon(new javax.swing.ImageIcon(getClass().getResource(ruta)));
+    }
+    
+    MouseListener ml = new MouseAdapter() {
+        @Override
+        public void mousePressed(MouseEvent me) {
+            if (me.getClickCount() == 1) {
+                String id = vista.getJtRegistros().getValueAt(vista.getJtRegistros().getSelectedRow(), 0).toString();
+                int xcolum = vista.getJtRegistros().getColumnModel().getColumnIndexAtX(me.getX());
+                int xrow = me.getY() / vista.getJtRegistros().getRowHeight();
+                if (xcolum <= vista.getJtRegistros().getColumnCount() && xcolum >= 0 && xrow <= vista.getJtRegistros().getRowCount() && xrow >= 0) {
+                    Object obj = vista.getJtRegistros().getValueAt(xrow, xcolum);
+                    if (obj instanceof JButton) {
+                        setear_id(num, id);
+                        vista.getJdDialog().setVisible(false);
+                        vista.getJtRegistros().removeMouseListener(ml);
+                    }
+                }
+            }
+        }
+    };
+    
+    public void setear_id(int num, String id){
+        switch (num) {
+            case 1: vista.getXmatricula().setText(id);break;
+            case 2: vista.getXid_conductor().setText(id);break;
+            case 3: vista.getXcodigo_viaje().setText(id);break;
+            case 4: vista.getXcedula_remitente().setText(id);break;
+            case 5: vista.getXcedula_destinatario().setText(id);break;
+            case 6: vista.getXcodigo_envio().setText(id);break;
+        }
     }
 
 }

@@ -265,9 +265,11 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
             }
         ));
+        jtRegistros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jtRegistros.setOpaque(false);
         jtRegistros.setRowHeight(40);
-        jtRegistros.setSelectionBackground(new java.awt.Color(102, 255, 102));
+        jtRegistros.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        jtRegistros.setSelectionForeground(new java.awt.Color(255, 255, 255));
         jtRegistros.getTableHeader().setResizingAllowed(false);
         jtRegistros.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jtRegistros);
