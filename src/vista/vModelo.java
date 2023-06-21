@@ -6,6 +6,10 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class vModelo extends javax.swing.JInternalFrame {
+    
+    public vModelo() {
+        initComponents();
+    }
 
     public JButton getBtnBuscar() {
         return btnBuscar;

@@ -2,14 +2,17 @@ package controlador;
 import modelo.mMarcaModelo;
 import vista.vModelo;
 
-public class cMarcaModelo{
+public final class cMarcaModelo{
     mMarcaModelo mmarcamodelo;
     vModelo vmodelo;
+    
 
     public cMarcaModelo(mMarcaModelo mmarcamodelo, vModelo vmodelo) {
         this.mmarcamodelo = mmarcamodelo;
         this.vmodelo = vmodelo;
         vmodelo.setVisible(true);
+        iniciar();
+        listar();
     }
     
     
@@ -40,6 +43,8 @@ public class cMarcaModelo{
                     break;
             }
             mmarcamodelo.buscar(vmodelo.getTxtBuscar().getText(), columna, vmodelo.getJtMarcasModelos());
+        } else {
+            mmarcamodelo.listar(vmodelo.getJtMarcasModelos());
         }
     }
 }
