@@ -35,7 +35,7 @@ public class mEnvio extends Envio{
       public boolean crear() {
         sql = "INSERT INTO envio(fecha, codigo_via)"
                 + " VALUES ('" + getFecha()
-                + "," + getCodigo_vista()+")";
+                + "," + getCodigo_via()+")";
         return con.accion(sql);
     }
  
@@ -44,6 +44,4 @@ public class mEnvio extends Envio{
         sql = "DELETE FROM envio WHERE codigo=" + codigo + "";
         return con.accion(sql);
     }
-
-    
 }

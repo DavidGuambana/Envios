@@ -40,9 +40,21 @@ public class mViaje extends Viaje{
                 + "," + getId_con()+")";
         return con.accion(sql);
     }
-      public boolean eliminar(int codigo) {
+     public boolean eliminar(int codigo) {
         sql = "DELETE FROM viaje WHERE codigo=" + codigo + "";
         return con.accion(sql);
+    }
+
+    public int ultimoCodigo() {
+        int id = 0;
+        try {
+            sql = "SELECT * FROM (SELECT CODIGO FROM VIAJE ORDER BY CODIGO DESC) WHERE ROWNUM <= 1;;";
+            rs = con.consulta(sql);
+            rs.next();
+            id = rs.getInt(1);
+        } catch (SQLException ex) {
+        }
+        return id;
     }
 
 }

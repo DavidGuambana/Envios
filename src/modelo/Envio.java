@@ -5,15 +5,15 @@ import java.util.Date;
 public class Envio {
     private int codigo;
     private Date fecha;
-    private int codigo_vista;
+    private int codigo_via;
 
     public Envio() {
     }
-    
-    public Envio(int codigo, Date fecha, int codigo_vista) {
+
+    public Envio(int codigo, Date fecha, int codigo_via) {
         this.codigo = codigo;
         this.fecha = fecha;
-        this.codigo_vista = codigo_vista;
+        this.codigo_via = codigo_via;
     }
 
     public int getCodigo() {
@@ -32,16 +32,16 @@ public class Envio {
         this.fecha = fecha;
     }
 
-    public int getCodigo_vista() {
-        return codigo_vista;
+    public int getCodigo_via() {
+        return codigo_via;
     }
 
-    public void setCodigo_vista(int codigo_vista) {
-        this.codigo_vista = codigo_vista;
+    public void setCodigo_via(int codigo_via) {
+        this.codigo_via = codigo_via;
     }
 
     @Override
     public String toString() {
-        return "Envio{" + "codigo=" + codigo + ", fecha=" + fecha + ", codigo_vista=" + codigo_vista + '}';
+        return "Envio{" + "codigo=" + codigo + ", fecha=" + fecha + ", codigo_via=" + codigo_via + '}';
     }
 }

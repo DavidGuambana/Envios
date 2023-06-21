@@ -111,28 +111,26 @@ public final class cTransaccional {
             m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
             m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
             m_via.crear();
-            
+            vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
         }
     }
     
     public void crear_envio(){
         Date fecha;
         try {
-            fecha = vista.getXfecha_viaje().getDate();
+            fecha = vista.getXfecha_envio().getDate();
         } catch (Exception e) {
             fecha = null;
         }
-        if (vista.getXmatricula().getText().equals("Autoasignado") ||fecha==null|| vista.getXcanton().getSelectedIndex() == 0||
-                vista.getXid_conductor().getText().equals("Autoasignado")) {
+        if (vista.getXcodigo_viaje().getText().equals("Autoasignado") ||fecha==null) {
             JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
         } else{
-            m_via.setMatricula(vista.getXmatricula().getText());
+            m_env.setCodigo_via(Integer.parseInt(vista.getXcodigo_viaje().getText()));
             Long d = fecha.getTime();
-            java.sql.Date fecha_env = new java.sql.Date(d);
-            m_via.setFecha(fecha_env);
-            m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
-            m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
-            m_via.crear();
+            java.sql.Date fecha_via = new java.sql.Date(d);
+            m_env.setFecha(fecha_via);
+            m_env.crear();
+             vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
         }
     }
     
