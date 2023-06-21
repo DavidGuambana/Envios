@@ -5,6 +5,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import vista.vPrincipal;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import modelo.mPrincipal;
 
 public class Main {
 
@@ -16,6 +17,7 @@ public class Main {
             Logger.getLogger(vPrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
         vPrincipal vp = new vPrincipal();
-        cPrincipal ctrlprprincipal = new cPrincipal(vp);
+        mPrincipal mp = new  mPrincipal();
+        cPrincipal ctrlprprincipal = new cPrincipal(vp,mp);
     }
 }

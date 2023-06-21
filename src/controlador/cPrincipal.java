@@ -6,6 +6,7 @@ import modelo.mCamion;
 import modelo.mConductor;
 import modelo.mMarcaModelo;
 import modelo.mPersona;
+import modelo.mPrincipal;
 import modelo.mTransaccional;
 import modelo.mUbicacion;
 import vista.vCamion;
@@ -25,10 +26,11 @@ public final class cPrincipal {
     vConductor visconduc;
     vModelo vismarcamodelo;
     vTransaccional vistransaccional;
-    
-    
-    public cPrincipal(vPrincipal p) {
+    mPrincipal m;
+
+    public cPrincipal(vPrincipal p, mPrincipal m) {
         this.p = p;
+        this.m = m;
         control();
         p.getjDialog().setSize(330, 530);
         p.getjDialog().setLocationRelativeTo(p);
@@ -37,11 +39,12 @@ public final class cPrincipal {
     
     Conexion con;
 
-    public void control() {
+    public void control() { 
         p.getJbConectar().addActionListener(l -> Conectar());
         p.getJbDesconectar().addActionListener(l -> Desconectar());
-        p.getJb_nuevo_envio().addActionListener(l -> menuTransaccional());
+        p.getBtnEjecutar().addActionListener(l -> RUN_SQL());
         
+        p.getJb_nuevo_envio().addActionListener(l -> menuTransaccional());
         p.getJb_nuevo_cliente().addActionListener(l -> menuPersona());
         p.getJb_ubicaciones().addActionListener(l -> menuUbicaciones());
         p.getJb_nuevo_chofer().addActionListener(l -> menuConductores());
@@ -159,5 +162,14 @@ public final class cPrincipal {
         }
         p.getLbEstado().setText("Activo");
         //COUNT DE REGISTROS
+    }
+    public void RUN_SQL() {
+        if (!p.getImput().getText().isEmpty()) {
+            if (m.llenarTabla(p.getJtRS(), p.getImput().getText())) {
+                p.getjDialogRS().setSize(792, 510);
+                p.getjDialogRS().setLocationRelativeTo(p);
+                p.getjDialogRS().setVisible(true);
+            }
+        }
     }
 }

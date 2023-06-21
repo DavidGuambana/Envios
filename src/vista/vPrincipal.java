@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -105,20 +106,12 @@ public class vPrincipal extends javax.swing.JFrame {
         return jDialog;
     }
 
-    public static JTextArea getOutput() {
-        return Output;
-    }
-
     public JButton getBtnBorrar() {
         return btnBorrar;
     }
 
     public JButton getBtnEjecutar() {
         return btnEjecutar;
-    }
-
-    public static JTextArea getImput() {
-        return imput;
     }
 
     public JComboBox<String> getJcCount() {
@@ -144,10 +137,24 @@ public class vPrincipal extends javax.swing.JFrame {
     public JLabel getLbTipo() {
         return lbTipo;
     }
-    
-    
-    
-    
+
+    public JDialog getjDialogRS() {
+        return jDialogRS;
+    }
+
+    public JTable getJtRS() {
+        return jtRS;
+    }
+
+    public JTextArea getOutput() {
+        return Output;
+    }
+
+    public JTextArea getImput() {
+        return imput;
+    }
+
+
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -164,6 +171,11 @@ public class vPrincipal extends javax.swing.JFrame {
         txtUser = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
+        jDialogRS = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jtRS = new javax.swing.JTable();
+        jbTitulo = new javax.swing.JLabel();
         jdp_principal = new javax.swing.JDesktopPane();
         jToolBar = new javax.swing.JToolBar();
         jSeparator10 = new javax.swing.JToolBar.Separator();
@@ -333,6 +345,66 @@ public class vPrincipal extends javax.swing.JFrame {
         jDialogLayout.setVerticalGroup(
             jDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jtRS = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
+        jtRS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 255)));
+        jtRS.setFont(new java.awt.Font("Yu Gothic Light", 0, 14)); // NOI18N
+        jtRS.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jtRS.setOpaque(false);
+        jtRS.setRowHeight(40);
+        jtRS.setSelectionBackground(new java.awt.Color(51, 51, 51));
+        jtRS.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jtRS.getTableHeader().setResizingAllowed(false);
+        jtRS.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(jtRS);
+
+        jbTitulo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jbTitulo.setText("RESULTADO DE LA CONSULTA:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbTitulo)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 738, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 20, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jbTitulo)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
+        );
+
+        javax.swing.GroupLayout jDialogRSLayout = new javax.swing.GroupLayout(jDialogRS.getContentPane());
+        jDialogRS.getContentPane().setLayout(jDialogRSLayout);
+        jDialogRSLayout.setHorizontalGroup(
+            jDialogRSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jDialogRSLayout.setVerticalGroup(
+            jDialogRSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -694,11 +766,12 @@ public class vPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jcTipoItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextArea Output;
+    private javax.swing.JTextArea Output;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnEjecutar;
-    public static javax.swing.JTextArea imput;
+    private javax.swing.JTextArea imput;
     private javax.swing.JDialog jDialog;
+    private javax.swing.JDialog jDialogRS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -716,7 +789,9 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JToolBar.Separator jSeparator10;
@@ -730,6 +805,7 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar;
     private javax.swing.JButton jbConectar;
     private javax.swing.JButton jbDesconectar;
+    private javax.swing.JLabel jbTitulo;
     private javax.swing.JButton jb_marcas_modelos;
     private javax.swing.JButton jb_nuevo_camion;
     private javax.swing.JButton jb_nuevo_chofer;
@@ -749,6 +825,7 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmb_nuevo_envio;
     private javax.swing.JMenuItem jmb_paquetes;
     private javax.swing.JMenuItem jmb_viajes;
+    private javax.swing.JTable jtRS;
     private javax.swing.JLabel lbEstado;
     private javax.swing.JLabel lbRegistros;
     private javax.swing.JLabel lbTipo;
