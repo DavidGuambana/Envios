@@ -237,7 +237,6 @@ public class vPrincipal extends javax.swing.JFrame {
         jLabel14.setText("Usuario");
 
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtUser.setText("DAVID");
         txtUser.setToolTipText("Ingrese el usuario...");
         txtUser.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 255)));
 
@@ -245,7 +244,6 @@ public class vPrincipal extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Contraseña");
 
-        txtPassword.setText("1234");
         txtPassword.setToolTipText("Ingrese la contraseña...");
         txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 255)));
 
