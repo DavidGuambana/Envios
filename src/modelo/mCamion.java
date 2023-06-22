@@ -17,7 +17,6 @@ public class mCamion extends Camion{
             } else {
                 sql = "SELECT matricula, codigo_mod, potencia FROM camion WHERE matricula='"+matricula+"'";
             }
-            System.out.println(sql);
             rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
@@ -38,7 +37,6 @@ public class mCamion extends Camion{
                 + " VALUES ('" + getMatricula()
                 + "'," + getModelo()
                 + "," + getPotencia()+")";
-          System.out.println(sql);
         return con.accion(sql);
     }
       public boolean actualizar() {
@@ -50,7 +48,11 @@ public class mCamion extends Camion{
     }
     public boolean eliminar(String matricula){
         sql = "DELETE FROM camion WHERE matricula='"+matricula+"'";
-        return con.accion(sql);
+        try {
+            return con.accion(sql);
+        } catch (Exception e) {
+            return false;
+        }
     }
     public List<Camion> buscar(String txt, String campo) {
         List<Camion> camiones = new ArrayList<>();

@@ -587,4 +587,6 @@ public class vPersona extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_nombre2;
     private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
+
+   
 }

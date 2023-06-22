@@ -25,7 +25,6 @@ public class mConductor extends Conductor {
             rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
-//   
                     Conductor conductor = new Conductor(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getString(4));
                     conductores.add(conductor);
                 }
@@ -69,14 +68,15 @@ public class mConductor extends Conductor {
             sql = "SELECT COUNT(CEDULA_PER)FROM CONDUCTOR WHERE CEDULA_PER=" + cedula + "";
             System.out.println(sql);
             rs = con.consulta(sql);
-            rs.next();
-            if (rs.getInt(1) == 0) {
-                exist = true;
-                System.out.println("entra false");
-            } else {
-                exist = false;
-                System.out.println("entra true");
+            if (rs != null) {
+                rs.next();
+                if (rs.getInt(1) == 0) {
+                    exist = true;
+                } else {
+                    exist = false;
+                }
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(mConductor.class.getName()).log(Level.SEVERE, null, ex);
         }

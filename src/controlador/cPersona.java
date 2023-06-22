@@ -1,6 +1,9 @@
 package controlador;
 
+import controlador.util.Validar;
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -33,6 +36,8 @@ public class cPersona {
         vista.setVisible(true);  
         visualizar("");
         seleccionar(vista.getJtPersonas());
+        crearmodo();
+        controlKey();
     }
     public void iniciarCtrlBtn() {
         vista.getJb_ModoEditar().addActionListener(l -> editarmodo());
@@ -104,8 +109,9 @@ public class cPersona {
             vista.getTxt_telefono().setText(""); 
         
     }
-       
-        public void llenarPerfil() {
+
+    public void llenarPerfil() {
+
         personas = modelo.listar(id);
         if (!personas.isEmpty()) {
             vista.getTxt_cedula().setText(personas.get(0).getCedula());
@@ -118,11 +124,11 @@ public class cPersona {
             vista.getCb_canton().setSelectedIndex(personas.get(0).getCodigo_can());
             String nombrec = vista.getCb_canton().getSelectedItem().toString();
             vista.getCb_provincia().setSelectedIndex(modubi.obteneridPRO(nombrec));
-             
-             
+
         }
     }
-        public void seleccionar(JTable t) {
+
+    public void seleccionar(JTable t) {
         t.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
@@ -133,46 +139,49 @@ public class cPersona {
             }
         });
     }
-    public void accionboton( ) {
+
+    public void accionboton() {
         if (vista.getJbOK().getText().equals("MODIFICAR")) {
-             setearDatos();
-             modelo.actualizar();
-             visualizar("");
+            if (setearDatos()) {
+                modelo.actualizar();
+                visualizar("");
+            }
         }
         if (vista.getJbOK().getText().equals("REGISTRAR")) {
-             setearDatos();
-             modelo.crear();
-             visualizar("");
-        }
-        if (vista.getJbOK().getText().equals("ELIMINAR")) {
-               if (JOptionPane.showConfirmDialog(null, 
-                "¿Está seguro de que desea eliminar el registro seleccionado?",
-                "Eliminar registro", JOptionPane.YES_NO_OPTION, 
-                JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
-             
-            try {
-                modelo.eliminar(vista.getTxt_cedula().getText());
+            if (setearDatos()) {
+                modelo.crear();
                 visualizar("");
-                JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
             }
-
-        } else {
             
         }
+        if (vista.getJbOK().getText().equals("ELIMINAR")) {
+            if (JOptionPane.showConfirmDialog(null,
+                    "¿Está seguro de que desea eliminar el registro seleccionado?",
+                    "Eliminar registro", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
 
-//            modelo.eliminar(vista.getTxt_cedula().getText());
-//            visualizar("");
+                try {
+                    modelo.eliminar(vista.getTxt_cedula().getText());
+                    visualizar("");
+                    JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
+                    crearmodo();
 
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
+                }
+
+            }
         }
-        
+
     }
-     public void setearDatos() {
+     public boolean setearDatos() {
+        boolean correcto = false;
         try {
-            if (vista.getTxt_cedula().getText().isEmpty()||vista.getTxt_nombre1().getText().isEmpty()|| vista.getTxt_nombre2().getText().isEmpty() || vista.getTxt_direccion().getText().isEmpty()|| vista.getTxt_telefono().getText().isEmpty()) {
+            if (!Validar.cedula(vista.getTxt_cedula().getText())||vista.getTxt_cedula().getText().isEmpty()||vista.getTxt_nombre1().getText().isEmpty()|| vista.getTxt_nombre2().getText().isEmpty() || vista.getTxt_direccion().getText().isEmpty()|| vista.getTxt_telefono().getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "¡Aun hay campos por completar!");
+                if (!Validar.cedula(vista.getTxt_cedula().getText())) {
+                    JOptionPane.showMessageDialog(null, "¡Cédula incorrecta!");
+                }
             } else {
                 modelo.setCedula(vista.getTxt_cedula().getText());
                 modelo.setNombre1(vista.getTxt_nombre1().getText());
@@ -186,11 +195,13 @@ public class cPersona {
                 System.out.println(nombrec);
                 System.out.println(modubi.obtenerid(nombrec));
                 modelo.setCodigo_can(modubi.obtenerid(nombrec));
-
+                correcto = true;
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Algunos datos no son correctos!");
+            correcto = false;
         }
+        return correcto;
     }
     public void blockboton(){
         vista.getTxt_cedula().setEditable(false);
@@ -222,6 +233,48 @@ public class cPersona {
           vista.getCb_provincia().setBackground(Color.WHITE);
     
 }
-        
-
+      public void controlKey() {
+        vista.getTxt_cedula().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.numero(vista.getTxt_cedula(), 10); 
+            }
+        });
+        vista.getTxt_nombre1().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_nombre1(), 30); 
+            }
+        });
+        vista.getTxt_nombre2().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_nombre2(), 30); 
+            }
+        });
+        vista.getTxt_apellido1().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_apellido1(), 30); 
+            }
+        });
+        vista.getTxt_apellido2().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_apellido2(), 30); 
+            }
+        });
+        vista.getTxt_direccion().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.nombre_compuesto(vista.getTxt_direccion(), 60); 
+            }
+        });
+        vista.getTxt_telefono().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.numero(vista.getTxt_telefono(), 10); 
+            }
+        });
+    }
 }

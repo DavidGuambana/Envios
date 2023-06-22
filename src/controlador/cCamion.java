@@ -32,6 +32,7 @@ public class cCamion {
         
         seleccionar(vista.getJtCamiones());
         iniciarCtrlBtn();
+        crearmodo();
         visualizar("");
     }
     public void iniciarCtrlBtn() {
@@ -40,8 +41,6 @@ public class cCamion {
         vista.getJb_ModoVista().addActionListener(l -> eliminarver());
         vista.getJbOK().addActionListener(l -> accionboton());
         vista.getBtnBuscar().addActionListener(l -> buscar());
-
-
     }
 
     private void visualizar(String id) {
@@ -52,7 +51,6 @@ public class cCamion {
         vista.getJtCamiones().setModel(dtm);
         vista.getJtCamiones().setRowHeight(30);
     }
-    
 
      
     private void buscar() {
@@ -140,21 +138,19 @@ public class cCamion {
                 JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
              
             try {
-                modelos.eliminar(vista.getTxt_matricula().getText());
-                visualizar("");
-                JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
-
+                if (modelos.eliminar(vista.getTxt_matricula().getText())) {
+                    JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
+                    visualizar("");
+                } else{
+                    JOptionPane.showMessageDialog(null, "NO SE PUEDE ELIMINAR");
+                }
+                
+                
+                crearmodo();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
             }
-
-        } else {
-            
         }
-
-//            modelo.eliminar(vista.getTxt_cedula().getText());
-//            visualizar("");
-
         }
         
     }
@@ -171,21 +167,16 @@ public class cCamion {
             JOptionPane.showMessageDialog(null, "¡Algunos datos no son correctos!");
         }
     }
-    public void blockboton(){
+
+    public void blockboton() {
         vista.getTxt_matricula().setEditable(false);
         vista.getTxt_potencia().setEditable(false);
         vista.getCb_modelo().setEnabled(false);
-       
+    }
 
-
-    
-}
-      public void desbckbtn(){
-       vista.getTxt_matricula().setEditable(true);
+    public void desbckbtn() {
+        vista.getTxt_matricula().setEditable(true);
         vista.getTxt_potencia().setEditable(true);
         vista.getCb_modelo().setEnabled(true);
-        
-}
-        
-
+    }  
 }

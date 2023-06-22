@@ -1,8 +1,11 @@
 
 package controlador;
 
+import controlador.util.Validar;
 import java.awt.Color;
 import java.awt.HeadlessException;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
@@ -42,6 +45,8 @@ public class cConductores {
         visualizar("");
         seleccionar(vista.getJtConductores());
         iniciarCtrlBtn();
+        crearmodo();
+        controlKey();
     }
     public void iniciarCtrlBtn() {
         vista.getJb_ModoEditar().addActionListener(l -> editarmodo());
@@ -176,10 +181,15 @@ public class cConductores {
     }
 
     public void setearDatos() {
-
+        Double salario;
+        try {
+            salario = Double.parseDouble(vista.getTxt_salario().getText());
+        } catch (Exception e) {
+            salario = 0.0;
+        }
         if (modelo.existeconductor(vista.getTxt_cedula().getText()) && modelop.existepersona(vista.getTxt_cedula().getText())) {
-            System.out.println("entra al if de solo ingresar conductor");
-            if (vista.getTxt_cedula().getText().isEmpty() || vista.getTxt_nombre1().getText().isEmpty() || vista.getTxt_nombre2().getText().isEmpty() || vista.getTxt_direccion().getText().isEmpty() || vista.getTxt_telefono().getText().isEmpty()) {
+            if (!Validar.cedula(vista.getTxt_cedula().getText())||vista.getTxt_cedula().getText().isEmpty() || vista.getTxt_nombre1().getText().isEmpty() || vista.getTxt_nombre2().getText().isEmpty() || vista.getTxt_direccion().getText().isEmpty() || 
+                    vista.getTxt_telefono().getText().isEmpty()||!Validar.licencia(vista.getTxt_licencia().getText())||salario<=0) {
                 JOptionPane.showMessageDialog(null, "¡Aun hay campos por completar!");
             } else {
                 if (JOptionPane.showConfirmDialog(null,
@@ -274,7 +284,7 @@ public class cConductores {
                     modelo.eliminar(vista.getCb_id().getText());
                     visualizar("");
                     JOptionPane.showMessageDialog(null, "ELIMINADO CORRECTAMENTE");
-
+                    crearmodo();
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
                 }
@@ -310,5 +320,54 @@ public class cConductores {
           visualizar("");
         }
     }
-
+       public void controlKey() {
+        vista.getTxt_cedula().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.numero(vista.getTxt_cedula(), 10); 
+            }
+        });
+        vista.getTxt_nombre1().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_nombre1(), 30); 
+            }
+        });
+        vista.getTxt_nombre2().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_nombre2(), 30); 
+            }
+        });
+        vista.getTxt_apellido1().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_apellido1(), 30); 
+            }
+        });
+        vista.getTxt_apellido2().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.letras(vista.getTxt_apellido2(), 30); 
+            }
+        });
+        vista.getTxt_direccion().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.nombre_compuesto(vista.getTxt_direccion(), 60); 
+            }
+        });
+        vista.getTxt_telefono().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.numero(vista.getTxt_telefono(), 10); 
+            }
+        });
+        vista.getTxt_salario().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.dinero(vista.getTxt_salario(), 7); 
+            }
+        });
+    }
 }

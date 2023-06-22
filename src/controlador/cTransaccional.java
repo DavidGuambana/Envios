@@ -252,6 +252,7 @@ public final class cTransaccional {
             case 6: vista.getXcodigo_envio().setText(id);break;
         }
     }
+    
     public void controlKey() {
         vista.getXdescripcion().addKeyListener(new KeyAdapter() {
             @Override
@@ -278,5 +279,4 @@ public final class cTransaccional {
             }
         });
     }
-
 }

@@ -46,7 +46,6 @@ public class mPersona extends Persona {
                 + "','" + getDireccion()
                 + "','" + getTelefono()
                 + "'," + getCodigo_can()+")";
-        System.out.println(sql);
         return con.accion(sql);
     }
     
@@ -85,20 +84,22 @@ public class mPersona extends Persona {
             return null;
         }
     }
-      public boolean existepersona (String cedula){
-         boolean exist = false;
+
+    public boolean existepersona(String cedula) {
+        boolean exist = false;
         try {
-            sql = "SELECT COUNT(CEDULA)FROM PERSONA WHERE CEDULA="+cedula+"";
+            sql = "SELECT COUNT(CEDULA)FROM PERSONA WHERE CEDULA=" + cedula + "";
             System.out.println(sql);
             rs = con.consulta(sql);
-            rs.next();
-            if (rs.getInt(1) == 0) {
-                exist = false;
-                System.out.println("entra false");
-            } else {
-                exist = true;
-                System.out.println("entra true");
+            if (rs != null) {
+                rs.next();
+                if (rs.getInt(1) == 0) {
+                    exist = false;
+                } else {
+                    exist = true;
+                }
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(mConductor.class.getName()).log(Level.SEVERE, null, ex);
         }
