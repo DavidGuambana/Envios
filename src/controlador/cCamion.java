@@ -1,4 +1,7 @@
 package controlador;
+import controlador.util.Validar;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -34,6 +37,7 @@ public class cCamion {
         iniciarCtrlBtn();
         crearmodo();
         visualizar("");
+        controlKey();
     }
     public void iniciarCtrlBtn() {
         vista.getJb_ModoEditar().addActionListener(l -> editarmodo());
@@ -94,6 +98,8 @@ public class cCamion {
             vista.getTxt_matricula().setText("");
             vista.getCb_modelo().setSelectedItem("");
             vista.getTxt_potencia().setText("");
+            vista.getCb_marca().setSelectedIndex(0);
+            vista.getCb_modelo().setSelectedIndex(0);
           
         
     }
@@ -178,5 +184,55 @@ public class cCamion {
         vista.getTxt_matricula().setEditable(true);
         vista.getTxt_potencia().setEditable(true);
         vista.getCb_modelo().setEnabled(true);
-    }  
+    }
+    public void controlKey() {
+        vista.getTxt_potencia().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.numero(vista.getTxt_potencia(), 4); 
+            }
+        });
+        vista.getTxt_matricula().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.nombre_compuesto(vista.getTxt_matricula(), 7); 
+            }
+        });
+//        vista.getTxt_nombre2().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.letras(vista.getTxt_nombre2(), 30); 
+//            }
+//        });
+//        vista.getTxt_apellido1().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.letras(vista.getTxt_apellido1(), 30); 
+//            }
+//        });
+//        vista.getTxt_apellido2().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.letras(vista.getTxt_apellido2(), 30); 
+//            }
+//        });
+//        vista.getTxt_direccion().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.nombre_compuesto(vista.getTxt_direccion(), 60); 
+//            }
+//        });
+//        vista.getTxt_telefono().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.numero(vista.getTxt_telefono(), 10); 
+//            }
+//        });
+//        vista.getTxt_salario().addKeyListener(new KeyAdapter() {
+//            @Override
+//            public void keyPressed(KeyEvent e){
+//                Validar.dinero(vista.getTxt_salario(), 7); 
+//            }
+//        });
+    }
 }
