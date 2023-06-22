@@ -32,8 +32,6 @@ public final class cTransaccional {
     public cTransaccional(vTransaccional vista, mTransaccional modelo) {
         this.vista = vista;
         this.modelo = modelo;
-        vista.setVisible(true);
-        
         btnAgregar.setBackground(Color.WHITE);
         InsertarIcono(btnAgregar, "/vista/iconos/agregar.png");
         vista.getJtRegistros().setDefaultRenderer(Object.class, new BotonTabla());
@@ -41,12 +39,40 @@ public final class cTransaccional {
          modelo.list_provincia(vista.getXprovincia2());
          modelo.list_canton(vista.getXcanton(), vista.getXprovincia());
          modelo.list_canton(vista.getXcanton2(), vista.getXprovincia2());
-         control();
          controlKey();
+         control();
+         vista.setVisible(true);
     }
 
     public void control() {
-        vista.getJbSIGUIENTE().addActionListener(l -> siguiente());
+        vista.getJbRviaje().addActionListener(l -> {
+            crear_envio();
+        });
+        
+        vista.getJbRenvio().addActionListener(l -> {
+            crear_viaje();
+        });
+        
+        vista.getJbRpaquete().addActionListener(l -> {
+            
+            crear_paquete();
+        });
+        
+        vista.getJbSaltarViaje().addActionListener(l -> {
+            vista.getTpEnvios().setEnabledAt(0, false);
+            vista.getTpEnvios().setEnabledAt(1, true);
+            vista.getTpEnvios().setSelectedIndex(1);
+        });
+        
+        vista.getJbSaltarEnvío().addActionListener(l -> {
+            vista.getTpEnvios().setEnabledAt(1, false);
+            vista.getTpEnvios().setEnabledAt(2, true);
+            vista.getTpEnvios().setSelectedIndex(2);
+        });
+        
+        
+        
+        
         
         //combobox
         vista.getXprovincia().addActionListener(l-> modelo.list_canton(vista.getXcanton(), vista.getXprovincia()));
@@ -84,18 +110,6 @@ public final class cTransaccional {
         vista.getJtRegistros().addMouseListener(ml);
         });
     }
-
-    public void siguiente() {
-        if (vista.getTpEnvios().getSelectedIndex() == 0) {
-            crear_viaje();
-        }
-        if (vista.getTpEnvios().getSelectedIndex() == 1) {
-            crear_envio();
-        }
-        if (vista.getTpEnvios().getSelectedIndex() == 2) {
-            crear_paquete();
-        }
-    }
     
     public void crear_viaje(){
         Date fecha;
@@ -117,7 +131,9 @@ public final class cTransaccional {
             m_via.crear();
             vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
             JOptionPane.showMessageDialog(null, "¡Viaje registrado correctamente!");
-            vista.getTpEnvios().setSelectedIndex(1);
+            vista.getTpEnvios().setEnabledAt(1, false);
+            vista.getTpEnvios().setEnabledAt(2, true);
+            vista.getTpEnvios().setSelectedIndex(2);
         }
     }
     
@@ -138,7 +154,9 @@ public final class cTransaccional {
             m_env.crear();
             vista.getXcodigo_envio().setText("" + m_env.ultimoCodigo());
             JOptionPane.showMessageDialog(null, "¡Envío registrado correctamente!");
-            vista.getTpEnvios().setSelectedIndex(2);
+            vista.getTpEnvios().setEnabledAt(0, false);
+            vista.getTpEnvios().setEnabledAt(1, true);
+            vista.getTpEnvios().setSelectedIndex(1);
         }
     }
     
@@ -171,6 +189,9 @@ public final class cTransaccional {
             m_paq.setDireccion(vista.getXdireccion().getText());
             m_via.crear();
             JOptionPane.showMessageDialog(null, "¡Paquete registrado correctamente!");
+            vista.getTpEnvios().setEnabledAt(2, false);
+            vista.getTpEnvios().setEnabledAt(0, true);
+            vista.getTpEnvios().setSelectedIndex(0);
         }
     }
 

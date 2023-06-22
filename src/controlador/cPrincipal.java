@@ -117,15 +117,23 @@ public final class cPrincipal {
         cMarcaModelo controlador = new cMarcaModelo(model, vismarcamodelo);
     }
     
-    public void menuTransaccional(){
-        mTransaccional model = new mTransaccional(); 
-       try {
+    public void menuTransaccional() {
+        mTransaccional model = new mTransaccional();
+        try {
+            vistransaccional.getTpEnvios().setEnabledAt(0, true);
+            vistransaccional.getTpEnvios().setEnabledAt(1, false);
+            vistransaccional.getTpEnvios().setEnabledAt(2, false);
+            vistransaccional.getTpEnvios().setSelectedIndex(0);
             p.getJdp_principal().add(vistransaccional);
         } catch (Exception e) {
             vistransaccional = new vTransaccional();
+            vistransaccional.getTpEnvios().setEnabledAt(0, true);
+            vistransaccional.getTpEnvios().setEnabledAt(1, false);
+            vistransaccional.getTpEnvios().setEnabledAt(2, false);
+            vistransaccional.getTpEnvios().setSelectedIndex(0);
             p.getJdp_principal().add(vistransaccional);
         }
-        cTransaccional controlador = new cTransaccional(vistransaccional,model);
+        cTransaccional controlador = new cTransaccional(vistransaccional, model);
     }
 
     public void Conectar() {

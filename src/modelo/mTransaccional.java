@@ -2,8 +2,6 @@ package modelo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
@@ -107,26 +105,30 @@ public class mTransaccional{
         } catch (SQLException ex) {
         }
     }
-    public void list_canton(JComboBox canton, JComboBox provincia){
-        if (provincia.getSelectedIndex() == 0) {
-            sql = "SELECT NOMBRE FROM CANTON";
-        } else{
-            sql = "SELECT C.NOMBRE FROM CANTON C JOIN PROVINCIA P ON(C.CODIGO_PROV = P.CODIGO) WHERE P.NOMBRE = '"+provincia.getSelectedItem().toString()+"'";
-        }
-        rs = con.consulta(sql);
-        if (rs != null) {
-            try {
-                canton.removeAllItems();
-                canton.addItem("Seleccione...");
-                while (rs.next()) {
-                    canton.addItem(rs.getString(1));
-                }
-            } catch (SQLException ex) {
+
+    public void list_canton(JComboBox canton, JComboBox provincia) {
+        try {
+            if (provincia.getSelectedIndex() == 0) {
+                sql = "SELECT NOMBRE FROM CANTON";
+            } else {
+                sql = "SELECT C.NOMBRE FROM CANTON C JOIN PROVINCIA P ON(C.CODIGO_PROV = P.CODIGO) WHERE P.NOMBRE = '" + provincia.getSelectedItem().toString() + "'";
             }
+            rs = con.consulta(sql);
+            if (rs != null) {
+                try {
+                    canton.removeAllItems();
+                    canton.addItem("Seleccione...");
+                    while (rs.next()) {
+                        canton.addItem(rs.getString(1));
+                    }
+                } catch (SQLException ex) {
+                }
+            }
+        } catch (Exception e) {
         }
     }
-    
-    public void list_provincia (JComboBox provincia){
+
+    public void list_provincia(JComboBox provincia) {
         sql = "SELECT NOMBRE FROM PROVINCIA";
         rs = con.consulta(sql);
         if (rs != null) {

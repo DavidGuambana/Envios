@@ -60,9 +60,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         return jbElejirViaje;
     }
 
-    public JButton getJbSIGUIENTE() {
-        return jbSIGUIENTE;
-    }
+    
 
     public JButton getJbSaltarEnvío() {
         return jbSaltarEnvío;
@@ -168,6 +166,18 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     public JComboBox<String> getXprovincia2() {
         return xprovincia2;
     }
+
+    public JButton getJbRenvio() {
+        return jbRenvio;
+    }
+
+    public JButton getJbRpaquete() {
+        return jbRpaquete;
+    }
+
+    public JButton getJbRviaje() {
+        return jbRviaje;
+    }
     
     
     
@@ -188,7 +198,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jbSIGUIENTE = new javax.swing.JButton();
         jProgressBar = new javax.swing.JProgressBar();
         tpEnvios = new javax.swing.JTabbedPane();
         jpViaje = new javax.swing.JPanel();
@@ -208,6 +217,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jbElejirMatricula = new javax.swing.JButton();
         jbElejirConductor = new javax.swing.JButton();
         jbSaltarViaje = new javax.swing.JButton();
+        jbRviaje = new javax.swing.JButton();
         jpEnvio = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jSeparator11 = new javax.swing.JSeparator();
@@ -217,6 +227,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         xfecha_envio = new com.toedter.calendar.JDateChooser();
         jbElejirViaje = new javax.swing.JButton();
         jbSaltarEnvío = new javax.swing.JButton();
+        jbRenvio = new javax.swing.JButton();
         jpPaquete = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jSeparator10 = new javax.swing.JSeparator();
@@ -249,6 +260,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jbElejirDestinatario = new javax.swing.JButton();
         jbElejirEnvio = new javax.swing.JButton();
         jSeparator15 = new javax.swing.JSeparator();
+        jbRpaquete = new javax.swing.JButton();
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -372,7 +384,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         setClosable(true);
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -391,13 +402,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jLabel3.setForeground(new java.awt.Color(0, 102, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("¡En esta sección puedes registrar paso a paso un envío!");
-
-        jbSIGUIENTE.setBackground(new java.awt.Color(0, 102, 153));
-        jbSIGUIENTE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jbSIGUIENTE.setForeground(new java.awt.Color(255, 255, 255));
-        jbSIGUIENTE.setText("SIGUIENTE...");
-        jbSIGUIENTE.setBorder(null);
-        jbSIGUIENTE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jProgressBar.setBackground(new java.awt.Color(0, 0, 0));
         jProgressBar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -546,16 +550,26 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jbSaltarViaje.setBorder(null);
         jbSaltarViaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jbRviaje.setBackground(new java.awt.Color(0, 102, 153));
+        jbRviaje.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jbRviaje.setForeground(new java.awt.Color(255, 255, 255));
+        jbRviaje.setText("SIGUIENTE...");
+        jbRviaje.setBorder(null);
+        jbRviaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout jpViajeLayout = new javax.swing.GroupLayout(jpViaje);
         jpViaje.setLayout(jpViajeLayout);
         jpViajeLayout.setHorizontalGroup(
             jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpViajeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addGroup(jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpViajeLayout.createSequentialGroup()
+                        .addComponent(jbRviaje, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
         jpViajeLayout.setVerticalGroup(
             jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,7 +577,9 @@ public class vTransaccional extends javax.swing.JInternalFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpViajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbSaltarViaje, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbRviaje, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -648,15 +664,28 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jbSaltarEnvío.setBorder(null);
         jbSaltarEnvío.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jbRenvio.setBackground(new java.awt.Color(0, 102, 153));
+        jbRenvio.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jbRenvio.setForeground(new java.awt.Color(255, 255, 255));
+        jbRenvio.setText("SIGUIENTE...");
+        jbRenvio.setBorder(null);
+        jbRenvio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout jpEnvioLayout = new javax.swing.GroupLayout(jpEnvio);
         jpEnvio.setLayout(jpEnvioLayout);
         jpEnvioLayout.setHorizontalGroup(
             jpEnvioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpEnvioLayout.createSequentialGroup()
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpEnvioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpEnvioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbSaltarEnvío, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jbRenvio, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpEnvioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbSaltarEnvío, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpEnvioLayout.setVerticalGroup(
@@ -664,9 +693,11 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             .addGroup(jpEnvioLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(43, 43, 43)
+                .addComponent(jbRenvio, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(jbSaltarEnvío, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         tpEnvios.addTab("Registrar envío", jpEnvio);
@@ -810,6 +841,13 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jSeparator15.setOpaque(true);
         jSeparator15.setPreferredSize(new java.awt.Dimension(50, 1));
 
+        jbRpaquete.setBackground(new java.awt.Color(0, 102, 153));
+        jbRpaquete.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jbRpaquete.setForeground(new java.awt.Color(255, 255, 255));
+        jbRpaquete.setText("FINALIZAR");
+        jbRpaquete.setBorder(null);
+        jbRpaquete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -884,14 +922,16 @@ public class vTransaccional extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbElejirDestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbElejirRemitente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jbElejirRemitente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(119, 119, 119)
+                        .addComponent(jbRpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel13)
                         .addGap(6, 6, 6)
@@ -919,6 +959,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
                                 .addGap(2, 2, 2)
                                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jbElejirRemitente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, 0)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
@@ -930,30 +971,34 @@ public class vTransaccional extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                                 .addGap(11, 11, 11)
                                 .addComponent(jbElejirDestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jbElejirEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel6Layout.createSequentialGroup()
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(xdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(2, 2, 2)
-                            .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(30, 30, 30)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(jLabel18)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jLabel19))
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(xprovincia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(xcanton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(30, 30, 30)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel20)
-                                .addComponent(xcodigo_envio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(2, 2, 2)
-                            .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jbElejirEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(xdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(2, 2, 2)
+                                .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jLabel18)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel19))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(xprovincia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(xcanton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel20)
+                                    .addComponent(xcodigo_envio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(2, 2, 2)
+                                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbRpaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))))
         );
 
         javax.swing.GroupLayout jpPaqueteLayout = new javax.swing.GroupLayout(jpPaquete);
@@ -981,9 +1026,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbSIGUIENTE, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(162, 162, 162))
             .addComponent(tpEnvios, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(jProgressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -991,11 +1034,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jbSIGUIENTE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)))
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -1064,7 +1103,9 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbElejirMatricula;
     private javax.swing.JButton jbElejirRemitente;
     private javax.swing.JButton jbElejirViaje;
-    private javax.swing.JButton jbSIGUIENTE;
+    private javax.swing.JButton jbRenvio;
+    private javax.swing.JButton jbRpaquete;
+    private javax.swing.JButton jbRviaje;
     private javax.swing.JButton jbSaltarEnvío;
     private javax.swing.JButton jbSaltarViaje;
     private javax.swing.JDialog jdDialog;
