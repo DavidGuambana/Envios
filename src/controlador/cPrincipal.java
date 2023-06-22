@@ -46,6 +46,9 @@ public final class cPrincipal {
     }
 
     public void control() {
+        p.getBtnBorrar().addActionListener(l-> p.getImput().setText(""));
+        
+        
         p.getJmb_envios().addActionListener(l -> {
             m.llenarTabla(p.getJtRS(), "Select * from envio");
             visualizar_tabla();
