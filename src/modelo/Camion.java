@@ -3,12 +3,12 @@ package modelo;
 public class Camion {
    private String matricula;
    private int modelo;
-   private String potencia;
+   private int potencia;
 
     public Camion() {
     }
 
-    public Camion(String matricula, int modelo, String potencia) {
+    public Camion(String matricula, int modelo, int potencia) {
         this.matricula = matricula;
         this.modelo = modelo;
         this.potencia = potencia;
@@ -30,13 +30,14 @@ public class Camion {
         this.modelo = modelo;
     }
 
-    public String getPotencia() {
+    public int getPotencia() {
         return potencia;
     }
 
-    public void setPotencia(String potencia) {
+    public void setPotencia(int potencia) {
         this.potencia = potencia;
     }
+
 
     
    
