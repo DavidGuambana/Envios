@@ -13,10 +13,11 @@ public class mCamion extends Camion{
         List<Camion> camion = new ArrayList<>();
         try {
             if ("".equals(matricula)) {
-                sql = "SELECT matricula, codigo_mod, potencia FROM camion ";
+                sql = "SELECT matricula, codigo_mod, potencia FROM camion";
             } else {
                 sql = "SELECT matricula, codigo_mod, potencia FROM camion WHERE matricula='"+matricula+"'";
             }
+            System.out.println(sql);
             rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
@@ -25,6 +26,7 @@ public class mCamion extends Camion{
                 }
             }
             con.close();
+            
             return camion;
         } catch (SQLException ex) {
             System.out.println();
@@ -79,5 +81,4 @@ public class mCamion extends Camion{
         con.close();
         return idmarca;
     }
-      
 }

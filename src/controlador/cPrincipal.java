@@ -50,7 +50,7 @@ public final class cPrincipal {
         p.getJb_nuevo_cliente().addActionListener(l -> menuPersona());
         p.getJb_ubicaciones().addActionListener(l -> menuUbicaciones());
         p.getJb_nuevo_chofer().addActionListener(l -> menuConductores());
-        //p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
+        p.getJb_nuevo_camion().addActionListener(l-> menuCamiones());
         p.getJb_marcas_modelos().addActionListener(l -> menuMarcaModelo());
 
     }
@@ -95,7 +95,6 @@ public final class cPrincipal {
 
       public void menuConductores() {
         mConductor model = new mConductor();
-        mPersona modper = new mPersona();
         
         try {
             p.getJdp_principal().add(visconduc);
@@ -103,7 +102,7 @@ public final class cPrincipal {
             visconduc = new vConductor();
             p.getJdp_principal().add(visconduc);
         }
-        cConductores controlador = new cConductores(model,visconduc,modper);
+        cConductores controlador = new cConductores(model,visconduc);
     }
 
     public void menuMarcaModelo() {

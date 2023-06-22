@@ -24,14 +24,15 @@ public class cCamion {
     private final mMarcaModelo modelomarca = new mMarcaModelo();
 
     public cCamion(mCamion modelo, vCamion vista) {
+        vista.setVisible(true); 
         this.modelos = modelo;
         this.vista = vista;
         modelomarca.llenarcombomarca(vista.getCb_marca());
         modelomarca.llenarcombomodelo(vista.getCb_modelo());
-        vista.setVisible(true);  
-        visualizar("");
+        
         seleccionar(vista.getJtCamiones());
         iniciarCtrlBtn();
+        visualizar("");
     }
     public void iniciarCtrlBtn() {
         vista.getJb_ModoEditar().addActionListener(l -> editarmodo());

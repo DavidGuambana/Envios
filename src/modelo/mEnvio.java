@@ -34,8 +34,10 @@ public class mEnvio extends Envio{
     }
       public boolean crear() {
         sql = "INSERT INTO envio(fecha, codigo_via)"
-                + " VALUES ('" + getFecha()
+                + " VALUES (TO_DATE('" + getFecha()
+                + "','YYYY-MM-DD')"
                 + "," + getCodigo_via()+")";
+          System.out.println(sql);
         return con.accion(sql);
     }
  

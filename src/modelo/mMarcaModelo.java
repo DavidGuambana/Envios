@@ -16,7 +16,7 @@ public class mMarcaModelo {
     public void listar(JTable tabla) {
         DefaultTableModel dtm = new DefaultTableModel(null, columnas);
         try {
-            sql = "SELECT mod.codigo, mod.nombre, mar.codigo, mar.nombre FROM MODELO mod JOIN MARCA mar ON(mod.id_codigo_mar = mar.codigo)";
+            sql = "SELECT mod.codigo, mod.nombre, mar.codigo, mar.nombre FROM MODELO mod JOIN MARCA mar ON(mod.codigo_mar = mar.codigo)";
             rs = con.consulta(sql);
             while (rs.next()) {
                 dtm.addRow(new Object[]{rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4)});

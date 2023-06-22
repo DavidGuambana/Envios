@@ -46,11 +46,11 @@ public final class cTransaccional {
 
     public void control() {
         vista.getJbRviaje().addActionListener(l -> {
-            crear_envio();
+            crear_viaje();
         });
         
         vista.getJbRenvio().addActionListener(l -> {
-            crear_viaje();
+            crear_envio();
         });
         
         vista.getJbRpaquete().addActionListener(l -> {
@@ -69,9 +69,6 @@ public final class cTransaccional {
             vista.getTpEnvios().setEnabledAt(2, true);
             vista.getTpEnvios().setSelectedIndex(2);
         });
-        
-        
-        
         
         
         //combobox

@@ -26,7 +26,7 @@ public class mTransaccional{
         }
         dtm = new DefaultTableModel(null, col_cam);
         try {
-            sql = "SELECT c.matricula, mo.nombre, ma.nombre FROM CAMION c JOIN MODELO mo ON (c.codigo_mod = mo.codigo) JOIN MARCA ma ON (mo.id_codigo_mar = ma.codigo)";
+            sql = "SELECT c.matricula, mo.nombre, ma.nombre FROM CAMION c JOIN MODELO mo ON (c.codigo_mod = mo.codigo) JOIN MARCA ma ON (mo.codigo_mar = ma.codigo)";
             rs = con.consulta(sql);
             while (rs.next()) {
                 dtm.addRow(new Object[]{rs.getString(1), rs.getString(2), rs.getString(3),b});

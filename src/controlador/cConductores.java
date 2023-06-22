@@ -2,6 +2,7 @@
 package controlador;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
@@ -14,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import modelo.Conductor;
-import modelo.Persona;
 import modelo.mConductor;
 import modelo.mPersona;
 import modelo.mUbicacion;
@@ -22,9 +22,9 @@ import vista.vConductor;
 
 public class cConductores {
 
-    private final mConductor modelo;
-    private final vConductor vista;
-    private final mPersona modelop;
+    mConductor modelo;
+    vConductor vista;
+    mPersona modelop = new mPersona();
     List<Conductor> conductores = new ArrayList<>();
     DefaultTableModel dtm;
     String[] columnas = {"ID Conductor", "Licencia", "Salario", "Cedula"};
@@ -33,29 +33,16 @@ public class cConductores {
     public static ResultSet rs = null;
     private mUbicacion modubi = new mUbicacion();
 
-    public cConductores(mConductor modelo, vConductor vista, mPersona modelop) {
+    public cConductores(mConductor modelo, vConductor vista) {
         this.modelo = modelo;
         this.vista = vista;
-        this.modelop = modelop;
-        this.vista.setVisible(true);
-        modubi.llenarcombocanton(vista.getCb_canton());
+        vista.setVisible(true);
         modubi.llenarcomboprovincia(vista.getCb_provincia());
+        modubi.llenarcombocanton(vista.getCb_canton());
         visualizar("");
         seleccionar(vista.getJtConductores());
         iniciarCtrlBtn();
     }
-
-//    public cConductores(mConductor modelo, vConductor vista) {
-//        this.modelo = modelo;
-//        this.vista = vista;
-//        this.vista.setVisible(true);
-//        modubi.llenarcombocanton(vista.getCb_canton());
-//        modubi.llenarcomboprovincia(vista.getCb_provincia());
-//        visualizar("");
-//        seleccionar(vista.getJtConductores());
-//        iniciarCtrlBtn();
-//
-//    }
     public void iniciarCtrlBtn() {
         vista.getJb_ModoEditar().addActionListener(l -> editarmodo());
         vista.getJb_ModoNuevo().addActionListener(l -> crearmodo());
@@ -211,13 +198,13 @@ public class cConductores {
                         modelop.setCodigo_can(vista.getCb_canton().getSelectedIndex());
                         modelo.setCedula(vista.getTxt_cedula().getText());
                         modelo.setLicencia(vista.getTxt_licencia().getText());
-                        modelo.setSalario(Double.parseDouble(vista.getTxt_salario().getText()));
+                        modelo.setSalario(Double.valueOf(vista.getTxt_salario().getText()));
                         modelop.actualizar();
                         modelo.crear();
                         visualizar("");
                         JOptionPane.showMessageDialog(null, "Ingresado correctamente");
 
-                    } catch (Exception e) {
+                    } catch (HeadlessException | NumberFormatException e) {
                         JOptionPane.showMessageDialog(null, "¡Ningun registro seleccionado!");
                     }
 
@@ -225,7 +212,7 @@ public class cConductores {
                     System.out.println("setea datos");
                     modelo.setCedula(vista.getTxt_cedula().getText());
                     modelo.setLicencia(vista.getTxt_licencia().getText());
-                    modelo.setSalario(Double.parseDouble(vista.getTxt_salario().getText()));
+                    modelo.setSalario(Double.valueOf(vista.getTxt_salario().getText()));
                     modelo.crear();
 
                 }
@@ -236,7 +223,7 @@ public class cConductores {
         } else {
             modelo.setCedula(vista.getTxt_cedula().getText());
             modelo.setLicencia(vista.getTxt_licencia().getText());
-            modelo.setSalario(Double.parseDouble(vista.getTxt_salario().getText()));
+            modelo.setSalario(Double.valueOf(vista.getTxt_salario().getText()));
             modelop.setCedula(vista.getTxt_cedula().getText());
             modelop.setNombre1(vista.getTxt_nombre1().getText());
             modelop.setNombre2(vista.getTxt_nombre2().getText());
@@ -255,7 +242,7 @@ public class cConductores {
         modelo.setId_conductor(Integer.parseInt(vista.getCb_id().getText()));
         modelo.setCedula(vista.getTxt_cedula().getText());
         modelo.setLicencia(vista.getTxt_licencia().getText());
-        modelo.setSalario(Double.parseDouble(vista.getTxt_salario().getText()));
+        modelo.setSalario(Double.valueOf(vista.getTxt_salario().getText()));
         modelop.setCedula(vista.getTxt_cedula().getText());
         modelop.setNombre1(vista.getTxt_nombre1().getText());
         modelop.setNombre2(vista.getTxt_nombre2().getText());
@@ -306,7 +293,6 @@ public class cConductores {
             int codigo = 0;
             switch (vista.getCbColumnas().getSelectedIndex()) {
                 case 0:
-//                   
                     columna = "ID_CON";
                     break;
                 case 1:
