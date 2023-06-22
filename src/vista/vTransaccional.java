@@ -17,6 +17,8 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     public vTransaccional() {
         initComponents();
     }
+    
+    
 
     public JButton getBtnBuscar() {
         return btnBuscar;
@@ -127,7 +129,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         return xcodigo_viaje;
     }
 
-    public static JTextArea getXdescripcion() {
+    public JTextArea getXdescripcion() {
         return xdescripcion;
     }
 
@@ -739,9 +741,9 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
         jScrollPane3.setBorder(null);
 
+        xdescripcion.setBackground(new java.awt.Color(255, 255, 255));
         xdescripcion.setColumns(20);
         xdescripcion.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
-        xdescripcion.setForeground(new java.awt.Color(255, 255, 255));
         xdescripcion.setLineWrap(true);
         xdescripcion.setRows(5);
         xdescripcion.setWrapStyleWord(true);
@@ -1077,7 +1079,7 @@ public class vTransaccional extends javax.swing.JInternalFrame {
     private javax.swing.JTextField xcedula_remitente;
     private javax.swing.JTextField xcodigo_envio;
     private javax.swing.JTextField xcodigo_viaje;
-    public static javax.swing.JTextArea xdescripcion;
+    private javax.swing.JTextArea xdescripcion;
     private javax.swing.JTextField xdireccion;
     private com.toedter.calendar.JDateChooser xfecha_envio;
     private com.toedter.calendar.JDateChooser xfecha_viaje;

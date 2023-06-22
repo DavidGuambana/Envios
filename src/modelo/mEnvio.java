@@ -44,4 +44,16 @@ public class mEnvio extends Envio{
         sql = "DELETE FROM envio WHERE codigo=" + codigo + "";
         return con.accion(sql);
     }
+    
+    public int ultimoCodigo() {
+        int id = 0;
+        try {
+            sql = "SELECT * FROM (SELECT CODIGO FROM ENVIO ORDER BY CODIGO DESC) WHERE ROWNUM <= 1";
+            rs = con.consulta(sql);
+            rs.next();
+            id = rs.getInt(1);
+        } catch (SQLException ex) {
+        }
+        return id;
+    }
 }

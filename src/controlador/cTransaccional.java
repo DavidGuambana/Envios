@@ -112,6 +112,8 @@ public final class cTransaccional {
             m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
             m_via.crear();
             vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
+            JOptionPane.showMessageDialog(null, "¡Viaje registrado correctamente!");
+            vista.getTpEnvios().setSelectedIndex(1);
         }
     }
     
@@ -122,30 +124,49 @@ public final class cTransaccional {
         } catch (Exception e) {
             fecha = null;
         }
-        if (vista.getXcodigo_viaje().getText().equals("Autoasignado") ||fecha==null) {
+        if (vista.getXcodigo_viaje().getText().equals("Autoasignado") || fecha == null) {
             JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
-        } else{
+        } else {
             m_env.setCodigo_via(Integer.parseInt(vista.getXcodigo_viaje().getText()));
             Long d = fecha.getTime();
             java.sql.Date fecha_via = new java.sql.Date(d);
             m_env.setFecha(fecha_via);
             m_env.crear();
-             vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
+            vista.getXcodigo_envio().setText("" + m_env.ultimoCodigo());
+            JOptionPane.showMessageDialog(null, "¡Envío registrado correctamente!");
+            vista.getTpEnvios().setSelectedIndex(2);
         }
     }
     
     public void crear_paquete(){
-        if (vista.getXmatricula().getText().equals("Autoasignado")|| vista.getXcanton().getSelectedIndex() == 0||
-                vista.getXid_conductor().getText().equals("Autoasignado")) {
+        Double peso;
+        try {
+            peso = Double.valueOf(vista.getXpeso().getText());
+        } catch (Exception e) {
+            peso = 0.0;
+        }
+        Double precio;
+        try {
+            precio = Double.valueOf(vista.getXprecio().getText());
+        } catch (Exception e) {
+            precio = 0.0;
+        }
+        
+        if (vista.getXdescripcion().getText().isEmpty()|| peso<=0||precio<=0||
+                vista.getXcanton().getSelectedIndex() == 0|| vista.getXcedula_remitente().getText().isEmpty()||
+                vista.getXcedula_destinatario().getText().isEmpty()|| vista.getXdireccion().getText().isEmpty()||
+                vista.getXcanton2().getSelectedIndex()==0 || vista.getXcodigo_envio().getText().equals("Autoasignado")) {
             JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
-        } else{
-//            m_via.setMatricula(vista.getXmatricula().getText());
-//            Long d = fecha.getTime();
-//            java.sql.Date fecha_env = new java.sql.Date(d);
-//            m_via.setFecha(fecha_env);
-            m_via.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
-            m_via.setId_con(Integer.parseInt(vista.getXid_conductor().getText()));
+        } else {
+            m_paq.setDescripcion(vista.getXdescripcion().getText());
+            m_paq.setPeso(peso);
+            m_paq.setPrecio(precio);
+            m_paq.setCedula_rem(vista.getXcedula_remitente().getText());
+            m_paq.setCedula_dest(vista.getXcedula_destinatario().getText());
+            m_paq.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
+            m_paq.setDireccion(vista.getXdireccion().getText());
             m_via.crear();
+            JOptionPane.showMessageDialog(null, "¡Paquete registrado correctamente!");
         }
     }
 

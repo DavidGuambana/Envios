@@ -48,7 +48,7 @@ public class mViaje extends Viaje{
     public int ultimoCodigo() {
         int id = 0;
         try {
-            sql = "SELECT * FROM (SELECT CODIGO FROM VIAJE ORDER BY CODIGO DESC) WHERE ROWNUM <= 1;;";
+            sql = "SELECT * FROM (SELECT CODIGO FROM VIAJE ORDER BY CODIGO DESC) WHERE ROWNUM <= 1";
             rs = con.consulta(sql);
             rs.next();
             id = rs.getInt(1);
