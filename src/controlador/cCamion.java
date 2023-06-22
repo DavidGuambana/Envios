@@ -133,7 +133,6 @@ public class cCamion {
         }
         if (vista.getJbOK().getText().equals("REGISTRAR")) {
              setearDatos();
-             modelos.crear();
              visualizar("");
              
         }
@@ -162,13 +161,14 @@ public class cCamion {
     }
     public void setearDatos() {
         try {
-//            if (vista.getTxt_matricula().getText().isEmpty()||vista.getTxt_potencia().getText().isEmpty()) {
-//                JOptionPane.showMessageDialog(null, "¡Aun hay campos por completar!");
-//            } else {
+            if (vista.getTxt_matricula().getText().isEmpty()||vista.getTxt_potencia().getText().isEmpty()||vista.getCb_modelo().getSelectedIndex()==0||vista.getCb_marca().getSelectedIndex()==0) {
+                JOptionPane.showMessageDialog(null, "¡Aun hay campos por completar!");
+            } else {
                 modelos.setMatricula(vista.getTxt_matricula().getText());
                 modelos.setModelo(vista.getCb_modelo().getSelectedIndex());
                 modelos.setPotencia(Integer.parseInt(vista.getTxt_potencia().getText()));
-//            }
+                modelos.crear();
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "¡Algunos datos no son correctos!");
         }
