@@ -30,7 +30,7 @@ public class mMarcaModelo {
     public void buscar(String txt, String columna, JTable tabla) {
         DefaultTableModel dtm = new DefaultTableModel(null, columnas);
         try {
-            sql = "SELECT mod.codigo, mod.nombre, mar.codigo, mar.nombre FROM MODELO mod JOIN MARCA mar ON(mod.id_codigo_mar = mar.codigo) WHERE " + columna + " LIKE '%" + txt + "'";
+            sql = "SELECT mod.codigo, mod.nombre, mar.codigo, mar.nombre FROM MODELO mod JOIN MARCA mar ON(mod.codigo_mar = mar.codigo) WHERE " + columna + " LIKE '%" + txt + "'";
             rs = con.consulta(sql);
             if (rs != null) {
                 while (rs.next()) {
