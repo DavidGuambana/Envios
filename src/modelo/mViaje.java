@@ -38,6 +38,7 @@ public class mViaje extends Viaje{
                 + "', TO_DATE('" + getFecha()
                 + "','YYYY-MM-DD')," + getCodigo_can()
                 + "," + getId_con()+")";
+         System.out.println(sql);
         return con.accion(sql);
     }
      public boolean eliminar(int codigo) {

@@ -58,9 +58,6 @@ public class vPrincipal extends javax.swing.JFrame {
         return jmb_envios;
     }
 
-    public JMenuItem getJmb_nuevo_envio() {
-        return jmb_nuevo_envio;
-    }
 
     public JMenuItem getJmb_paquetes() {
         return jmb_paquetes;
@@ -216,7 +213,6 @@ public class vPrincipal extends javax.swing.JFrame {
         jbDesconectar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu10 = new javax.swing.JMenu();
-        jmb_nuevo_envio = new javax.swing.JMenuItem();
         jmb_envios = new javax.swing.JMenuItem();
         jmb_paquetes = new javax.swing.JMenuItem();
         jmb_viajes = new javax.swing.JMenuItem();
@@ -697,9 +693,6 @@ public class vPrincipal extends javax.swing.JFrame {
 
         jMenu10.setText("Paquetería");
 
-        jmb_nuevo_envio.setText("Nuevo envio...");
-        jMenu10.add(jmb_nuevo_envio);
-
         jmb_envios.setText("Envios");
         jMenu10.add(jmb_envios);
 
@@ -809,7 +802,6 @@ public class vPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmb_clientes;
     private javax.swing.JMenuItem jmb_conductores;
     private javax.swing.JMenuItem jmb_envios;
-    private javax.swing.JMenuItem jmb_nuevo_envio;
     private javax.swing.JMenuItem jmb_paquetes;
     private javax.swing.JMenuItem jmb_viajes;
     private javax.swing.JTable jtRS;

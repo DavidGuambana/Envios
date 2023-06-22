@@ -54,7 +54,6 @@ public final class cTransaccional {
         });
         
         vista.getJbRpaquete().addActionListener(l -> {
-            
             crear_paquete();
         });
         
@@ -128,9 +127,9 @@ public final class cTransaccional {
             m_via.crear();
             vista.getXcodigo_viaje().setText(""+m_via.ultimoCodigo());
             JOptionPane.showMessageDialog(null, "¡Viaje registrado correctamente!");
-            vista.getTpEnvios().setEnabledAt(1, false);
-            vista.getTpEnvios().setEnabledAt(2, true);
-            vista.getTpEnvios().setSelectedIndex(2);
+            vista.getTpEnvios().setEnabledAt(0, false);
+            vista.getTpEnvios().setEnabledAt(1, true);
+            vista.getTpEnvios().setSelectedIndex(1);
         }
     }
     
@@ -151,9 +150,9 @@ public final class cTransaccional {
             m_env.crear();
             vista.getXcodigo_envio().setText("" + m_env.ultimoCodigo());
             JOptionPane.showMessageDialog(null, "¡Envío registrado correctamente!");
-            vista.getTpEnvios().setEnabledAt(0, false);
-            vista.getTpEnvios().setEnabledAt(1, true);
-            vista.getTpEnvios().setSelectedIndex(1);
+            vista.getTpEnvios().setEnabledAt(1, false);
+            vista.getTpEnvios().setEnabledAt(2, true);
+            vista.getTpEnvios().setSelectedIndex(2);
         }
     }
     
@@ -170,11 +169,9 @@ public final class cTransaccional {
         } catch (Exception e) {
             precio = 0.0;
         }
-        
         if (vista.getXdescripcion().getText().isEmpty()|| peso<=0||precio<=0||
-                vista.getXcanton().getSelectedIndex() == 0|| vista.getXcedula_remitente().getText().isEmpty()||
-                vista.getXcedula_destinatario().getText().isEmpty()|| vista.getXdireccion().getText().isEmpty()||
-                vista.getXcanton2().getSelectedIndex()==0 || vista.getXcodigo_envio().getText().equals("Autoasignado")) {
+                vista.getXcanton2().getSelectedIndex() == 0|| vista.getXcedula_remitente().getText().isEmpty()||
+                vista.getXcedula_destinatario().getText().isEmpty()|| vista.getXdireccion().getText().isEmpty()|| vista.getXcodigo_envio().getText().equals("Autoasignado")) {
             JOptionPane.showMessageDialog(null, "¡Aún tienes campos por completar!");
         } else {
             m_paq.setDescripcion(vista.getXdescripcion().getText());
@@ -182,9 +179,10 @@ public final class cTransaccional {
             m_paq.setPrecio(precio);
             m_paq.setCedula_rem(vista.getXcedula_remitente().getText());
             m_paq.setCedula_dest(vista.getXcedula_destinatario().getText());
-            m_paq.setCodigo_can(modelo.getCodigoCan(vista.getXcanton().getSelectedItem().toString()));
+            m_paq.setCodigo_can(modelo.getCodigoCan(vista.getXcanton2().getSelectedItem().toString()));
             m_paq.setDireccion(vista.getXdireccion().getText());
-            m_via.crear();
+            m_paq.setCodigo_envio(Integer.parseInt(vista.getXcodigo_envio().getText()));
+            m_paq.crear();
             JOptionPane.showMessageDialog(null, "¡Paquete registrado correctamente!");
             vista.getTpEnvios().setEnabledAt(2, false);
             vista.getTpEnvios().setEnabledAt(0, true);

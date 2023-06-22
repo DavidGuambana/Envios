@@ -35,7 +35,8 @@ public class mPaquete extends Paquete {
         }
     }
        public boolean crear() {
-        sql = "INSERT INTO persona(descripcion, peso, precio, cedula_rem, cedula_des, codigo_can, direccion,codigo_env)"
+           System.out.println("saas");
+        sql = "INSERT INTO PAQUETE (descripcion, peso, precio, cedula_rem, cedula_des, codigo_can, direccion, codigo_env)"
                 + " VALUES ('" + getDescripcion()
                 + "'," + getPeso()
                 + "," + getPrecio()
@@ -43,7 +44,8 @@ public class mPaquete extends Paquete {
                 + "','" + getCedula_dest()
                 + "'," + getCodigo_can()
                 + ",'" + getDireccion()
-                + "," + getCodigo_envio()+")";
+                + "'," + getCodigo_envio()+")";
+           System.out.println(sql);
         return con.accion(sql);
     }
     public boolean eliminar(int codigo) {

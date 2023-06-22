@@ -39,7 +39,27 @@ public final class cPrincipal {
     
     Conexion con;
 
-    public void control() { 
+    public void visualizar_tabla() {
+        p.getjDialogRS().setSize(792, 510);
+        p.getjDialogRS().setLocationRelativeTo(p);
+        p.getjDialogRS().setVisible(true);
+    }
+
+    public void control() {
+        p.getJmb_envios().addActionListener(l -> {
+            m.llenarTabla(p.getJtRS(), "Select * from envio");
+            visualizar_tabla();
+        });
+        p.getJmb_paquetes().addActionListener(l -> {
+            m.llenarTabla(p.getJtRS(), "Select * from paquete");
+            visualizar_tabla();
+        });
+        p.getJmb_viajes().addActionListener(l -> {
+            m.llenarTabla(p.getJtRS(), "Select * from viaje");
+            visualizar_tabla();
+        });
+        
+        
         p.getJbConectar().addActionListener(l -> Conectar());
         p.getJbDesconectar().addActionListener(l -> Desconectar());
         p.getBtnEjecutar().addActionListener(l -> RUN_SQL());

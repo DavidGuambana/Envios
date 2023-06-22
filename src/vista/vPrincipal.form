@@ -347,11 +347,6 @@
             <Property name="text" type="java.lang.String" value="Paqueter&#xed;a"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jmb_nuevo_envio">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo envio..."/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jmb_envios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Envios"/>
