@@ -1,7 +1,10 @@
 package controlador;
 
 import controlador.util.BotonTabla;
+import controlador.util.Validar;
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -39,6 +42,7 @@ public final class cTransaccional {
          modelo.list_canton(vista.getXcanton(), vista.getXprovincia());
          modelo.list_canton(vista.getXcanton2(), vista.getXprovincia2());
          control();
+         controlKey();
     }
 
     public void control() {
@@ -231,6 +235,32 @@ public final class cTransaccional {
             case 5: vista.getXcedula_destinatario().setText(id);break;
             case 6: vista.getXcodigo_envio().setText(id);break;
         }
+    }
+    public void controlKey() {
+        vista.getXdescripcion().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.descripcion(vista.getXdescripcion(), 120); 
+            }
+        });
+        vista.getXprecio().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.dinero(vista.getXprecio(), 7); 
+            }
+        });
+        vista.getXpeso().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.dinero(vista.getXpeso(), 7); 
+            }
+        });
+        vista.getXdireccion().addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e){
+                Validar.nombre_compuesto(vista.getXdireccion(), 60); 
+            }
+        });
     }
 
 }

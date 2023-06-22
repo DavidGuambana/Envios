@@ -681,6 +681,8 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jSeparator10.setOpaque(true);
         jSeparator10.setPreferredSize(new java.awt.Dimension(50, 1));
 
+        xcedula_remitente.setEditable(false);
+        xcedula_remitente.setBackground(new java.awt.Color(255, 255, 255));
         xcedula_remitente.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         xcedula_remitente.setBorder(null);
 
@@ -693,6 +695,8 @@ public class vTransaccional extends javax.swing.JInternalFrame {
         jSeparator9.setOpaque(true);
         jSeparator9.setPreferredSize(new java.awt.Dimension(50, 1));
 
+        xcedula_destinatario.setEditable(false);
+        xcedula_destinatario.setBackground(new java.awt.Color(255, 255, 255));
         xcedula_destinatario.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         xcedula_destinatario.setBorder(null);
 
@@ -741,7 +745,6 @@ public class vTransaccional extends javax.swing.JInternalFrame {
 
         jScrollPane3.setBorder(null);
 
-        xdescripcion.setBackground(new java.awt.Color(255, 255, 255));
         xdescripcion.setColumns(20);
         xdescripcion.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         xdescripcion.setLineWrap(true);
